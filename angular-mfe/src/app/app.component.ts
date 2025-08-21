@@ -2,11 +2,12 @@ import { Component, OnInit, NgZone, OnDestroy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PhoneListComponent } from './phone-list/phone-list.component';
 import { PhoneListTestComponent } from './phone-list/phone-list-test.component';
+import { PhoneDetailComponent } from './phone-detail/phone-detail.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, PhoneListComponent, PhoneListTestComponent],
+  imports: [CommonModule, PhoneListComponent, PhoneListTestComponent, PhoneDetailComponent],
   template: `
     <div style="padding: 20px; border: 2px solid #dd1b16; margin: 20px;">
       <div *ngIf="currentView === 'home'">
@@ -28,11 +29,15 @@ import { PhoneListTestComponent } from './phone-list/phone-list-test.component';
         </div>
         <app-phone-list></app-phone-list>
       </div>
+
+      <div *ngIf="currentView === 'phone-detail'">
+        <app-phone-detail></app-phone-detail>
+      </div>
     </div>
   `
 })
 export class AppComponent implements OnInit, OnDestroy {
-  currentView: 'home' | 'phone-list' = 'home';
+  currentView: 'home' | 'phone-list' | 'phone-detail' = 'home';
   private ngZone = inject(NgZone);
   private onRouteChange = () => {
     // Ensure change detection runs when route changes originate outside Angular
@@ -56,6 +61,8 @@ export class AppComponent implements OnInit, OnDestroy {
     const hash = window.location.hash;
     if (hash.includes('angular-phone-list')) {
       this.currentView = 'phone-list';
+    } else if (hash.includes('angular-phone-detail')) {
+      this.currentView = 'phone-detail';
     } else {
       this.currentView = 'home';
     }
@@ -75,5 +82,10 @@ export class AppComponent implements OnInit, OnDestroy {
   goHome() {
     this.currentView = 'home';
     window.location.hash = '#!/angular-page';
+  }
+
+  showPhoneDetail() {
+    this.currentView = 'phone-detail';
+    window.location.hash = '#!/angular-phone-detail';
   }
 }

@@ -17,6 +17,9 @@ angular.
         when('/angular-phone-list', {
           template: ''
         }).
+        when('/angular-phone-detail/:phoneId', {
+          template: ''
+        }).
         otherwise('/phones');
     }
   ]);

@@ -1,7 +1,8 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { PhoneSimpleService, Phone } from '../services/phone-simple.service';
+// import { PhoneSimpleService, Phone } from '../services/phone-simple.service';
+import { PhoneService, Phone } from '../services/phone.service';
 import { LoadingComponent } from '../components/loading/loading.component';
 
 @Component({
@@ -115,7 +116,7 @@ export class PhoneListComponent implements OnInit {
   error: string | null = null;
 
   // Use inject function for dependency injection in standalone components
-  private phoneService = inject(PhoneSimpleService);
+  private phoneService = inject(PhoneService);
 
   constructor() {}
 
@@ -167,14 +168,7 @@ export class PhoneListComponent implements OnInit {
   }
 
   viewPhone(phoneId: string) {
-    // Send message to AngularJS to navigate to phone detail
-    const event = new CustomEvent('angular-to-angularjs', {
-      detail: {
-        action: 'navigate',
-        route: `#!/phones/${phoneId}`,
-        message: `Navigating to ${phoneId} from Angular component`
-      }
-    });
-    window.dispatchEvent(event);
+    // Navigate within the Angular MFE to Angular detail page
+    window.location.hash = `#!/angular-phone-detail/${phoneId}`;
   }
 }

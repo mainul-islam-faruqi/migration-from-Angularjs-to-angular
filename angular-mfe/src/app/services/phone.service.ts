@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -16,8 +16,7 @@ export interface Phone {
 })
 export class PhoneService {
   private readonly baseUrl = 'http://localhost:8000';
-
-  constructor(private http: HttpClient) {}
+  private http = inject(HttpClient);
 
   getPhones(): Observable<Phone[]> {
     return this.http.get<Phone[]>(`${this.baseUrl}/phones/phones.json`);
