@@ -11,6 +11,12 @@ angular.
         when('/phones/:phoneId', {
           template: '<phone-detail></phone-detail>'
         }).
+        when('/angular-page', {
+          template: '<div id="angular-mfe-container"></div>'
+        }).
+        when('/angular-phone-list', {
+          template: '<div id="angular-mfe-container"></div>'
+        }).
         otherwise('/phones');
     }
   ]);

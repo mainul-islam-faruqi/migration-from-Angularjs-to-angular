@@ -1,34 +1,76 @@
 <!doctype html>
 <html lang="en" ng-app="phonecatApp">
-  <head>
-    <meta charset="utf-8">
-    <title>Google Phone Gallery</title>
-    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="app.css" />
-    <link rel="stylesheet" href="app.animations.css" />
+<head>
+  <meta charset="utf-8">
+  <title>PhoneCat App with Angular MFE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="app.css" />
+  <link rel="stylesheet" href="app.animations.css" />
+</head>
 
-    <script src="lib/jquery/dist/jquery.js"></script>
-    <script src="lib/angular/angular.js"></script>
-    <script src="lib/angular-animate/angular-animate.js"></script>
-    <script src="lib/angular-resource/angular-resource.js"></script>
-    <script src="lib/angular-route/angular-route.js"></script>
-    <script src="app.module.js"></script>
-    <script src="app.config.js"></script>
-    <script src="app.animations.js"></script>
-    <script src="core/core.module.js"></script>
-    <script src="core/checkmark/checkmark.filter.js"></script>
-    <script src="core/phone/phone.module.js"></script>
-    <script src="core/phone/phone.service.js"></script>
-    <script src="phone-list/phone-list.module.js"></script>
-    <script src="phone-list/phone-list.component.js"></script>
-    <script src="phone-detail/phone-detail.module.js"></script>
-    <script src="phone-detail/phone-detail.component.js"></script>
-  </head>
-  <body>
+<body>
 
-    <div class="view-container">
-      <div ng-view class="view-frame"></div>
+  <!-- Navigation for demonstration -->
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#!/phones">PhoneCat with MFE</a>
+      </div>
+      <div class="navbar-nav navbar-right">
+        <a class="navbar-link" href="#!/phones">AngularJS Phones</a>
+        <a class="navbar-link" href="#!/angular-page">Angular MFE</a>
+        <a class="navbar-link" href="#!/angular-phone-list">Angular Phone List</a>
+      </div>
     </div>
+  </nav>
 
-  </body>
+  <!-- AngularJS App Container -->
+  <div class="view-container">
+    <div ng-view class="view-frame"></div>
+  </div>
+  
+  <!-- Micro-frontend Container -->
+  <div id="angular-mfe-container"></div>
+  
+  <!-- SystemJS -->
+  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.14.1/dist/system.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.14.1/dist/extras/amd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.14.1/dist/extras/named-exports.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.14.1/dist/extras/use-default.min.js"></script>
+  
+  <!-- SystemJS Import Map -->
+  <script type="systemjs-importmap">
+          {
+            "imports": {
+              "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.5/lib/system/single-spa.min.js",
+              "angular-mfe": "http://localhost:4200/main.js"
+            }
+          }
+        </script>
+  
+  <!-- AngularJS Scripts -->
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular-animate/angular-animate.js"></script>
+  <script src="lib/angular-resource/angular-resource.js"></script>
+  <script src="lib/angular-route/angular-route.js"></script>
+  <script src="lib/jquery/dist/jquery.js"></script>
+  <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+  
+  <!-- AngularJS App Scripts -->
+  <script src="app.module.js"></script>
+  <script src="app.config.js"></script>
+  <script src="app.animations.js"></script>
+  <script src="core/core.module.js"></script>
+  <script src="core/phone/phone.module.js"></script>
+  <script src="core/phone/phone.service.js"></script>
+  <script src="phone-list/phone-list.module.js"></script>
+  <script src="phone-list/phone-list.component.js"></script>
+  <script src="phone-detail/phone-detail.module.js"></script>
+  <script src="phone-detail/phone-detail.component.js"></script>
+
+  <!-- Load Single-SPA Root Config -->
+  <script type="module" src="microfrontend-config.js"></script>
+
+</body>
 </html>
