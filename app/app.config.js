@@ -12,10 +12,10 @@ angular.
           template: '<phone-detail></phone-detail>'
         }).
         when('/angular-page', {
-          template: '<div id="angular-mfe-container"></div>'
+          template: ''
         }).
         when('/angular-phone-list', {
-          template: '<div id="angular-mfe-container"></div>'
+          template: ''
         }).
         otherwise('/phones');
     }

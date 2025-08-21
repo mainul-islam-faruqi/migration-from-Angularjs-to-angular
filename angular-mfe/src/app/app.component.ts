@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone, OnDestroy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PhoneListComponent } from './phone-list/phone-list.component';
 import { PhoneListTestComponent } from './phone-list/phone-list-test.component';
@@ -26,18 +26,30 @@ import { PhoneListTestComponent } from './phone-list/phone-list-test.component';
             ← Back to Home
           </button>
         </div>
-        <app-phone-list-test></app-phone-list-test>
+        <app-phone-list></app-phone-list>
       </div>
     </div>
   `
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
   currentView: 'home' | 'phone-list' = 'home';
+  private ngZone = inject(NgZone);
+  private onRouteChange = () => {
+    // Ensure change detection runs when route changes originate outside Angular
+    this.ngZone.run(() => this.checkRoute());
+  };
 
   ngOnInit() {
     // Listen for route changes from the URL hash
     this.checkRoute();
-    window.addEventListener('hashchange', () => this.checkRoute());
+    window.addEventListener('hashchange', this.onRouteChange);
+    // single-spa dispatches this event on every navigation it handles
+    window.addEventListener('single-spa:routing-event', this.onRouteChange);
+  }
+
+  ngOnDestroy(): void {
+    window.removeEventListener('hashchange', this.onRouteChange);
+    window.removeEventListener('single-spa:routing-event', this.onRouteChange);
   }
 
   checkRoute() {
