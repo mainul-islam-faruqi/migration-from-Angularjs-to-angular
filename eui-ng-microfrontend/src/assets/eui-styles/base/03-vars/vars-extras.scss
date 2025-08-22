@@ -1,0 +1,34 @@
+@use '../01-base' as base;
+@use '../02-tokens/maps' as maps;
+
+:root {
+    // COLOR RGB
+
+    @each $color, $shades in maps.$color-map {
+        @each $shade, $value in $shades {
+            --eui-bc-#{$color + '-' + $shade}-rgb: #{base.toRGB($value)};
+            --eui-bc-#{$color + '-' + $shade}-rgb-contrast: #{base.toRGB(base.getContrast($value))};
+        }
+    }
+
+    // COLOR CONTEXT RGB
+
+    --eui-c-white-rgb: var(--eui-bc-neutral-0-rgb);
+    --eui-c-neutral-min-rgb: var(--eui-bc-neutral-0-rgb);
+    --eui-c-black-rgb: var(--eui-bc-neutral-160-rgb);
+    --eui-c-neutral-max-rgb: var(--eui-bc-neutral-160-rgb);
+
+    @each $color, $shades in maps.$color-context-map {
+        @each $shade, $value in $shades {
+            $color-value: #{$color + '-' + $value};
+
+            @if $shade == base {
+                --eui-c-#{$color}-rgb: var(--eui-bc-#{$color-value}-rgb);
+                --eui-c-#{$color}-rgb-contrast: var(--eui-bc-#{$color-value}-rgb-contrast);
+            } @else {
+                --eui-c-#{$color + '-' + $shade}-rgb: var(--eui-bc-#{$color-value}-rgb);
+                --eui-c-#{$color + '-' + $shade}-rgb-contrast: var(--eui-bc-#{$color-value}-rgb-contrast);
+            }
+        }
+    }    
+}

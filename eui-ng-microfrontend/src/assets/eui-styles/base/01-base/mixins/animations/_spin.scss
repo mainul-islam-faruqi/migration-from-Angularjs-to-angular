@@ -1,0 +1,20 @@
+@use 'hacks';
+
+@mixin eui-anim--spin {
+    @include hacks.hacks();
+    @keyframes eui-anim--spin {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    &:hover,
+	&:focus,
+	&:active {
+        animation-name: eui-anim--spin;
+        animation-duration: var(--eui-base-animation-duration-slow);;
+	}
+}

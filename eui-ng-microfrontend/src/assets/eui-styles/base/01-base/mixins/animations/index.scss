@@ -1,0 +1,48 @@
+@forward 'hacks';
+@forward 'bob';
+@forward 'buzz';
+@forward 'fade-in';
+@forward 'fade-out';
+@forward 'flip-in-y';
+@forward 'jack-in-the-box';
+@forward 'pop';
+@forward 'pulsar';
+@forward 'pulse';
+@forward 'slide-in-down';
+@forward 'slide-in-left';
+@forward 'slide-in-right';
+@forward 'slide-in-up';
+@forward 'spin';
+@forward 'wobble';
+
+// Use animations
+@mixin eui-animation ($animation: null, $delay: 0s, $duration: var(--eui-base-animation-duration-base), $direction: var(--eui-base-animation-direction), $fillmode: var(--eui-base-animation-fill-mode)) {
+    @if ($animation) {
+        animation-delay: $delay;
+        animation-direction: $direction;
+        animation-duration: $duration;
+        animation-fill-mode: $fillmode;
+        animation-name: $animation;
+    }
+}
+
+@mixin eui-transition-base {
+    transition: var(--eui-base-animation-transition-base);
+}
+@mixin eui-transition-ease {
+    transition: var(--eui-base-animation-transition-ease);
+}
+@mixin eui-transition-ease-in-out {
+    transition: var(--eui-base-animation-transition-ease-in-out);
+}
+@mixin eui-transition($transition...) {
+    @if length($transition) == 0 {
+        transition: var(--eui-base-animation-transition-base);
+    } @else {
+        transition: $transition;
+    }
+    @media screen and (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
+}
+

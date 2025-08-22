@@ -1,0 +1,217 @@
+@use '../01-base' as base;
+@use '../02-tokens/maps' as maps;
+
+:root {
+    // COLOR BASE - eui-bc
+    // -------------------
+
+    --eui-bc-transparent: transparent;
+
+    @each $color, $shades in maps.$color-map {
+        @each $shade, $value in $shades {
+            --eui-bc-#{$color + '-' + $shade}: #{$value};
+            --eui-bc-#{$color + '-' + $shade}-contrast: #{base.getContrast($value)};
+        }
+    }
+
+    // COLOR CONTEXT - eui-c
+    // ---------------------
+
+    --eui-c-white: var(--eui-bc-neutral-0);
+    --eui-c-black: var(--eui-bc-neutral-160);
+
+    --eui-c-neutral-min: var(--eui-bc-neutral-0);
+    --eui-c-neutral-max: var(--eui-bc-neutral-160);
+
+    --eui-c-bg: var(--eui-bc-neutral-2); // to be kept for backward compat / eUI 17 / eUI 19 (over MWP)
+    --eui-c-bg-light: var(--eui-bc-neutral-0); // to be kept for backward compat / eUI 17 / eUI 19 (over MWP)
+    --eui-c-surface-page: var(--eui-c-bg);
+    --eui-c-surface-container: var(--eui-c-bg-light);
+
+    --eui-c-surface-shell: var(--eui-bc-neutral-3);
+    --eui-c-surface-container-1: var(--eui-bc-neutral-5);
+    --eui-c-surface-container-2: var(--eui-bc-neutral-10);
+    --eui-c-surface-container-3: var(--eui-bc-neutral-20);
+
+    --eui-c-text: var(--eui-bc-neutral-100);
+    --eui-c-text-light: var(--eui-bc-neutral-80);
+    --eui-c-text-lighter: var(--eui-bc-neutral-60);
+
+    --eui-c-focus-visible: var(--eui-bc-primary-100);
+    --eui-c-focus: var(--eui-bc-primary-20);
+    
+    --eui-c-hover: var(--eui-bc-primary-5);
+    --eui-c-hover-disabled: var(--eui-bc-neutral-10);
+
+    --eui-c-active: var(--eui-bc-primary-100);
+    --eui-c-active-bg: var(--eui-bc-primary-10);
+    --eui-c-active-bg-alt: var(--eui-bc-primary-40);
+
+    --eui-c-disabled: var(--eui-bc-neutral-60);
+    --eui-c-disabled-bg: var(--eui-bc-neutral-20);
+    --eui-c-readonly: var(--eui-bc-neutral-80);
+
+    --eui-c-link: var(--eui-bc-primary-100);
+
+    --eui-c-divider: var(--eui-bc-neutral-20);
+    --eui-c-divider-light: var(--eui-bc-neutral-10);
+
+    @each $color, $shades in maps.$color-context-map {
+        @each $shade, $value in $shades {
+            $color-value: #{$color + '-' + $value};
+
+            @if $shade == base {
+                --eui-c-#{$color}: var(--eui-bc-#{$color-value});
+                --eui-c-#{$color}-contrast: var(--eui-bc-#{$color-value}-contrast);
+            } @else {
+                --eui-c-#{$color + '-' + $shade}: var(--eui-bc-#{$color-value});
+                --eui-c-#{$color + '-' + $shade}-contrast: var(--eui-bc-#{$color-value}-contrast);
+            }
+        }
+    }
+
+    // COLOR STATE - eui-c-s
+    // ---------------------
+
+    @each $color, $shades in maps.$color-state-map {
+        @each $shade, $value in $shades {
+            @if $shade == default {
+                --eui-c-s-#{$color}: var(--eui-c-#{$value});
+            } @else {
+                --eui-c-s-#{$color + '-' + $shade}: var(--eui-c-#{$value});
+            }
+        }
+    }
+
+
+    // TYPOGRAPHY - eui-f
+    // ------------------
+
+    // font families
+    --eui-f-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    --eui-f-family-monospace: 'Consolas', 'Liberation Mono', 'Courier New', monospace;
+
+    // font sizes
+    --eui-f-size-base: 16px;
+
+    // font aliases
+    --eui-f: var(--eui-f-m);
+    --eui-f-bold: var(--eui-f-m-bold);
+
+    @each $size in maps.$font-size-list {
+        --eui-f-#{$size}: normal normal 400 var(--eui-f-size-#{$size})/var(--eui-f-line-height-#{$size}) var(--eui-f-family);
+        --eui-f-#{$size}-bold: normal normal 700 var(--eui-f-size-#{$size})/var(--eui-f-line-height-#{$size}) var(--eui-f-family);
+    }
+
+    @each $size, $def in maps.$font-size-map {
+        --eui-f-size-#{$size}: #{$def};
+        --eui-f-size-#{$size}-compact: #{$def};
+    }
+
+    @each $size, $def in maps.$font-line-height-map {
+        --eui-f-line-height-#{$size}: #{$def};
+    }
+
+    @each $size, $def in maps.$font-weight-map {
+        --eui-f-weight-#{$size}: #{$def};
+    }
+
+
+    // SPACING - eui-s
+    // ---------------
+
+    @each $spacing, $value in maps.$spacing-map {
+        --eui-s-#{$spacing}: #{$value};
+    }
+
+    
+    // BORDER RADIUS - eui-br
+    // ----------------------
+
+    @each $br, $value in maps.$border-radius-map {
+        --eui-br-#{$br}: #{$value};
+    }
+
+
+    // LAYOUT-BREAKPOINTS - eui-bp
+    // ---------------------------
+
+    @each $bp, $value in maps.$breakpoint-map {
+        --eui-bp-#{$bp}: #{$value};
+    }
+
+
+    // BORDER WIDTH - eui-bw
+    // ---------------------
+
+    @each $br, $value in maps.$border-width-map {
+        --eui-bw-#{$br}: #{$value};
+    }
+
+
+    // BOX-SHADOWS - eui-sh
+    // --------------------
+
+    @each $sh, $value in maps.$box-shadow-map {
+        --eui-sh-#{$sh}: #{$value};
+    }
+
+
+    // ICON-SIZES - eui-is
+    // -------------------
+
+    @each $icon-size, $value in maps.$icon-size-map {
+        --eui-is-#{$icon-size}: #{$value};
+    }
+
+
+    // OPACITY - eui-o
+    // ---------------
+
+    @each $idx, $value in maps.$opacity-map {
+        --eui-o-#{$idx}: #{$value};
+    }
+
+
+    // Z-INDEXES - eui-zi
+    // -------------------
+
+    @each $idx, $value in maps.$z-index-map {
+        --eui-zi-#{$idx}: #{$value};
+    }
+
+
+    // OTHERS 
+    // ------
+    --eui-internal-icon-checkmark-path: url('#{base.$eui-assets-base-path}/icons/eui-internals/check.svg');
+    --eui-internal-icon-remove-path: url('#{base.$eui-assets-base-path}/icons/eui-internals/remove.svg');
+    --eui-internal-icon-ellipse-path: url('#{base.$eui-assets-base-path}/icons/eui-internals/ellipse.svg');
+    --eui-internal-icon-external-path: url('#{base.$eui-assets-base-path}/icons/eui-internals/external.svg');
+    --eui-internal-icon-chevron-down-path: url('#{base.$eui-assets-base-path}/icons/eui-internals/chevron-down.svg');    
+
+    --eui-base-line-height: 1.5;
+    --eui-base-scale-factor: 1;
+
+    // Animations related
+    --eui-base-animation-linear-out-slow-in-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    --eui-base-animation-fast-out-slow-in-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    --eui-base-animation-fast-out-linear-in-timing-function: cubic-bezier(0.4, 0, 1, 1);
+    --eui-base-animation-ease-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);    // ease
+    --eui-base-animation-ease-in-out-timing-function: ease-in-out;
+
+    --eui-base-animation-duration-fast: 0.25s;
+    --eui-base-animation-duration-medium: 0.5s;
+    --eui-base-animation-duration-slow: 1s;
+    --eui-base-animation-duration-base: 500ms;
+    --eui-base-animation-duration: var(--eui-base-animation-duration-base);
+
+    --eui-base-animation-transition-base: all 0.2s #{var(--eui-base-animation-linear-out-slow-in-timing-function)};
+    --eui-base-animation-transition-ease: all 0.2s #{var(--eui-base-animation-ease-timing-function)};
+    --eui-base-animation-transition-ease-in-out: all 0.2s #{var(--eui-base-animation-ease-in-out-timing-function)};
+    --eui-base-animation-transition-ease-in-out-1s: all 1s #{var(--eui-base-animation-ease-in-out-timing-function)};
+
+    --eui-base-animation-delay: 0s;
+    --eui-base-animation-direction: normal;
+    --eui-base-animation-fill-mode: forwards;    // this prevents the animation from restarting
+    --eui-base-animation-background-color: var(--eui-c-s-primary-surface-light);
+}

@@ -1,0 +1,13 @@
+@use '../01-base' as base;
+@use '../02-tokens/maps-legacy-hc-theme' as maps;
+
+html.eui-t-eui-legacy.eui-t-high-contrast {
+    // COLOR BASE
+
+    @each $color, $shades in maps.$color-map {
+        @each $shade, $value in $shades {
+            --eui-bc-#{$color + '-' + $shade}: #{$value};
+            --eui-bc-#{$color + '-' + $shade}-contrast: #{base.getContrast($value)};
+        }
+    }
+}

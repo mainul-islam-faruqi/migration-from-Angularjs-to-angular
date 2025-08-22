@@ -20,6 +20,9 @@ angular.
         when('/angular-phone-detail/:phoneId', {
           template: ''
         }).
+        when('/eui', {
+          template: ''
+        }).
         otherwise('/phones');
     }
   ]);

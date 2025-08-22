@@ -1,0 +1,27 @@
+@mixin eui-loading() {
+    &::before {
+        animation: 0.8s linear infinite spin;
+        border: 8px solid transparent;
+        border-radius: 50%;
+        border-top-color: var(--eui-c-s-primary-base);
+        content: "";
+        display: block;
+        height: 80px;
+        left: 50%;
+        margin: -40px 0 0 -40px;
+        position: absolute;
+        top: 50%;
+        width: 80px;
+        z-index: 1000001;
+    }
+
+    &::after {
+        background-color: rgba(255, 255, 255, 0.4);
+        content: '';
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+}

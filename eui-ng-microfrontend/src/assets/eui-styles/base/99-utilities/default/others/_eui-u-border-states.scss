@@ -1,0 +1,35 @@
+.eui-u-border-none {
+    border: var(--eui-bw-none) !important;    // Used in forms read-only
+}
+
+.eui-u-border-state-primary {
+    border-left: var(--eui-bw-m) solid var(--eui-c-s-primary-base) !important;
+}
+
+.eui-u-border-state-secondary {
+    border-left: var(--eui-bw-m) solid var(--eui-c-s-secondary-border) !important;
+}
+
+.eui-u-border-state-info {
+    border-left: var(--eui-bw-m) solid var(--eui-c-s-info-base) !important;
+}
+
+.eui-u-border-state-success {
+    border-left: var(--eui-bw-m) solid var(--eui-c-s-success-base) !important;
+}
+
+.eui-u-border-state-warning {
+    border-left: var(--eui-bw-m) solid var(--eui-c-s-warning-base) !important;
+}
+
+.eui-u-border-state-danger {
+    border-left: var(--eui-bw-m) solid var(--eui-c-s-danger-base) !important;
+}
+
+.eui-u-border-state-accent {
+    border-left: var(--eui-bw-m) solid var(--eui-c-s-accent-border) !important;
+}
+
+.eui-u-border-bottom-separator {
+    border-bottom: var(--eui-bw-xs) solid var(--eui-c-divider) !important;
+}

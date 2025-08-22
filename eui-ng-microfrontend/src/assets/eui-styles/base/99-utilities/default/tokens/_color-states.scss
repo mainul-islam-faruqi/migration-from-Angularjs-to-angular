@@ -1,0 +1,39 @@
+@use '../../../../base/02-tokens/maps' as tokens;
+
+// context colors
+@each $color, $shades in tokens.$color-state-map {
+    @each $shade, $value in $shades {
+        @if ($shade == 'default') {
+            .eui-u-c-s-#{$color} {
+                color: var(--eui-c-s-#{$color}) !important;
+            };
+        }@else {
+            @if ($shade == 'surface-light') {
+                .eui-u-c-s-#{$color + '-' + $shade} {
+                    background-color: var(--eui-c-s-#{$color + '-' + $shade}) !important;
+                    color: var(--eui-c-s-#{$color + '-on-surface-light'}) !important;
+                }
+                .eui-u-c-s-#{$color + '-' + $shade}:hover {
+                    background-color: var(--eui-c-s-#{$color + '-surface-light-hover'}) !important;
+                }
+            }@else {
+                @if ($shade == 'surface') {
+                    .eui-u-c-s-#{$color + '-' + $shade} {
+                        background-color: var(--eui-c-s-#{$color + '-' + $shade}) !important;
+                        color: var(--eui-c-s-#{$color + '-surface-contrast'}) !important;
+                    }
+                    .eui-u-c-s-#{$color + '-' + $shade}:hover {
+                        background-color: var(--eui-c-s-#{$color + '-surface-hover'}) !important;
+                        color: var(--eui-c-s-#{$color + '-surface-hover-contrast'}) !important;
+                    }                    
+                } @else {
+                    @if ($shade == 'border' or $shade == 'border-light') {
+                        .eui-u-c-s-#{$color + '-' + $shade} {
+                            border: 1px solid var(--eui-c-s-#{$color + '-' + $shade}) !important;
+                        }
+                    } 
+                }
+            }
+        }
+    }
+}

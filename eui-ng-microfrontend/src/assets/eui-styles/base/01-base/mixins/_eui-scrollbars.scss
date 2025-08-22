@@ -1,0 +1,70 @@
+@mixin eui-scrollbars( $size: 8px, $foreground-color: var(--_eui-scrollbars-foreground-color), $background-color: var(--eui-c-s-secondary-surface-light), $border-radius: 5rem, $state: active ) {
+    
+    &::-webkit-scrollbar {
+        display: inherit;
+        height: $size;      // horizontal scroll
+        width: $size;       // vertical scroll
+        @if ($state == active) {
+            background-color: $background-color;
+        }
+        @else {
+            background-color: transparent;
+        }
+    }
+
+    // This is the scrolling bar
+    &::-webkit-scrollbar-thumb {
+        @if ($state == active) {
+            background-color: $foreground-color;
+            border-radius: $border-radius;
+
+            &:hover {
+                background-color: var(--eui-c-s-secondary-surface);
+            }
+        }
+        @else {
+            background-color: transparent;
+        }
+    }
+
+    // This is the scroll container
+    &::-webkit-scrollbar-track {
+        @if ($state == active) {
+            background-color: $background-color;
+            border-radius: 0;
+        }
+        @else {
+            background-color: transparent;
+        }
+    }
+
+    // Firefox only CSS-specific extension - Attention those properties overrides :webkit pseudos!
+    @-moz-document url-prefix() {
+        scrollbar-color: var(--eui-c-s-secondary-surface) var(--eui-c-s-secondary-surface-light);
+        // scrollbar-gutter: stable;
+        scrollbar-width: auto;
+    }
+}
+@mixin eui-scrollbars-inactive($size: 8px) {
+    &::-webkit-scrollbar {
+        background-color: transparent;
+        display: inherit;
+        height: $size;      // horizontal scroll
+        width: $size;       // vertical scroll
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+}
+
+
+// @mixin eui-ng-scrollbar() {
+//     --scrollbar-thickness: 10 !important;
+//     --scrollbar-hover-thickness: var(--scrollbar-thickness) !important;
+//     --scrollbar-border-radius: 5rem !important;
+// }

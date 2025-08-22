@@ -1,0 +1,36 @@
+// DISPLAY HACKS - mixins used to quickly drop in hacks for each element on some devices/browsers
+
+// ENABLE HARDWARE ACCELERATION
+// Enables hardware acceleration on many mobile/tablet devices which will improve the performance of a transition effect,
+// as well as prevent other elements around the one transitioning from moving. Perspective also reduces blurryness of text in Chrome.
+@mixin hardwareAccel() {
+	transform: perspective(1px) translateZ(0);
+}
+
+// IMPROVE ANTI ALIAS
+// On many mobile/tablet devices, using transforms can cause a thin line to be drawn around an element.
+// To improve aliasing of these elements on mobile/tablet devices, a transparent box-shadow is applied.
+@mixin improveAntiAlias() {
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
+// FORCE BLOCK LEVEL
+// Transforms need to be block-level to work
+@mixin forceBlockLevel() {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+// TAP HIGHLIGHT FIX
+// Prevent highlight colour when an element is tapped
+@mixin hideTapHighlightColor() {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+// APPLY THE HACKS
+@mixin hacks() {
+	@include hardwareAccel();    // Problem with background
+    // @include improveAntiAlias();
+    @include forceBlockLevel();
+    @include hideTapHighlightColor();
+}

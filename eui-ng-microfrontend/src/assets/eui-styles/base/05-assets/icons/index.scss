@@ -1,0 +1,67 @@
+@use '../../02-tokens/maps' as tokens;
+
+.eui-icon-svg {
+    fill: currentColor;
+    margin: 0;
+    transform: scaleX(1) scaleY(1) rotateZ(0deg);
+    transition: transform 300ms ease-in-out;
+    display: inline-flex;
+    align-items: center;
+}
+
+@each $icon-size, $value in tokens.$icon-size-map {
+    .eui-icon-svg {
+        &.eui-icon-svg--size {
+            &-#{$icon-size} {
+                svg {
+                    height: var(--eui-is-#{$icon-size});
+                    width: var(--eui-is-#{$icon-size});
+
+                    // Custom icons
+                    > image {
+                        height: var(--eui-is-#{$icon-size});
+                        width: var(--eui-is-#{$icon-size});
+                    }
+                }
+
+                &.eui-icon-svg--stack {
+                    svg {
+                        height: var(--eui-is-#{$icon-size});
+                        width: var(--eui-is-#{$icon-size});
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+// COMPOSITION: ICON + BADGE
+.eui-icon-svg {
+    .eui-badge,
+    .eui-badge--size-m {
+        position: absolute;
+        left: 40%;
+        top: -40%;
+    }
+
+    .eui-badge--empty {
+        left: 70%;
+        top: -5%
+    }
+}
+
+.eui-icon-svg--size-l {
+    .eui-badge--size-s {
+        left: 70%;
+    }
+}
+
+// COMPOSITION: BUTTON + BADGE
+.eui-button {
+    .eui-badge {
+        height: inherit;
+    }
+}

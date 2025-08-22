@@ -1,0 +1,87 @@
+$ratio-4x3: 1.33333333;
+
+.eui-flag-icon {
+    align-items: center;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: inline-flex !important;
+    height: calc(0.83333333 * #{var(--eui-s-l)});
+    min-width: var(--eui-s-l);
+    position: relative;
+    width: var(--eui-s-l);
+    box-shadow: var(--eui-sh-1);
+
+    &::before {
+        content: "\00a0";
+    }
+
+    &-rounded,
+    &--rounded {
+        background-size: cover !important;
+        border-radius: 50%;
+        height: calc(#{var(--eui-s-m)} + #{var(--eui-s-2xs)});
+        min-width: calc(#{var(--eui-s-m)} + #{var(--eui-s-2xs)});
+        width: calc(#{var(--eui-s-m)} + #{var(--eui-s-2xs)}) !important;
+    }
+
+    &-squared {
+        height: calc(#{var(--eui-s-m)} + #{var(--eui-s-2xs)});
+        min-width: calc(#{var(--eui-s-m)} + #{var(--eui-s-2xs)});
+        width: calc(#{var(--eui-s-m)} + #{var(--eui-s-2xs)}) !important;
+    }
+
+    &-rounded,
+    &--rounded,
+    &-squared {
+        &.eui-flag-icon-1dot5x {
+            height: calc(0.875 * #{var(--eui-s-l)});
+            width: calc(0.875 * #{var(--eui-s-l)}) !important;
+        }
+
+        &.eui-flag-icon-2x {
+            height: calc(1 * #{var(--eui-s-l)});
+            width: calc(1 * #{var(--eui-s-l)}) !important;
+        }
+
+        &.eui-flag-icon-3x {
+            height: calc(1.5 * #{var(--eui-s-l)});
+            width: calc(1.5 * #{var(--eui-s-l)}) !important;
+        }
+
+        &.eui-flag-icon-4x {
+            height: calc(2 * #{var(--eui-s-l)});
+            width: calc(2 * #{var(--eui-s-l)}) !important;
+        }
+
+        &.eui-flag-icon-5x {
+            height: calc(2.5 * #{var(--eui-s-l)});
+            width: calc(2.5 * #{var(--eui-s-l)}) !important;
+        }
+    }
+
+    &-1dot5x {
+        height: calc(0.875 * #{var(--eui-s-l)});
+        width: calc(#{$ratio-4x3} * 0.875 * #{var(--eui-s-l)}) !important;
+    }
+
+    &-2x {
+        height: calc(1 * #{var(--eui-s-l)});
+        width: calc(#{$ratio-4x3} * 1 * #{var(--eui-s-l)}) !important;
+    }
+
+    &-3x {
+        height: calc(1.5 * #{var(--eui-s-l)});
+        width: calc(#{$ratio-4x3} * 1.5 * #{var(--eui-s-l)}) !important;
+    }
+
+    &-4x {
+        height: calc(2 * #{var(--eui-s-l)});
+        width: calc(#{$ratio-4x3} * 2 * #{var(--eui-s-l)}) !important;
+    }
+
+    &-5x {
+        height: calc(2.5 * #{var(--eui-s-l)});
+        width: calc(#{$ratio-4x3} * 2.5 * #{var(--eui-s-l)}) !important;
+    }
+}

@@ -1,0 +1,31 @@
+.eui-u-width-auto {
+    width: auto !important;
+}
+
+.eui-u-width-100 {
+    width: 100% !important;
+}
+
+.eui-u-width-66 {
+    width: 66% !important;
+}
+
+.eui-u-width-50 {
+    width: 50% !important;
+}
+
+.eui-u-width-33 {
+    width: 33.33333% !important;
+}
+
+.eui-u-width-0 {
+    width: 0% !important;
+}
+
+@for $i from 1 through 30 {
+    .eui-u-width-#{$i} {
+        max-width: calc(#{$i} * #{var(--eui-s-m)});
+        min-width: calc(#{$i} * #{var(--eui-s-m)});
+        width: calc(#{$i} * #{var(--eui-s-m)}) !important;
+    }
+}

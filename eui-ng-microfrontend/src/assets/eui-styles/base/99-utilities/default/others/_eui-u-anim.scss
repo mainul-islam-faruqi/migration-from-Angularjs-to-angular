@@ -1,0 +1,86 @@
+@use '../../../../base/01-base' as base;
+
+.eui-u-anim {
+    animation-fill-mode: var(--eui-base-animation-fill-mode);
+    animation-delay: var(--eui-base-animation-delay);
+    animation-direction: var(--eui-base-animation-direction);
+    animation-duration: var(--eui-base-animation-duration-base);
+    transition: var(--eui-base-animation-transition-base);
+
+    &--infinite {
+        animation-iteration-count: infinite !important;
+    }
+
+    &--fast {
+        animation-duration: var(--eui-base-animation-duration-fast) !important;
+    }
+
+    &--medium {
+        animation-duration: var(--eui-base-animation-duration-medium) !important;
+    }
+
+    &--slow {
+        animation-duration: var(--eui-base-animation-duration-slow) !important;
+    }
+
+    // Animation effects
+    &.eui-u-anim--bob {
+        @include base.eui-anim--bob();
+    }
+
+    &.eui-u-anim--buzz {
+        @include base.eui-anim--buzz();
+    }
+
+    &.eui-u-anim--fadeIn {
+        @include base.eui-anim--fadeIn();
+    }
+
+    &.eui-u-anim--fadeOut {
+        @include base.eui-anim--fadeOut();
+    }
+
+    &.eui-u-anim--flipInY {
+        @include base.eui-anim--flipInY();
+    }
+
+    &.eui-u-anim--jackInTheBox {
+        @include base.eui-anim--jackInTheBox();
+    }
+
+    &.eui-u-anim--pop {
+        @include base.eui-anim--pop();
+    }
+
+    &.eui-u-anim--pulsar {
+        @include base.eui-anim--pulsar();
+    }
+
+    &.eui-u-anim--pulse {
+        @include base.eui-anim--pulse();
+    }
+
+    &.eui-u-anim--slideInDown {
+        @include base.eui-anim--slideInDown();
+    }
+
+    &.eui-u-anim--slideInLeft {
+        @include base.eui-anim--slideInLeft();
+    }
+
+    &.eui-u-anim--slideInRight {
+        @include base.eui-anim--slideInRight();
+    }
+
+    &.eui-u-anim--slideInUp {
+        @include base.eui-anim--slideInUp();
+    }
+
+    &.eui-u-anim--spin {
+        @include base.eui-anim--spin();
+    }
+
+    &.eui-u-anim--wobble {
+        @include base.eui-anim--wobble();
+    }
+}

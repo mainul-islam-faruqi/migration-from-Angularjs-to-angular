@@ -1,0 +1,61 @@
+@use '../../../../base/01-base' as base;
+@use '../../../../base/02-tokens/maps' as maps;
+
+.eui-u-display-hidden {
+    display: none !important;
+}
+
+.eui-u-display-visible {
+    visibility: visible !important;
+}
+
+.eui-u-display-block {
+    display: block !important;
+}
+
+.eui-u-display-inline {
+    display: inline !important;
+}
+
+.eui-u-display-inline-block {
+    display: inline-block !important;
+}
+
+.eui-u-display-print-only {
+    @media screen {
+        display: none !important;
+    }
+}
+
+.eui-u-display-print-hidden {
+    // See also: eui\packages\styles\src\styles\10-media\_module-print.scss
+    @media print {
+        display: none !important;
+    }
+}
+
+.eui-u-display-hidden-desktop-down {
+    display: initial;
+}
+
+.eui-u-display-scrollbars {
+    @include base.eui-scrollbars;
+}
+
+@include base.media(maps.$eui-bkp-desktop-down) {
+    .eui-u-display-hidden-desktop-down {
+        display: none !important;
+    }
+}
+
+@include base.media(maps.$eui-bkp-mobile) {
+    .eui-u-display-hidden-mobile {
+        display: none !important;
+    }
+}
+
+@include base.media(maps.$eui-bkp-mobile-up) {
+    .eui-u-display-hidden-mobile-up {
+        display: none !important;
+    }
+}

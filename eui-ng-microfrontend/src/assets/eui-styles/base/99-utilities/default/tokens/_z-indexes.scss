@@ -1,0 +1,7 @@
+@use '../../../../base/02-tokens/maps' as tokens;
+
+@each $idx, $value in tokens.$z-index-map {
+    .eui-u-zi-#{$idx} {
+        z-index: var(--eui-zi-#{$idx}) !important;
+    }
+}

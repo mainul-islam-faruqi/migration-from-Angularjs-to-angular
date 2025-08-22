@@ -1,0 +1,14 @@
+@use '../../base/02-tokens/maps' as maps;
+
+@each $color, $shades in maps.$color-map {
+    @each $shade, $value in $shades {
+        .eui-u-c-#{$color + '-' + $shade} {
+            color: var(--eui-bc-#{$color + '-' + $shade}) !important;
+        };
+
+        .eui-u-c-bg-#{$color + '-' + $shade} {
+            background-color: var(--eui-bc-#{$color + '-' + $shade}) !important;
+            color: var(--eui-bc-#{$color + '-' + $shade}-contrast) !important;
+        }
+    }
+}

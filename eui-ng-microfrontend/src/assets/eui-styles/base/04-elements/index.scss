@@ -1,0 +1,23 @@
+html {
+    display: block;
+    height: 100%;
+    font-size: var(--eui-f-size-base);
+    line-height: var(--eui-base-line-height);
+}
+
+body {
+    background-color: var(--eui-c-surface-page);
+    color: var(--eui-c-text);
+    font-family: var(--eui-f-family);
+    font-feature-settings: 'liga';
+    font-size: var(--eui-f-size-base);
+    -moz-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    font-weight: normal;
+    height: 100%;
+    line-height: var(--eui-base-line-height);
+    margin: 0;
+    text-align: start;
+    text-rendering: optimizeLegibility;
+}

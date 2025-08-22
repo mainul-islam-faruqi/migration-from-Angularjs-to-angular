@@ -1,0 +1,55 @@
+{
+    "name": "eui-angular-app",
+    "version": "19.3.2",
+    "license": "EUPL-1.1",
+    "scripts": {
+        "ng": "ng",
+        "start-mock-server": "nodemon --watch ./mock ./mock/server.js",
+        "start-serve": "eui-scripts serve-app --configuration=proxy-mock",
+        "start": "npm-run-all --parallel start-mock-server start-serve",
+        "start-proxy": "eui-scripts serve-app --configuration=proxy",
+        "start-local": "eui-scripts serve-app",
+        "build": "eui-scripts build-app",
+        "mfe:start": "webpack serve --config webpack.single-spa.config.js --mode development",
+        "mfe:build": "webpack --config webpack.single-spa.config.js --mode production",
+        "build-dev": "eui-scripts build-app --configuration=development --configEnvTarget=dev",
+        "build-prod": "eui-scripts build-app --configuration=production-optimized --configEnvTarget=prod",
+        "build-prod-skip-test": "eui-scripts build-app --configuration=production-optimized --configEnvTarget=prod --skipTest",
+        "build-prod-stats": "eui-scripts build-app --configuration=production-optimized --configEnvTarget=prod --statsJson",
+        "app:build": "eui-scripts build-app",
+        "app:inject-config": "eui-scripts inject-config-app",
+        "generate-changelog": "eui-scripts generate-changelog",
+        "generate-sprite": "eui-scripts generate-sprite"
+    },
+    "private": true,
+    "dependencies": {
+        "@angular/animations": "^20.2.1",
+        "@angular/core": "^19.2.14",
+        "@angular/platform-browser": "^19.2.14",
+        "@eui/deps-base": "19.3.2",
+        "ts-loader": "^9.5.2",
+        "webpack": "^5.101.3"
+    },
+    "resolutions": {
+        "js-yaml": ">=3.13.1",
+        "pdfjs-dist": "4.10.38",
+        "tar": ">=6.2.1",
+        "katex": ">=0.16.10",
+        "follow-redirects": ">=1.15.4",
+        "word-wrap": ">=1.2.4",
+        "postcss": ">=8.4.31",
+        "semver": ">=7.5.2",
+        "express": "4.21.2",
+        "path-to-regexp": "1.9.0"
+    },
+    "devDependencies": {
+        "angular2-template-loader": "^0.6.2",
+        "css-loader": "^7.1.2",
+        "raw-loader": "^4.0.2",
+        "sass": "^1.90.0",
+        "sass-loader": "^16.0.5",
+        "to-string-loader": "^1.2.0",
+        "webpack-cli": "^6.0.1",
+        "webpack-dev-server": "^5.2.2"
+    }
+}

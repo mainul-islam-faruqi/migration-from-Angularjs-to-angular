@@ -1,0 +1,25 @@
+@use 'hacks';
+
+@mixin eui-anim--pulsar {
+    @include hacks.hacks();
+    @keyframes eui-anim--pulsar {
+        from {
+            transform: scale3d(1, 1, 1);
+        }
+
+        50% {
+            transform: scale3d(1.05, 1.05, 1.05);
+        }
+
+        to {
+            transform: scale3d(1, 1, 1);
+        }
+    }
+    &:hover,
+	&:focus,
+	&:active {
+        animation-name: eui-anim--pulsar;
+        animation-duration: var(--eui-base-animation-duration-fast);
+        animation-iteration-count: 1;
+	}
+}

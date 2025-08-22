@@ -1,0 +1,262 @@
+@use '../../../../base/01-base' as base;
+@use '../../../../base/02-tokens/maps' as tokens;
+
+// FONTS
+@each $size in tokens.$font-size-list {
+    .eui-u-f-#{$size} {
+        font: var(--eui-f-#{$size}) !important;
+    }
+    .eui-u-f-#{$size}-bold {
+        font: var(--eui-f-#{$size}-bold) !important;
+    }
+}
+@each $font, $def in tokens.$font-weight-map {
+    .eui-u-f-weight-#{$font} {
+        font-weight: var(--eui-f-weight-#{$font}) !important;
+    }
+}
+@each $font, $def in tokens.$font-size-map {
+    .eui-u-f-size-#{$font} {
+        font-size: var(--eui-f-size-#{$font}) !important;
+    }
+}
+
+// ALIASES
+.eui-u-f {
+    font: var(--eui-f) !important;
+}
+.eui-u-f-bold {
+    font-style: normal !important;
+    font-weight: 700 !important;
+}
+
+.eui-u-f-regular {
+    font-style: normal !important;
+    font-weight: normal !important;
+}
+.eui-u-f-bold-italic {
+    font-style: italic !important;
+    font-weight: 700 !important;
+}
+.eui-u-f-italic {
+    font-style: italic !important;
+    font-weight: normal !important;
+}
+
+
+.eui-u-text-monospace {
+    font-family: var(--eui-f-family-monospace) !important;
+}
+
+// Alignments
+.eui-u-text-left {
+    text-align: left !important;
+}
+.eui-u-text-right {
+    text-align: right !important;
+}
+.eui-u-text-center {
+    text-align: center !important;
+}
+.eui-u-text-justify {
+    text-align: justify !important;
+}
+.eui-u-text-wrap {
+    white-space: normal !important;
+}
+.eui-u-text-no-wrap {
+    white-space: nowrap !important;
+}
+.eui-u-text-truncate {
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+}
+
+// Decorations
+.eui-u-text-overline {
+    text-decoration: overline !important;
+}
+.eui-u-text-underline {
+    text-decoration: underline !important;
+}
+.eui-u-text-line-through {
+    text-decoration: line-through !important;
+}
+
+// Anchors / links
+.eui-u-text-link,
+.eui-u-text-link-standalone {
+    color: var(--eui-c-link) !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+    @include base.eui-accessible-focus(2px);
+
+    &:hover {
+        text-decoration: underline !important;
+    }
+}
+.eui-u-text-link-underline {
+    color: var(--eui-c-link) !important;
+    cursor: pointer !important;
+    text-decoration: underline !important;
+    @include base.eui-accessible-focus(2px);
+}
+
+.eui-u-text-link-external,
+.eui-u-text-link-external-standalone {
+    color: var(--eui-c-link) !important;
+    cursor: pointer !important;
+    position: relative !important;
+    text-decoration: none !important;
+    @include base.eui-accessible-focus(2px);
+
+    &:hover {
+        text-decoration: underline !important;
+    }
+
+    &::after {
+        background-color: transparent;
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: 75% 75%;
+        display: inline-block;
+        height: var(--eui-s-m);
+        margin-left: var(--eui-s-2xs);
+        width: var(--eui-s-m);
+        @include base.pseudoSvgIconExternalPrimary();
+    }
+}
+.eui-u-text-link-external-underline {
+    color: var(--eui-c-link) !important;
+    cursor: pointer !important;
+    position: relative !important;
+    text-decoration: underline !important;
+    @include base.eui-accessible-focus(2px);
+
+    &::after {
+        background-color: transparent;
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: 75% 75%;
+        display: inline-block;
+        height: var(--eui-s-m);
+        margin-left: var(--eui-s-2xs);
+        width: var(--eui-s-m);
+        @include base.pseudoSvgIconExternalPrimary();
+    }
+}
+
+// Transformations
+.eui-u-text-lowercase {
+    text-transform: lowercase !important;
+}
+.eui-u-text-uppercase {
+    text-transform: uppercase !important;
+}
+.eui-u-text-capitalize {
+    text-transform: capitalize !important;
+}
+
+// Sizes extras
+.eui-u-text-small {
+    font: var(--eui-f-s) !important;
+}
+.eui-u-text-smaller {
+    font: var(--eui-f-xs) !important;
+}
+.eui-u-text-smallest,
+.eui-u-text-tiny {
+    font: var(--eui-f-2xs) !important;
+}
+
+// Layout formatting
+.eui-u-text-code,
+.eui-u-text-kbd,
+.eui-u-text-pre,
+.eui-u-text-samp {
+    font-family: var(--eui-f-family-monospace) !important;
+}
+
+.eui-u-text-code {
+    color: var(--eui-c-s-danger);
+    word-wrap: break-word !important;
+}
+
+.eui-u-text-kbd {
+    background-color: var(--eui-c-s-secondary) !important; // WCAG2 AA compliant
+    border-radius: var(--eui-br-m) !important;
+    color: var(--eui-c-white) !important;
+    font-size: var(--eui-f-s) !important;
+    padding: 1px var(--eui-s-2xs) !important;
+}
+
+.eui-u-text-pre {
+    color: var(--eui-c-s-danger) !important;
+    display: block !important;
+    font-size: 90% !important;
+}
+
+.eui-u-text-blockquote {
+    border-left: var(--eui-s-2xs) solid var(--eui-c-s-secondary-border-light) !important;
+    padding: var(--eui-s-xs) var(--eui-s-m) !important;
+}
+
+.eui-u-text-mark {
+    background-color: var(--eui-c-s-accent-surface-medium) !important;
+    padding: var(--eui-s-2xs) !important;
+}
+
+.eui-u-text-highlight {
+    padding: var(--eui-s-2xs) !important;
+    background-color: var(--eui-c-s-accent-surface-light) !important;
+}
+.eui-u-text-paragraph {
+    font: var(--eui-f-m) !important;
+
+    margin-block-start: var(--eui-s-xs) !important;
+    margin-block-end: var(--eui-s-xs) !important;
+
+    &:first-child {
+        margin-block-start: 0px !important;
+    }
+    &:last-child {
+        margin-block-end: 0px !important;
+    }
+}
+.eui-u-text-list {
+    padding-inline-start: var(--eui-s-2xl) !important;
+}
+.eui-u-text-list-item {
+    margin-block-start: var(--eui-s-2xs) !important;
+    margin-block-end: var(--eui-s-2xs) !important;
+}
+
+// HEADINGS
+.eui-u-text-h1 {
+    font: var(--eui-f-4xl) !important;
+}
+.eui-u-text-h2 {
+    font: var(--eui-f-3xl) !important;
+}
+.eui-u-text-h3 {
+    font: var(--eui-f-2xl) !important;
+}
+.eui-u-text-h4 {
+    font: var(--eui-f-xl) !important;
+}
+.eui-u-text-h5 {
+    font: var(--eui-f-l) !important;
+}
+.eui-u-text-h6 {
+    font: var(--eui-f-m-bold) !important;
+}
+
+
+// MISC
+.eui-u-hr {
+    border-style: ridge !important;
+    width: 100% !important;
+    border-top: 1px solid var(--eui-c-divider) !important;
+    border-bottom: 0 !important;
+}

@@ -1,0 +1,522 @@
+@use 'sass:map';
+@use '../01-base/' as base;
+
+// BORDER RADIUS
+
+$border-radius-map: (
+    none: 0,
+    s: 2px,
+    m: 4px,
+    l: 6px,
+    xl: 8px,
+    max: 999px
+);
+
+
+// BORDER WIDTH
+
+$border-width-map: (
+    none: 0,
+    xs: 1px,
+    s: 2px,
+    m: 4px
+);
+
+
+// BOX SHADOW
+
+$box-shadow-map: (
+    none: none,
+    1: (0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12)),
+    2: (0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12)),
+    3: (0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 8px 0 rgba(0, 0, 0, 0.12)),
+    4: (0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12)),
+    6: (0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12)),
+    8: (0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12)),
+    9: (0px 5px 6px -3px rgba(0, 0, 0, 0.2), 0px 9px 12px 1px rgba(0, 0, 0, 0.14), 0px 3px 16px 2px rgba(0, 0, 0, 0.12)),
+    12: (0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 12px 17px 2px rgba(0, 0, 0, 0.14), 0px 5px 22px 4px rgba(0, 0, 0, 0.12)),
+    16: (0px 8px 10px -5px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12)),
+    24: (0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12)),
+    card: 0px 8px 13px -3px rgba(0, 0, 0, 0.07)    
+);
+
+
+// BREAKPOINT
+
+$breakpoint-map: (
+    xs: 0,
+    sm: 480px,
+    md: 768px,
+    lg: 996px,
+    xl: 1140px,
+    xxl: 1440px,
+    fhd: 1920px,
+    2k: 2560px,
+    4k: 3840px
+);
+
+// naming
+$xs: base.new-breakpoint(min-width map.get($breakpoint-map, 'xs') max-width map.get($breakpoint-map, 's') - 1) !default;
+$s: base.new-breakpoint(min-width map.get($breakpoint-map, 'sm') max-width map.get($breakpoint-map, 'md') - 1) !default;
+$m: base.new-breakpoint(min-width map.get($breakpoint-map, 'md') max-width map.get($breakpoint-map, 'lg') - 1) !default;
+$l: base.new-breakpoint(min-width map.get($breakpoint-map, 'lg') max-width map.get($breakpoint-map, 'xl') - 1) !default;
+$xl: base.new-breakpoint(min-width map.get($breakpoint-map, 'xl') max-width map.get($breakpoint-map, 'xxl') - 1) !default;
+$xxl: base.new-breakpoint(min-width map.get($breakpoint-map, 'xxl') max-width map.get($breakpoint-map, 'fhd') - 1) !default;
+$fhd: base.new-breakpoint(min-width map.get($breakpoint-map, 'fhd') max-width map.get($breakpoint-map, '2k') - 1) !default;
+
+// human naming
+$eui-bkp-mobile-down: $xs !default;
+$eui-bkp-mobile: base.new-breakpoint(max-width map.get($breakpoint-map, 'md') - 1) !default;
+$eui-bkp-mobile-up: base.new-breakpoint(min-width map.get($breakpoint-map, 'md')) !default;
+$eui-bkp-tablet: $m !default;
+$eui-bkp-tablet-up: base.new-breakpoint(min-width map.get($breakpoint-map, 'lg')) !default;
+$eui-bkp-desktop-down: base.new-breakpoint(max-width map.get($breakpoint-map, 'lg') - 1) !default;
+$eui-bkp-desktop: base.new-breakpoint(min-width map.get($breakpoint-map, 'xl')) !default;
+$eui-bkp-desktop-up: base.new-breakpoint(min-width map.get($breakpoint-map, 'lg')) !default;
+$eui-bkp-desktop-wide: $xxl !default;
+$eui-bkp-desktop-fhd: $fhd !default;
+
+
+// ICON SIZE
+
+$icon-size-map: (
+    2xs: 0.75rem,
+    xs: 1rem,
+    s: 1.25rem,
+    m: 1.5rem,
+    l: 2rem,
+    xl: 2.5rem,
+    2xl: 3rem,
+    3xl: 3.5rem,
+    4xl: 4rem,
+    fluid: 1em
+);
+
+
+// OPACITY
+
+$opacity-map: (
+    none: 0,
+    25: 0.25,
+    50: 0.5,
+    75: 0.75,
+    100: 1
+);
+
+
+// SPACING
+
+$spacing-map: (
+    none: 0,
+    4xs: 0.0625rem,
+    3xs: 0.125rem,
+    2xs: 0.25rem,
+    xs: 0.5rem,
+    s: 0.75rem,
+    m: 1rem,
+    l: 1.25rem,
+    xl: 1.5rem,
+    2xl: 2rem,
+    3xl: 2.5rem,
+    4xl: 3rem,
+    5xl: 3.5rem,
+    6xl: 4rem,
+    7xl: 5rem,
+    8xl: 6rem
+);
+
+
+// Z-INDEX
+
+$z-index-map: (
+    auto: auto,
+    zero: 0,
+    root: 1,
+    input-maxlength: 2,
+    clearable-icon: 3,
+    breadcrumb: 9,
+    header: 10,
+    top-message: 12,
+    nav: 15,
+    loading-indicator: 20,
+    cdk-overlay-pane: 999,
+    logo: 1000,
+    sticky: 1040,
+    sidebar: 1044,
+    overlay: 1045,
+    btn-floating: 1046,
+    highlighted: 1047,
+    footer-action-bar: 1048,
+    modal-backdrop: 1049,
+    modal: 1050,
+    menu: 1060,
+    tooltip: 1070,
+    max: 9999,
+    cdk-overlay-container: 10000,
+    block-document: 10010,
+    growl-message: 99999
+);
+
+
+// COLORS
+
+$color-map: (
+    branding: (
+        120: #003676,
+        110: #013C80,
+        100: #004494,
+        80: #0057BD,
+        60: #0069E6,
+        40: #0F7DFF,
+        20: #3894FF,
+        10: #61AAFF,
+        5: #8AC0FF,
+        2: #DBECFF,
+        0: #fff
+    ),
+    primary: (
+        160: #0a1f6c,
+        140: #0f2fa2,
+        120: #143fd9,
+        110: #2651eb,
+        100: #3860ed,
+        80: #5577f0,
+        60: #89a1f4,
+        40: #b1c0f8,
+        20: #d8e0fb,
+        10: #ebf3fd,
+        5: #f3f6fa,
+        0: #fff
+    ),
+    neutral: (
+        160: #131313,
+        140: #1d1d1d,
+        120: #262626,
+        110: #2b2b2b,
+        100: #303030,
+        80: #595959,
+        60: #838383,
+        40: #acacac,
+        20: #d6d6d6,
+        10: #eaeaea,
+        5: #f5f5f5,
+        3: #f9f9f9,
+        2: #fcfcfc,
+        0: #fff
+    ),
+    cta: (
+        0: #fff,
+        5: #fff9ef,
+        10: #fcefdc,
+        20: #ffebcc,
+        40: #ffe1b4,
+        60: #ffd392,
+        80: #ffcb7d,
+        100: #ffbe5c,
+        110: #fea439,
+        120: #fc8713,
+        140: #c55109,
+        160: #a84304
+    ),    
+    accent: (
+        160: #432105,
+        140: #734110,
+        120: #a46704,
+        110: #ce9100,
+        100: #efbc03,
+        80: #ffd617,
+        60: #ffe843,
+        40: #fff587,
+        20: #fffbc2,
+        10: #fefde8,
+        5: #fffcf7,
+        0: #fff
+    ),
+    info: (
+        0: #fff,
+        5: #f0f7fd,
+        10: #e3f1fc,
+        20: #c8e3f9,
+        40: #8cc5f2,
+        60: #51a6ec,
+        80: #2791e7,
+        100: #0578d6,
+        110: #046abd,
+        120: #0462ae,
+        140: #044e8b,
+        160: #033863
+    ),
+    success: (
+        160: #0e401d,
+        140: #16612b,
+        120: #1d813a,
+        110: #209141,
+        100: #24a148,
+        80: #50b46d,
+        60: #7cc791,
+        40: #a7d9b6,
+        20: #d3ecda,
+        10: #e9f6ed,
+        5: #f4faf6,
+        0: #fff
+    ),
+    warning: (
+        160: #613d07,
+        140: #925b0a,
+        120: #c27a0e,
+        110: #db890f,
+        100: #f39811,
+        80: #f5ad41,
+        60: #f8c170,
+        40: #fad6a0,
+        20: #fdeacf,
+        10: #fef5e7,
+        5: #fefaf3,
+        0: #fff
+    ),
+    danger: (
+        160: #570c10,
+        140: #831218,
+        120: #ae1820,
+        110: #c41b24,
+        100: #da1e28,
+        80: #e14b53,
+        60: #e9787e,
+        40: #f0a5a9,
+        20: #f8d2d4,
+        10: #fbe9ea,
+        5: #fdf4f4,
+        0: #fff
+    )
+);
+
+
+// COLOR CONTEXT
+
+$color-context-map: (
+    branding: (
+        base: '100', dark: '120', light: '80', lighter: '40', lightest: '20', bg: '10', bg-light: '5', bg-lighter: '2'
+    ),
+    neutral: (
+        base: '100', darkest: '160', darker: '140', dark: '110', light: '80', lighter: '40', lightest: '20', bg: '10', bg-light: '5', bg-lighter: '3'
+    ),
+    cta: (
+        base: '100', darkest: '160', darker: '140', dark: '110', light: '80', lighter: '40', lightest: '20', bg: '10', bg-light: '5'
+    ),
+    primary: (
+        base: '100', darkest: '160', darker: '140', dark: '110', light: '80', lighter: '40', lightest: '20', bg: '10', bg-light: '5'
+    ),
+    info: (
+        base: '100', darkest: '160', darker: '140', dark: '110', light: '80', lighter: '40', lightest: '20', bg: '10', bg-light: '5'
+    ),
+    accent: (
+        base: '100', darkest: '160', darker: '140', dark: '110', light: '80', lighter: '40', lightest: '20', bg: '10', bg-light: '5'
+    ),
+    success: (
+        base: '100', darkest: '160', darker: '140', dark: '110', light: '80', lighter: '40', lightest: '20', bg: '10', bg-light: '5'
+    ),
+    warning: (
+        base: '100', darkest: '160', darker: '140', dark: '110', light: '80', lighter: '40', lightest: '20', bg: '10', bg-light: '5'
+    ),
+    danger: (
+        base: '100', darkest: '160', darker: '140', dark: '110', light: '80', lighter: '40', lightest: '20', bg: '10', bg-light: '5'
+    )
+);
+
+
+// COLOR STATES
+
+$color-state-map: (
+    // base, darkest, darker, dark, light, lighter, lightest, bg
+    primary: (
+        base: 'primary', 
+        default: 'primary-dark', 
+        on-surface-light: 'primary-darker',
+        surface-light: 'primary-bg',
+        surface-light-contrast: 'primary-bg-contrast',
+        surface-light-hover: 'primary-lightest',
+        surface-medium: 'primary-lightest',
+        on-surface-medium: 'primary-darkest', 
+        border: 'primary-light',
+        border-light: 'primary-lighter',
+        border-lighter: 'primary-lightest',
+        surface: 'primary',
+        surface-contrast: 'primary-contrast',
+        surface-hover: 'primary-dark',
+        surface-hover-contrast: 'primary-dark-contrast'
+    ),
+    // base, darkest, darker, dark, light, lighter, lightest, bg, bg-light
+    secondary: (
+        base: 'neutral',
+        default: 'neutral-dark',
+        on-surface-light: 'neutral-darker',
+        surface-light: 'neutral-bg-light',
+        surface-light-contrast: 'neutral-bg-light-contrast',
+        surface-light-hover: 'neutral-bg',
+        surface-medium: 'neutral-lightest',
+        on-surface-medium: 'neutral-darkest',
+        border: 'neutral-light',
+        border-light: 'neutral-lighter',
+        border-lighter: 'neutral-lightest',
+        surface: 'neutral-lighter',
+        surface-contrast: 'neutral-lighter-contrast',
+        surface-hover: 'neutral-lightest',
+        surface-hover-contrast: 'neutral-lightest-contrast'
+    ),
+    cta: (
+        base: 'cta',
+        default: 'cta-darkest',
+        on-surface-light: 'cta-darker',
+        surface-light: 'cta-bg',
+        surface-light-contrast: 'cta-bg-contrast',
+        surface-light-hover: 'cta-lightest',
+        surface-medium: 'cta-lightest',
+        on-surface-medium: 'cta-darkest',
+        border: 'cta-light',
+        border-light: 'cta-lighter',
+        border-lighter: 'cta-lightest',
+        surface: 'cta',
+        surface-contrast: 'cta-contrast',
+        surface-hover: 'cta-dark',
+        surface-hover-contrast: 'cta-dark-contrast'
+    ),
+    info: (
+        base: 'info',
+        default: 'info-dark',
+        on-surface-light: 'info-dark',
+        surface-light: 'info-bg',
+        surface-light-contrast: 'info-bg-contrast',
+        surface-light-hover: 'info-lightest',
+        surface-medium: 'info-lightest',
+        on-surface-medium: 'info-darkest',
+        border: 'info-light',
+        border-light: 'info-lighter',
+        border-lighter: 'info-lightest',
+        surface: 'info-dark',
+        surface-contrast: 'info-dark-contrast',
+        surface-hover: 'info-darker',
+        surface-hover-contrast: 'info-darker-contrast'
+    ),
+    success: (
+        base: 'success',
+        default: 'success-darker',
+        on-surface-light: 'success-darker',
+        surface-light: 'success-bg',
+        surface-light-contrast: 'success-bg-contrast',
+        surface-light-hover: 'success-lightest',
+        surface-medium: 'success-lightest',
+        on-surface-medium: 'success-darkest',
+        border: 'success-light',
+        border-light: 'success-lighter',
+        border-lighter: 'success-lightest',
+        surface: 'success-darker',
+        surface-contrast: 'success-darker-contrast',
+        surface-hover: 'success-darkest',
+        surface-hover-contrast: 'success-darkest-contrast'
+    ),
+    warning: (
+        base: 'warning',
+        default: 'warning-darker',
+        on-surface-light: 'warning-darker',
+        surface-light: 'warning-bg',
+        surface-light-contrast: 'warning-bg-contrast',
+        surface-light-hover: 'warning-lightest',
+        surface-medium: 'warning-lightest',
+        on-surface-medium: 'warning-darkest',
+        border: 'warning-light',
+        border-light: 'warning-lighter',
+        border-lighter: 'warning-lightest',
+        surface: 'warning',
+        surface-contrast: 'warning-contrast',
+        surface-hover: 'warning-dark',
+        surface-hover-contrast: 'warning-contrast'
+    ),
+    danger: (
+        base: 'danger',
+        default: 'danger-dark',
+        on-surface-light: 'danger-darker',
+        surface-light: 'danger-bg',
+        surface-light-contrast: 'danger-bg-contrast',
+        surface-light-hover: 'danger-lightest',
+        surface-medium: 'danger-lightest',
+        on-surface-medium: 'danger-darkest',
+        border: 'danger-light',
+        border-light: 'danger-lighter',
+        border-lighter: 'danger-lightest',
+        surface: 'danger',
+        surface-contrast: 'danger-contrast',
+        surface-hover: 'danger-dark',
+        surface-hover-contrast: 'danger-dark-contrast'
+    ),
+    accent: (
+        base: 'accent',
+        default: 'accent-darkest',
+        on-surface-light: 'accent-darkest',
+        surface-light: 'accent-bg',
+        surface-light-contrast: 'accent-bg-contrast',
+        surface-light-hover: 'accent-lightest',
+        surface-medium: 'accent-lightest',
+        on-surface-medium: 'accent-darkest',
+        border: 'accent-light',
+        border-light: 'accent-lighter',
+        border-lighter: 'accent-lightest',
+        surface: 'accent-light',
+        surface-contrast: 'accent-light-contrast',
+        surface-hover: 'accent',
+        surface-hover-contrast: 'accent-contrast'
+    )
+);
+
+
+// TYPOGRAPHY
+
+$font-size-list: (
+    '2xs', 'xs', 's', 'm', 'l', 'xl', '2xl', '3xl', '4xl', '5xl', '6xl',
+    '2xs-compact', 'xs-compact', 's-compact', 'm-compact', 'l-compact', 'xl-compact', '2xl-compact', '3xl-compact', '4xl-compact', '5xl-compact', '6xl-compact'
+);
+
+$font-size-map: (
+    2xs: 0.675rem,
+    xs: 0.75rem,
+    s: 0.875rem,
+    m: 1rem,
+    l: 1.25rem,
+    xl: 1.5rem,
+    2xl: 1.75rem,
+    3xl: 2rem,
+    4xl: 2.5rem,
+    5xl: 2.75rem,
+    6xl: 3rem
+);
+
+$font-weight-map: (
+    regular: 400,
+    medium: 400,
+    semi-bold: 700,
+    bold: 700
+);
+
+$font-line-height-map: (
+    2xs: 1rem,
+    xs: 1.25rem,
+    s: 1.25rem,
+    m: 1.5rem,
+    l: 1.75rem,
+    xl: 2.25rem,
+    2xl: 2.5rem,
+    3xl: 2.75rem,
+    4xl: 3rem,
+    5xl: 3.25rem,
+    6xl: 3.50rem,
+    2xs-compact: 0.75rem,
+    xs-compact: 1rem,
+    s-compact: 1rem,
+    m-compact: 1.25rem,
+    l-compact: 1.5rem,
+    xl-compact: 1.75rem,
+    2xl-compact: 2rem,
+    3xl-compact: 2.5rem,
+    4xl-compact: 2.75rem,
+    5xl-compact: 3rem,
+    6xl-compact: 3.25rem
+);

@@ -1,0 +1,7 @@
+@use '../../../../base/02-tokens/maps' as tokens;
+
+@each $shadow, $value in tokens.$box-shadow-map {
+   .eui-u-sh-#{$shadow} {
+       box-shadow: var(--eui-sh-#{$shadow}) !important;
+   }
+}

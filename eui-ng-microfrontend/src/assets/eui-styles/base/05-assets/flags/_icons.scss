@@ -1,0 +1,1548 @@
+@use '../../01-base' as base;
+
+.eui-flag-icon-ad {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-ad.svg');
+}
+.eui-flag-icon-ad.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-ad.svg');
+}
+.eui-flag-icon-ae {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-ae.svg');
+}
+.eui-flag-icon-ae.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-ae.svg');
+}
+.eui-flag-icon-af {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-af.svg');
+}
+.eui-flag-icon-af.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-af.svg');
+}
+.eui-flag-icon-ag {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-ag.svg');
+}
+.eui-flag-icon-ag.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-ag.svg');
+}
+.eui-flag-icon-ai {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-ai.svg');
+}
+.eui-flag-icon-ai.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-ai.svg');
+}
+.eui-flag-icon-al {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-al.svg');
+}
+.eui-flag-icon-al.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-al.svg');
+}
+.eui-flag-icon-am {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-am.svg');
+}
+.eui-flag-icon-am.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-am.svg');
+}
+.eui-flag-icon-ao {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-ao.svg');
+}
+.eui-flag-icon-ao.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-ao.svg');
+}
+.eui-flag-icon-aq {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-aq.svg');
+}
+.eui-flag-icon-aq.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-aq.svg');
+}
+.eui-flag-icon-ar {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-ar.svg');
+}
+.eui-flag-icon-ar.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-ar.svg');
+}
+.eui-flag-icon-as {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-as.svg');
+}
+.eui-flag-icon-as.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-as.svg');
+}
+.eui-flag-icon-at {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-at.svg');
+}
+.eui-flag-icon-at.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-at.svg');
+}
+.eui-flag-icon-au {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-au.svg');
+}
+.eui-flag-icon-au.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-au.svg');
+}
+.eui-flag-icon-aw {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-aw.svg');
+}
+.eui-flag-icon-aw.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-aw.svg');
+}
+.eui-flag-icon-ax {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-ax.svg');
+}
+.eui-flag-icon-ax.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-ax.svg');
+}
+.eui-flag-icon-az {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-az.svg');
+}
+.eui-flag-icon-az.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-az.svg');
+}
+.eui-flag-icon-ba {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-ba.svg');
+}
+.eui-flag-icon-ba.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-ba.svg');
+}
+.eui-flag-icon-bb {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-bb.svg');
+}
+.eui-flag-icon-bb.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-bb.svg');
+}
+.eui-flag-icon-bd {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-bd.svg');
+}
+.eui-flag-icon-bd.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-bd.svg');
+}
+.eui-flag-icon-be {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-be.svg');
+}
+.eui-flag-icon-be.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-be.svg');
+}
+.eui-flag-icon-bf {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-bf.svg');
+}
+.eui-flag-icon-bf.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-bf.svg');
+}
+.eui-flag-icon-bg {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-bg.svg');
+}
+.eui-flag-icon-bg.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-bg.svg');
+}
+.eui-flag-icon-bh {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-bh.svg');
+}
+.eui-flag-icon-bh.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-bh.svg');
+}
+.eui-flag-icon-bi {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-bi.svg');
+}
+.eui-flag-icon-bi.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-bi.svg');
+}
+.eui-flag-icon-bj {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-bj.svg');
+}
+.eui-flag-icon-bj.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-bj.svg');
+}
+.eui-flag-icon-bl {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-bl.svg');
+}
+.eui-flag-icon-bl.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-bl.svg');
+}
+.eui-flag-icon-bm {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-bm.svg');
+}
+.eui-flag-icon-bm.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-bm.svg');
+}
+.eui-flag-icon-bn {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-bn.svg');
+}
+.eui-flag-icon-bn.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-bn.svg');
+}
+.eui-flag-icon-bo {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-bo.svg');
+}
+.eui-flag-icon-bo.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-bo.svg');
+}
+.eui-flag-icon-bq {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-bq.svg');
+}
+.eui-flag-icon-bq.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-bq.svg');
+}
+.eui-flag-icon-br {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-br.svg');
+}
+.eui-flag-icon-br.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-br.svg');
+}
+.eui-flag-icon-bs {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-bs.svg');
+}
+.eui-flag-icon-bs.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-bs.svg');
+}
+.eui-flag-icon-bt {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-bt.svg');
+}
+.eui-flag-icon-bt.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-bt.svg');
+}
+.eui-flag-icon-bv {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-bv.svg');
+}
+.eui-flag-icon-bv.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-bv.svg');
+}
+.eui-flag-icon-bw {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-bw.svg');
+}
+.eui-flag-icon-bw.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-bw.svg');
+}
+.eui-flag-icon-by {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-by.svg');
+}
+.eui-flag-icon-by.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-by.svg');
+}
+.eui-flag-icon-bz {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-bz.svg');
+}
+.eui-flag-icon-bz.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-bz.svg');
+}
+.eui-flag-icon-ca {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-ca.svg');
+}
+.eui-flag-icon-ca.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-ca.svg');
+}
+.eui-flag-icon-cc {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-cc.svg');
+}
+.eui-flag-icon-cc.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-cc.svg');
+}
+.eui-flag-icon-cd {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-cd.svg');
+}
+.eui-flag-icon-cd.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-cd.svg');
+}
+.eui-flag-icon-cf {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-cf.svg');
+}
+.eui-flag-icon-cf.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-cf.svg');
+}
+.eui-flag-icon-cg {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-cg.svg');
+}
+.eui-flag-icon-cg.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-cg.svg');
+}
+.eui-flag-icon-ch {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-ch.svg');
+}
+.eui-flag-icon-ch.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-ch.svg');
+}
+.eui-flag-icon-ci {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-ci.svg');
+}
+.eui-flag-icon-ci.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-ci.svg');
+}
+.eui-flag-icon-ck {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-ck.svg');
+}
+.eui-flag-icon-ck.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-ck.svg');
+}
+.eui-flag-icon-cl {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-cl.svg');
+}
+.eui-flag-icon-cl.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-cl.svg');
+}
+.eui-flag-icon-cm {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-cm.svg');
+}
+.eui-flag-icon-cm.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-cm.svg');
+}
+.eui-flag-icon-cn {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-cn.svg');
+}
+.eui-flag-icon-cn.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-cn.svg');
+}
+.eui-flag-icon-co {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-co.svg');
+}
+.eui-flag-icon-co.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-co.svg');
+}
+.eui-flag-icon-cr {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-cr.svg');
+}
+.eui-flag-icon-cr.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-cr.svg');
+}
+.eui-flag-icon-cu {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-cu.svg');
+}
+.eui-flag-icon-cu.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-cu.svg');
+}
+.eui-flag-icon-cv {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-cv.svg');
+}
+.eui-flag-icon-cv.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-cv.svg');
+}
+.eui-flag-icon-cw {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-cw.svg');
+}
+.eui-flag-icon-cw.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-cw.svg');
+}
+.eui-flag-icon-cx {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-cx.svg');
+}
+.eui-flag-icon-cx.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-cx.svg');
+}
+.eui-flag-icon-cy {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-cy.svg');
+}
+.eui-flag-icon-cy.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-cy.svg');
+}
+.eui-flag-icon-cz {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-cz.svg');
+}
+.eui-flag-icon-cz.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-cz.svg');
+}
+.eui-flag-icon-de {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-de.svg');
+}
+.eui-flag-icon-de.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-de.svg');
+}
+.eui-flag-icon-dj {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-dj.svg');
+}
+.eui-flag-icon-dj.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-dj.svg');
+}
+.eui-flag-icon-dk {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-dk.svg');
+}
+.eui-flag-icon-dk.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-dk.svg');
+}
+.eui-flag-icon-dm {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-dm.svg');
+}
+.eui-flag-icon-dm.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-dm.svg');
+}
+.eui-flag-icon-do {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-do.svg');
+}
+.eui-flag-icon-do.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-do.svg');
+}
+.eui-flag-icon-dz {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-dz.svg');
+}
+.eui-flag-icon-dz.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-dz.svg');
+}
+.eui-flag-icon-ec {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-ec.svg');
+}
+.eui-flag-icon-ec.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-ec.svg');
+}
+.eui-flag-icon-ee {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-ee.svg');
+}
+.eui-flag-icon-ee.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-ee.svg');
+}
+.eui-flag-icon-eg {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-eg.svg');
+}
+.eui-flag-icon-eg.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-eg.svg');
+}
+.eui-flag-icon-eh {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-eh.svg');
+}
+.eui-flag-icon-eh.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-eh.svg');
+}
+.eui-flag-icon-er {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-er.svg');
+}
+.eui-flag-icon-er.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-er.svg');
+}
+.eui-flag-icon-es {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-es.svg');
+}
+.eui-flag-icon-es.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-es.svg');
+}
+.eui-flag-icon-et {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-et.svg');
+}
+.eui-flag-icon-et.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-et.svg');
+}
+.eui-flag-icon-fi {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-fi.svg');
+}
+.eui-flag-icon-fi.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-fi.svg');
+}
+.eui-flag-icon-fj {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-fj.svg');
+}
+.eui-flag-icon-fj.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-fj.svg');
+}
+.eui-flag-icon-fk {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-fk.svg');
+}
+.eui-flag-icon-fk.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-fk.svg');
+}
+.eui-flag-icon-fm {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-fm.svg');
+}
+.eui-flag-icon-fm.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-fm.svg');
+}
+.eui-flag-icon-fo {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-fo.svg');
+}
+.eui-flag-icon-fo.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-fo.svg');
+}
+.eui-flag-icon-fr {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-fr.svg');
+}
+.eui-flag-icon-fr.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-fr.svg');
+}
+.eui-flag-icon-ga {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-ga.svg');
+}
+.eui-flag-icon-ga.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-ga.svg');
+}
+.eui-flag-icon-gb,
+.eui-flag-icon-uk {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-gb.svg');
+}
+.eui-flag-icon-gb.eui-flag-icon-squared,
+.eui-flag-icon-uk.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-gb.svg');
+}
+.eui-flag-icon-gd {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-gd.svg');
+}
+.eui-flag-icon-gd.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-gd.svg');
+}
+.eui-flag-icon-ge {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-ge.svg');
+}
+.eui-flag-icon-ge.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-ge.svg');
+}
+.eui-flag-icon-gf {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-gf.svg');
+}
+.eui-flag-icon-gf.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-gf.svg');
+}
+.eui-flag-icon-gg {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-gg.svg');
+}
+.eui-flag-icon-gg.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-gg.svg');
+}
+.eui-flag-icon-gh {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-gh.svg');
+}
+.eui-flag-icon-gh.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-gh.svg');
+}
+.eui-flag-icon-gi {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-gi.svg');
+}
+.eui-flag-icon-gi.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-gi.svg');
+}
+.eui-flag-icon-gl {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-gl.svg');
+}
+.eui-flag-icon-gl.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-gl.svg');
+}
+.eui-flag-icon-gm {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-gm.svg');
+}
+.eui-flag-icon-gm.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-gm.svg');
+}
+.eui-flag-icon-gn {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-gn.svg');
+}
+.eui-flag-icon-gn.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-gn.svg');
+}
+.eui-flag-icon-gp {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-gp.svg');
+}
+.eui-flag-icon-gp.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-gp.svg');
+}
+.eui-flag-icon-gq {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-gq.svg');
+}
+.eui-flag-icon-gq.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-gq.svg');
+}
+.eui-flag-icon-gr,
+.eui-flag-icon-el {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-gr.svg');
+}
+.eui-flag-icon-gr.eui-flag-icon-squared,
+.eui-flag-icon-el.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-gr.svg');
+}
+.eui-flag-icon-gs {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-gs.svg');
+}
+.eui-flag-icon-gs.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-gs.svg');
+}
+.eui-flag-icon-gt {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-gt.svg');
+}
+.eui-flag-icon-gt.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-gt.svg');
+}
+.eui-flag-icon-gu {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-gu.svg');
+}
+.eui-flag-icon-gu.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-gu.svg');
+}
+.eui-flag-icon-gw {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-gw.svg');
+}
+.eui-flag-icon-gw.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-gw.svg');
+}
+.eui-flag-icon-gy {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-gy.svg');
+}
+.eui-flag-icon-gy.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-gy.svg');
+}
+.eui-flag-icon-hk {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-hk.svg');
+}
+.eui-flag-icon-hk.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-hk.svg');
+}
+.eui-flag-icon-hm {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-hm.svg');
+}
+.eui-flag-icon-hm.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-hm.svg');
+}
+.eui-flag-icon-hn {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-hn.svg');
+}
+.eui-flag-icon-hn.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-hn.svg');
+}
+.eui-flag-icon-hr {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-hr.svg');
+}
+.eui-flag-icon-hr.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-hr.svg');
+}
+.eui-flag-icon-ht {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-ht.svg');
+}
+.eui-flag-icon-ht.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-ht.svg');
+}
+.eui-flag-icon-hu {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-hu.svg');
+}
+.eui-flag-icon-hu.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-hu.svg');
+}
+.eui-flag-icon-id {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-id.svg');
+}
+.eui-flag-icon-id.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-id.svg');
+}
+.eui-flag-icon-ie {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-ie.svg');
+}
+.eui-flag-icon-ie.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-ie.svg');
+}
+.eui-flag-icon-il {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-il.svg');
+}
+.eui-flag-icon-il.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-il.svg');
+}
+.eui-flag-icon-im {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-im.svg');
+}
+.eui-flag-icon-im.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-im.svg');
+}
+.eui-flag-icon-in {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-in.svg');
+}
+.eui-flag-icon-in.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-in.svg');
+}
+.eui-flag-icon-io {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-io.svg');
+}
+.eui-flag-icon-io.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-io.svg');
+}
+.eui-flag-icon-iq {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-iq.svg');
+}
+.eui-flag-icon-iq.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-iq.svg');
+}
+.eui-flag-icon-ir {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-ir.svg');
+}
+.eui-flag-icon-ir.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-ir.svg');
+}
+.eui-flag-icon-is {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-is.svg');
+}
+.eui-flag-icon-is.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-is.svg');
+}
+.eui-flag-icon-it {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-it.svg');
+}
+.eui-flag-icon-it.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-it.svg');
+}
+.eui-flag-icon-je {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-je.svg');
+}
+.eui-flag-icon-je.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-je.svg');
+}
+.eui-flag-icon-jm {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-jm.svg');
+}
+.eui-flag-icon-jm.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-jm.svg');
+}
+.eui-flag-icon-jo {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-jo.svg');
+}
+.eui-flag-icon-jo.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-jo.svg');
+}
+.eui-flag-icon-jp {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-jp.svg');
+}
+.eui-flag-icon-jp.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-jp.svg');
+}
+.eui-flag-icon-ke {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-ke.svg');
+}
+.eui-flag-icon-ke.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-ke.svg');
+}
+.eui-flag-icon-kg {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-kg.svg');
+}
+.eui-flag-icon-kg.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-kg.svg');
+}
+.eui-flag-icon-kh {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-kh.svg');
+}
+.eui-flag-icon-kh.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-kh.svg');
+}
+.eui-flag-icon-ki {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-ki.svg');
+}
+.eui-flag-icon-ki.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-ki.svg');
+}
+.eui-flag-icon-km {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-km.svg');
+}
+.eui-flag-icon-km.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-km.svg');
+}
+.eui-flag-icon-kn {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-kn.svg');
+}
+.eui-flag-icon-kn.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-kn.svg');
+}
+.eui-flag-icon-kp {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-kp.svg');
+}
+.eui-flag-icon-kp.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-kp.svg');
+}
+.eui-flag-icon-kr {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-kr.svg');
+}
+.eui-flag-icon-kr.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-kr.svg');
+}
+.eui-flag-icon-kw {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-kw.svg');
+}
+.eui-flag-icon-kw.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-kw.svg');
+}
+.eui-flag-icon-ky {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-ky.svg');
+}
+.eui-flag-icon-ky.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-ky.svg');
+}
+.eui-flag-icon-kz {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-kz.svg');
+}
+.eui-flag-icon-kz.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-kz.svg');
+}
+.eui-flag-icon-la {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-la.svg');
+}
+.eui-flag-icon-la.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-la.svg');
+}
+.eui-flag-icon-lb {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-lb.svg');
+}
+.eui-flag-icon-lb.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-lb.svg');
+}
+.eui-flag-icon-lc {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-lc.svg');
+}
+.eui-flag-icon-lc.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-lc.svg');
+}
+.eui-flag-icon-li {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-li.svg');
+}
+.eui-flag-icon-li.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-li.svg');
+}
+.eui-flag-icon-lk {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-lk.svg');
+}
+.eui-flag-icon-lk.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-lk.svg');
+}
+.eui-flag-icon-lr {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-lr.svg');
+}
+.eui-flag-icon-lr.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-lr.svg');
+}
+.eui-flag-icon-ls {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-ls.svg');
+}
+.eui-flag-icon-ls.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-ls.svg');
+}
+.eui-flag-icon-lt {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-lt.svg');
+}
+.eui-flag-icon-lt.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-lt.svg');
+}
+.eui-flag-icon-lu {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-lu.svg');
+}
+.eui-flag-icon-lu.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-lu.svg');
+}
+.eui-flag-icon-lv {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-lv.svg');
+}
+.eui-flag-icon-lv.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-lv.svg');
+}
+.eui-flag-icon-ly {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-ly.svg');
+}
+.eui-flag-icon-ly.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-ly.svg');
+}
+.eui-flag-icon-ma {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-ma.svg');
+}
+.eui-flag-icon-ma.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-ma.svg');
+}
+.eui-flag-icon-mc {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-mc.svg');
+}
+.eui-flag-icon-mc.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-mc.svg');
+}
+.eui-flag-icon-md {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-md.svg');
+}
+.eui-flag-icon-md.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-md.svg');
+}
+.eui-flag-icon-me {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-me.svg');
+}
+.eui-flag-icon-me.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-me.svg');
+}
+.eui-flag-icon-mf {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-mf.svg');
+}
+.eui-flag-icon-mf.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-mf.svg');
+}
+.eui-flag-icon-mg {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-mg.svg');
+}
+.eui-flag-icon-mg.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-mg.svg');
+}
+.eui-flag-icon-mh {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-mh.svg');
+}
+.eui-flag-icon-mh.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-mh.svg');
+}
+.eui-flag-icon-mk {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-mk.svg');
+}
+.eui-flag-icon-mk.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-mk.svg');
+}
+.eui-flag-icon-ml {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-ml.svg');
+}
+.eui-flag-icon-ml.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-ml.svg');
+}
+.eui-flag-icon-mm {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-mm.svg');
+}
+.eui-flag-icon-mm.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-mm.svg');
+}
+.eui-flag-icon-mn {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-mn.svg');
+}
+.eui-flag-icon-mn.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-mn.svg');
+}
+.eui-flag-icon-mo {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-mo.svg');
+}
+.eui-flag-icon-mo.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-mo.svg');
+}
+.eui-flag-icon-mp {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-mp.svg');
+}
+.eui-flag-icon-mp.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-mp.svg');
+}
+.eui-flag-icon-mq {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-mq.svg');
+}
+.eui-flag-icon-mq.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-mq.svg');
+}
+.eui-flag-icon-mr {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-mr.svg');
+}
+.eui-flag-icon-mr.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-mr.svg');
+}
+.eui-flag-icon-ms {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-ms.svg');
+}
+.eui-flag-icon-ms.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-ms.svg');
+}
+.eui-flag-icon-mt {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-mt.svg');
+}
+.eui-flag-icon-mt.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-mt.svg');
+}
+.eui-flag-icon-mu {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-mu.svg');
+}
+.eui-flag-icon-mu.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-mu.svg');
+}
+.eui-flag-icon-mv {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-mv.svg');
+}
+.eui-flag-icon-mv.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-mv.svg');
+}
+.eui-flag-icon-mw {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-mw.svg');
+}
+.eui-flag-icon-mw.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-mw.svg');
+}
+.eui-flag-icon-mx {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-mx.svg');
+}
+.eui-flag-icon-mx.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-mx.svg');
+}
+.eui-flag-icon-my {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-my.svg');
+}
+.eui-flag-icon-my.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-my.svg');
+}
+.eui-flag-icon-mz {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-mz.svg');
+}
+.eui-flag-icon-mz.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-mz.svg');
+}
+.eui-flag-icon-na {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-na.svg');
+}
+.eui-flag-icon-na.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-na.svg');
+}
+.eui-flag-icon-nc {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-nc.svg');
+}
+.eui-flag-icon-nc.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-nc.svg');
+}
+.eui-flag-icon-ne {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-ne.svg');
+}
+.eui-flag-icon-ne.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-ne.svg');
+}
+.eui-flag-icon-nf {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-nf.svg');
+}
+.eui-flag-icon-nf.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-nf.svg');
+}
+.eui-flag-icon-ng {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-ng.svg');
+}
+.eui-flag-icon-ng.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-ng.svg');
+}
+.eui-flag-icon-ni {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-ni.svg');
+}
+.eui-flag-icon-ni.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-ni.svg');
+}
+.eui-flag-icon-nl {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-nl.svg');
+}
+.eui-flag-icon-nl.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-nl.svg');
+}
+.eui-flag-icon-no {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-no.svg');
+}
+.eui-flag-icon-no.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-no.svg');
+}
+.eui-flag-icon-np {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-np.svg');
+}
+.eui-flag-icon-np.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-np.svg');
+}
+.eui-flag-icon-nr {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-nr.svg');
+}
+.eui-flag-icon-nr.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-nr.svg');
+}
+.eui-flag-icon-nu {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-nu.svg');
+}
+.eui-flag-icon-nu.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-nu.svg');
+}
+.eui-flag-icon-nz {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-nz.svg');
+}
+.eui-flag-icon-nz.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-nz.svg');
+}
+.eui-flag-icon-om {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-om.svg');
+}
+.eui-flag-icon-om.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-om.svg');
+}
+.eui-flag-icon-pa {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-pa.svg');
+}
+.eui-flag-icon-pa.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-pa.svg');
+}
+.eui-flag-icon-pe {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-pe.svg');
+}
+.eui-flag-icon-pe.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-pe.svg');
+}
+.eui-flag-icon-pf {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-pf.svg');
+}
+.eui-flag-icon-pf.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-pf.svg');
+}
+.eui-flag-icon-pg {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-pg.svg');
+}
+.eui-flag-icon-pg.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-pg.svg');
+}
+.eui-flag-icon-ph {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-ph.svg');
+}
+.eui-flag-icon-ph.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-ph.svg');
+}
+.eui-flag-icon-pk {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-pk.svg');
+}
+.eui-flag-icon-pk.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-pk.svg');
+}
+.eui-flag-icon-pl {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-pl.svg');
+}
+.eui-flag-icon-pl.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-pl.svg');
+}
+.eui-flag-icon-pm {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-pm.svg');
+}
+.eui-flag-icon-pm.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-pm.svg');
+}
+.eui-flag-icon-pn {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-pn.svg');
+}
+.eui-flag-icon-pn.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-pn.svg');
+}
+.eui-flag-icon-pr {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-pr.svg');
+}
+.eui-flag-icon-pr.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-pr.svg');
+}
+.eui-flag-icon-ps {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-ps.svg');
+}
+.eui-flag-icon-ps.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-ps.svg');
+}
+.eui-flag-icon-pt {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-pt.svg');
+}
+.eui-flag-icon-pt.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-pt.svg');
+}
+.eui-flag-icon-pw {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-pw.svg');
+}
+.eui-flag-icon-pw.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-pw.svg');
+}
+.eui-flag-icon-py {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-py.svg');
+}
+.eui-flag-icon-py.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-py.svg');
+}
+.eui-flag-icon-qa {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-qa.svg');
+}
+.eui-flag-icon-qa.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-qa.svg');
+}
+.eui-flag-icon-re {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-re.svg');
+}
+.eui-flag-icon-re.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-re.svg');
+}
+.eui-flag-icon-ro {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-ro.svg');
+}
+.eui-flag-icon-ro.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-ro.svg');
+}
+.eui-flag-icon-rs {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-rs.svg');
+}
+.eui-flag-icon-rs.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-rs.svg');
+}
+.eui-flag-icon-ru {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-ru.svg');
+}
+.eui-flag-icon-ru.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-ru.svg');
+}
+.eui-flag-icon-rw {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-rw.svg');
+}
+.eui-flag-icon-rw.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-rw.svg');
+}
+.eui-flag-icon-sa {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-sa.svg');
+}
+.eui-flag-icon-sa.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-sa.svg');
+}
+.eui-flag-icon-sb {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-sb.svg');
+}
+.eui-flag-icon-sb.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-sb.svg');
+}
+.eui-flag-icon-sc {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-sc.svg');
+}
+.eui-flag-icon-sc.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-sc.svg');
+}
+.eui-flag-icon-sd {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-sd.svg');
+}
+.eui-flag-icon-sd.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-sd.svg');
+}
+.eui-flag-icon-se {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-se.svg');
+}
+.eui-flag-icon-se.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-se.svg');
+}
+.eui-flag-icon-sg {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-sg.svg');
+}
+.eui-flag-icon-sg.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-sg.svg');
+}
+.eui-flag-icon-sh {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-sh.svg');
+}
+.eui-flag-icon-sh.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-sh.svg');
+}
+.eui-flag-icon-si {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-si.svg');
+}
+.eui-flag-icon-si.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-si.svg');
+}
+.eui-flag-icon-sj {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-sj.svg');
+}
+.eui-flag-icon-sj.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-sj.svg');
+}
+.eui-flag-icon-sk {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-sk.svg');
+}
+.eui-flag-icon-sk.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-sk.svg');
+}
+.eui-flag-icon-sl {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-sl.svg');
+}
+.eui-flag-icon-sl.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-sl.svg');
+}
+.eui-flag-icon-sm {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-sm.svg');
+}
+.eui-flag-icon-sm.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-sm.svg');
+}
+.eui-flag-icon-sn {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-sn.svg');
+}
+.eui-flag-icon-sn.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-sn.svg');
+}
+.eui-flag-icon-so {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-so.svg');
+}
+.eui-flag-icon-so.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-so.svg');
+}
+.eui-flag-icon-sr {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-sr.svg');
+}
+.eui-flag-icon-sr.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-sr.svg');
+}
+.eui-flag-icon-ss {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-ss.svg');
+}
+.eui-flag-icon-ss.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-ss.svg');
+}
+.eui-flag-icon-st {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-st.svg');
+}
+.eui-flag-icon-st.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-st.svg');
+}
+.eui-flag-icon-sv {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-sv.svg');
+}
+.eui-flag-icon-sv.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-sv.svg');
+}
+.eui-flag-icon-sx {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-sx.svg');
+}
+.eui-flag-icon-sx.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-sx.svg');
+}
+.eui-flag-icon-sy {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-sy.svg');
+}
+.eui-flag-icon-sy.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-sy.svg');
+}
+.eui-flag-icon-sz {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-sz.svg');
+}
+.eui-flag-icon-sz.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-sz.svg');
+}
+.eui-flag-icon-tc {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-tc.svg');
+}
+.eui-flag-icon-tc.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-tc.svg');
+}
+.eui-flag-icon-td {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-td.svg');
+}
+.eui-flag-icon-td.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-td.svg');
+}
+.eui-flag-icon-tf {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-tf.svg');
+}
+.eui-flag-icon-tf.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-tf.svg');
+}
+.eui-flag-icon-tg {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-tg.svg');
+}
+.eui-flag-icon-tg.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-tg.svg');
+}
+.eui-flag-icon-th {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-th.svg');
+}
+.eui-flag-icon-th.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-th.svg');
+}
+.eui-flag-icon-tj {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-tj.svg');
+}
+.eui-flag-icon-tj.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-tj.svg');
+}
+.eui-flag-icon-tk {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-tk.svg');
+}
+.eui-flag-icon-tk.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-tk.svg');
+}
+.eui-flag-icon-tl {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-tl.svg');
+}
+.eui-flag-icon-tl.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-tl.svg');
+}
+.eui-flag-icon-tm {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-tm.svg');
+}
+.eui-flag-icon-tm.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-tm.svg');
+}
+.eui-flag-icon-tn {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-tn.svg');
+}
+.eui-flag-icon-tn.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-tn.svg');
+}
+.eui-flag-icon-to {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-to.svg');
+}
+.eui-flag-icon-to.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-to.svg');
+}
+.eui-flag-icon-tr {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-tr.svg');
+}
+.eui-flag-icon-tr.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-tr.svg');
+}
+.eui-flag-icon-tt {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-tt.svg');
+}
+.eui-flag-icon-tt.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-tt.svg');
+}
+.eui-flag-icon-tv {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-tv.svg');
+}
+.eui-flag-icon-tv.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-tv.svg');
+}
+.eui-flag-icon-tw {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-tw.svg');
+}
+.eui-flag-icon-tw.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-tw.svg');
+}
+.eui-flag-icon-tz {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-tz.svg');
+}
+.eui-flag-icon-tz.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-tz.svg');
+}
+.eui-flag-icon-ua {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-ua.svg');
+}
+.eui-flag-icon-ua.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-ua.svg');
+}
+.eui-flag-icon-ug {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-ug.svg');
+}
+.eui-flag-icon-ug.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-ug.svg');
+}
+.eui-flag-icon-um {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-um.svg');
+}
+.eui-flag-icon-um.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-um.svg');
+}
+.eui-flag-icon-us {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-us.svg');
+}
+.eui-flag-icon-us.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-us.svg');
+}
+.eui-flag-icon-uy {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-uy.svg');
+}
+.eui-flag-icon-uy.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-uy.svg');
+}
+.eui-flag-icon-uz {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-uz.svg');
+}
+.eui-flag-icon-uz.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-uz.svg');
+}
+.eui-flag-icon-va {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-va.svg');
+}
+.eui-flag-icon-va.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-va.svg');
+}
+.eui-flag-icon-vc {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-vc.svg');
+}
+.eui-flag-icon-vc.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-vc.svg');
+}
+.eui-flag-icon-ve {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-ve.svg');
+}
+.eui-flag-icon-ve.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-ve.svg');
+}
+.eui-flag-icon-vg {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-vg.svg');
+}
+.eui-flag-icon-vg.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-vg.svg');
+}
+.eui-flag-icon-vi {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-vi.svg');
+}
+.eui-flag-icon-vi.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-vi.svg');
+}
+.eui-flag-icon-vn {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-vn.svg');
+}
+.eui-flag-icon-vn.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-vn.svg');
+}
+.eui-flag-icon-vu {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-vu.svg');
+}
+.eui-flag-icon-vu.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-vu.svg');
+}
+.eui-flag-icon-wf {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-wf.svg');
+}
+.eui-flag-icon-wf.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-wf.svg');
+}
+.eui-flag-icon-ws {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-ws.svg');
+}
+.eui-flag-icon-ws.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-ws.svg');
+}
+.eui-flag-icon-ye {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-ye.svg');
+}
+.eui-flag-icon-ye.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-ye.svg');
+}
+.eui-flag-icon-yt {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-yt.svg');
+}
+.eui-flag-icon-yt.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-yt.svg');
+}
+.eui-flag-icon-za {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-za.svg');
+}
+.eui-flag-icon-za.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-za.svg');
+}
+.eui-flag-icon-zm {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-zm.svg');
+}
+.eui-flag-icon-zm.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-zm.svg');
+}
+.eui-flag-icon-zw {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-zw.svg');
+}
+.eui-flag-icon-zw.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-zw.svg');
+}
+.eui-flag-icon-es-ct {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-es-ct.svg');
+}
+.eui-flag-icon-es-ct.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-es-ct.svg');
+}
+.eui-flag-icon-eu {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-eu.svg');
+}
+.eui-flag-icon-eu.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-eu.svg');
+}
+.eui-flag-icon-gb-eng {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-gb-eng.svg');
+}
+.eui-flag-icon-gb-eng.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-gb-eng.svg');
+}
+.eui-flag-icon-gb-nir {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-gb-nir.svg');
+}
+.eui-flag-icon-gb-nir.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-gb-nir.svg');
+}
+.eui-flag-icon-gb-sct {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-gb-sct.svg');
+}
+.eui-flag-icon-gb-sct.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-gb-sct.svg');
+}
+.eui-flag-icon-gb-wls {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-gb-wls.svg');
+}
+.eui-flag-icon-gb-wls.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-gb-wls.svg');
+}
+.eui-flag-icon-un {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-un.svg');
+}
+.eui-flag-icon-un.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-un.svg');
+}
+.eui-flag-icon-xk {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/4x3-xk.svg');
+}
+.eui-flag-icon-xk.eui-flag-icon-squared {
+    background-image: url('#{base.$eui-assets-base-path}/icons/flags/svg/1x1-xk.svg');
+}

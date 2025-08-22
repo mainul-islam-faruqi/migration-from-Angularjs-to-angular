@@ -1,0 +1,74 @@
+@mixin pseudoSvgIconCommon() {
+    height: 1rem;
+    width: 1rem;
+    content: '';
+    mask-repeat: no-repeat;
+    mask-position: 50% 50%;
+    mask-size: cover;
+}
+@mixin pseudoSvgIconCommonSize() {
+    height: 1rem;
+    width: 1rem;
+}
+
+
+
+@mixin pseudoSvgIconCheckmarkWhite() {
+    @include pseudoSvgIconCommon();
+    mask-image: var(--eui-internal-icon-checkmark-path);
+    background-color: var(--eui-c-white);
+}
+@mixin pseudoSvgIconCheckmarkBlack() {
+    @include pseudoSvgIconCommonSize();
+    content: var(--eui-internal-icon-checkmark-path);
+}
+
+@mixin pseudoSvgIconRemoveWhite() {
+    @include pseudoSvgIconCommon();
+    mask-image: var(--eui-internal-icon-remove-path);
+    background-color: var(--eui-c-white);
+}
+@mixin pseudoSvgIconRemoveBlack() {
+    @include pseudoSvgIconCommonSize();
+    content: var(--eui-internal-icon-remove-path);
+}
+
+@mixin pseudoSvgIconExternalWhite() {
+    @include pseudoSvgIconCommon();
+    mask-image: var(--eui-internal-icon-external-path);
+    background-color: var(--eui-c-white);
+}
+@mixin pseudoSvgIconExternalPrimary() {
+    @include pseudoSvgIconCommon();
+    mask-image: var(--eui-internal-icon-external-path);
+    background-color: var(--eui-c-s-primary);
+}
+@mixin pseudoSvgIconExternalBlack() {
+    @include pseudoSvgIconCommonSize();
+    content: var(--eui-internal-icon-external-path);
+}
+
+@mixin pseudoSvgIconEllipseWhite() {
+    @include pseudoSvgIconCommon();
+    mask-image: var(--eui-internal-icon-ellipse-path);
+    background-color: var(--eui-c-white);
+}
+@mixin pseudoSvgIconEllipsePrimary() {
+    @include pseudoSvgIconCommon();
+    mask-image: var(--eui-internal-icon-ellipse-path);
+    background-color: var(--eui-c-s-primary);
+}
+@mixin pseudoSvgIconEllipseDanger() {
+    @include pseudoSvgIconCommon();
+    mask-image: var(--eui-internal-icon-ellipse-path);
+    background-color: var(--eui-c-s-danger);
+}
+@mixin pseudoSvgIconEllipseBlack() {
+    @include pseudoSvgIconCommonSize();
+    content: var(--eui-internal-icon-ellipse-path);
+}
+
+@mixin pseudoSvgIconChevronDownBlack() {
+    @include pseudoSvgIconCommonSize();
+    content: var(--eui-internal-icon-chevron-down-path);
+}

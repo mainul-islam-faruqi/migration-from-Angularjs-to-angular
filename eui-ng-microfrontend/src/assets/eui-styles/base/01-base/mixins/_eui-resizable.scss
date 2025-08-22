@@ -1,0 +1,14 @@
+@mixin eui-resizable( $eui-resizable-bar-right-offset: unset, $eui-resizable-icon-top-offset: var(--eui-s-m) ) {
+    .eui-resizable {
+        .eui-resizable-bar {
+            // For eui-page-column
+            @if ($eui-resizable-bar-right-offset != unset) {
+                margin-right: calc($eui-resizable-bar-right-offset);
+            }
+        }
+
+        .eui-resizable-icon__container {
+            transform: translate(calc(-1 * var(--eui-s-m)), var(--eui-s-s));
+        }
+    }
+}

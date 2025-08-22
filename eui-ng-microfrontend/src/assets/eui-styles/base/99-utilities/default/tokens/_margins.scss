@@ -1,0 +1,40 @@
+@use '../../../../base/02-tokens/maps' as tokens;
+
+@each $spacing, $value in tokens.$spacing-map {
+    .eui-u-mt-#{$spacing} {
+        margin-top: var(--eui-s-#{$spacing}) !important;
+    }
+    .eui-u-mb-#{$spacing} {
+        margin-bottom: var(--eui-s-#{$spacing}) !important;
+    }
+    .eui-u-ml-#{$spacing} {
+        margin-left: var(--eui-s-#{$spacing}) !important;
+    }
+    .eui-u-mr-#{$spacing} {
+        margin-right: var(--eui-s-#{$spacing}) !important;
+    }
+    .eui-u-m-#{$spacing} {
+        margin: var(--eui-s-#{$spacing}) !important;
+    }
+    .eui-u-mv-#{$spacing} {
+        margin-top: var(--eui-s-#{$spacing}) !important;
+        margin-bottom: var(--eui-s-#{$spacing}) !important;
+    }
+    .eui-u-mh-#{$spacing} {
+        margin-left: var(--eui-s-#{$spacing}) !important;
+        margin-right: var(--eui-s-#{$spacing}) !important;
+    }
+ }
+
+.eui-u-ml-auto {
+    margin-left: auto !important;
+}
+.eui-u-mr-auto {
+    margin-right: auto !important;
+}
+.eui-u-mt-auto {
+    margin-top: auto !important;
+}
+.eui-u-mb-auto {
+    margin-bottom: auto !important;
+}

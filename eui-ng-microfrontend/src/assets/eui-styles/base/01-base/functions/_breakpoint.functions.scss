@@ -1,0 +1,12 @@
+@use 'sass:list';
+
+@function new-breakpoint($query: $feature $value) {
+    $default-feature-min: "min-width";
+
+    @if list.length($query) == 1 {
+        $query: $default-feature-min nth($query, 1);
+    } @else if is-even(list.length($query)) {
+        $query: list.append($query, 12);
+    }
+    @return $query;
+}

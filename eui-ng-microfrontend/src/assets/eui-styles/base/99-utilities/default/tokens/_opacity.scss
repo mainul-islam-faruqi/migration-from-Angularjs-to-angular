@@ -1,0 +1,7 @@
+@use '../../../../base/02-tokens/maps' as tokens;
+
+@each $idx, $value in tokens.$opacity-map {
+    .eui-u-o-#{$idx} {
+        opacity: var(--eui-o-#{$idx}) !important;
+    }
+}

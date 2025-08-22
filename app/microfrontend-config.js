@@ -19,6 +19,15 @@ System.import('single-spa').then(singleSpa => {
     })
   });
 
+  registerApplication({
+    name: 'eui-desktop',
+    app: () => System.import('eui-desktop'),
+    activeWhen: location => location.hash.includes('eui'),
+    customProps: () => ({
+      domElementGetter: () => document.getElementById('eui-mfe-container')
+    })
+  });
+
   // Start single-spa
   start({
     urlRerouteOnly: true

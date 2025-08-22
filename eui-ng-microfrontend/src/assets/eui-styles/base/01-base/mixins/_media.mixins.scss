@@ -1,0 +1,29 @@
+@use 'sass:map';
+@use 'sass:list';
+
+$default-feature: "min-width";
+@mixin media($query: $feature $value $columns) {
+    @if list.length($query) == 1 {
+        @media screen and ($default-feature: list.nth($query, 1)) {
+            @content;
+        }
+    }
+    @else {
+        $loop-to: list.length($query);
+        $media-query: "screen and ";
+        @if is-not(is-even(list.length($query))) {
+            $loop-to: $loop-to - 1;
+        }
+        $i: 1;
+        @while $i <=$loop-to {
+            $media-query: $media-query + "(" + list.nth($query, $i) + ": " + list.nth($query, $i + 1) + ") ";
+            @if ($i + 1) != $loop-to {
+                $media-query: $media-query + "and ";
+            }
+            $i: $i+2;
+        }
+        @media #{$media-query} {
+            @content;
+        }
+    }
+}

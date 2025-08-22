@@ -32,22 +32,26 @@
   
   <!-- Micro-frontend Container -->
   <div id="angular-mfe-container"></div>
-  
+
+  <!-- Add a dedicated container -->
+  <div id="eui-mfe-container"></div>
   <!-- SystemJS -->
   <script src="https://cdn.jsdelivr.net/npm/systemjs@6.14.1/dist/system.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.14.1/dist/extras/named-register.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/systemjs@6.14.1/dist/extras/amd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/systemjs@6.14.1/dist/extras/named-exports.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/systemjs@6.14.1/dist/extras/use-default.min.js"></script>
   
   <!-- SystemJS Import Map -->
   <script type="systemjs-importmap">
-          {
-            "imports": {
-              "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.5/lib/system/single-spa.min.js",
-              "angular-mfe": "http://localhost:4200/main.js"
-            }
-          }
-        </script>
+    {
+      "imports": {
+        "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.5/lib/system/single-spa.min.js",
+        "angular-mfe": "http://localhost:4200/main.js",
+        "eui-desktop": "http://localhost:4300/main.js" 
+      }
+    }
+  </script>
   
   <!-- AngularJS Scripts -->
   <script src="lib/angular/angular.js"></script>

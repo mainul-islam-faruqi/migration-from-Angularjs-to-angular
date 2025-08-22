@@ -1,0 +1,24 @@
+@mixin eui-anim-base {
+    animation-fill-mode: both; //var(--eui-base-animation-fill-mode);
+    animation-delay: var(--eui-base-animation-delay);
+    animation-direction: var(--eui-base-animation-direction);
+    animation-duration: var(--eui-base-animation-duration-base);
+    transition: var(--eui-base-animation-transition-base);
+}
+
+@mixin eui-anim-infinite {
+    @include eui-anim-base();
+    animation-iteration-count: infinite;
+}
+@mixin eui-anim-fast {
+    @include eui-anim-base();
+    animation-duration: var(--eui-base-animation-duration-fast);
+}
+@mixin eui-anim-medium {
+    @include eui-anim-base();
+    animation-duration: var(--eui-base-animation-duration-medium);
+}
+@mixin eui-anim-slow {
+    @include eui-anim-base();
+    animation-duration: var(--eui-base-animation-duration-slow);
+}

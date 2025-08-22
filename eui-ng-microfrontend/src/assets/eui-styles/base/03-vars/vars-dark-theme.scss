@@ -1,0 +1,29 @@
+@use '../01-base' as base;
+@use '../02-tokens/maps-dark-theme' as maps;
+
+html.eui-t-dark {
+    --eui-c-bg: var(--eui-bc-neutral-10);
+
+    --eui-c-surface-page: var(--eui-bc-neutral-10);
+    --eui-c-surface-shell: var(--eui-bc-neutral-10);
+    --eui-c-surface-container: var(--eui-bc-neutral-5);
+    --eui-c-surface-container-1: var(--eui-bc-neutral-10);
+    --eui-c-surface-container-2: var(--eui-bc-neutral-20);
+    --eui-c-surface-container-3: var(--eui-bc-neutral-40);    
+
+    --eui-c-divider: var(--eui-bc-neutral-40);
+    --eui-c-divider-light: var(--eui-bc-neutral-20);    
+
+    --eui-c-focus: var(--eui-bc-primary-60);
+    --eui-c-active-bg-alt: var(--eui-bc-primary-10);
+
+    --_eui-scrollbars-foreground-color: var(--eui-bc-neutral-40);
+
+    // COLOR SHADES
+    @each $color, $shades in maps.$color-map {
+        @each $shade, $value in $shades {
+            --eui-bc-#{$color + '-' + $shade}: #{$value};
+            --eui-bc-#{$color + '-' + $shade}-contrast: #{base.getContrast($value)};
+        }
+    }
+}

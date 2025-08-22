@@ -1,0 +1,54 @@
+@use '../01-base' as base;
+@use '../02-tokens/maps-legacy-theme' as maps;
+@use '../02-tokens/maps' as mapsDefault;
+
+html.eui-t-eui-legacy {
+    // COLOR BASE
+
+    @each $color, $shades in maps.$color-map {
+        @each $shade, $value in $shades {
+            --eui-bc-#{$color + '-' + $shade}: #{$value};
+            --eui-bc-#{$color + '-' + $shade}-contrast: #{base.getContrast($value)};
+        }
+    }
+
+
+    // COLOR CONTEXT
+
+    @each $color, $shades in maps.$color-context-map {
+        @each $shade, $value in $shades {
+            $base-color: $color;
+
+            @if $shade == base {
+                --eui-c-#{$color}: var(--eui-bc-#{$base-color + '-' + $value});
+                --eui-c-#{$color}-contrast: var(--eui-bc-#{$base-color + '-' + $value}-contrast);
+            } @else {
+                --eui-c-#{$color + '-' + $shade}: var(--eui-bc-#{$base-color + '-' + $value});
+                --eui-c-#{$color + '-' + $shade}-contrast: var(--eui-bc-#{$base-color + '-' + $value}-contrast);
+            }
+        }
+    }
+
+
+    // SPACING
+
+    @each $spacing, $value in mapsDefault.$spacing-map {
+        --eui-base-spacing-#{$spacing}: #{$value};
+    }
+
+
+    // COLOR BASE for legacy
+
+    @each $color, $shades in maps.$color-map {
+        @each $shade, $value in $shades {
+            $base-color: $color;
+
+            @if $color == 'neutral' {
+                $base-color: 'grey'
+            }
+
+            --eui-base-color-#{$base-color + '-' + $shade}: #{$value};
+            --eui-base-color-#{$base-color + '-' + $shade}-contrast: #{base.getContrast($value)};
+        }
+    }
+}

@@ -1,0 +1,30 @@
+@use "sass:math";
+
+@function v($var, $fallback: null) {
+    @if ($fallback) {
+        @return var(--#{$var}, #{$fallback});
+    } @else {
+        @return var(--#{$var});
+    }
+}
+@function map-deep-get($map, $keys...) {
+    @each $key in $keys {
+        @debug #{$map};
+        $map: map-get($map, $key);
+    }
+    @return $map;
+}
+
+@function strip-units($value) {
+    @return math.div($value, $value * 0 + 1);
+}
+@function to-rem($pxval) {
+    @if not unitless($pxval) {
+        $pxval: strip-units($pxval);
+    }
+    $base: 16px;
+    @if not unitless($base) {
+        $base: strip-units($base);
+    }
+    @return math.div($pxval, $base) * 1rem;
+}

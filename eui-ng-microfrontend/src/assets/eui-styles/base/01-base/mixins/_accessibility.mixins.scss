@@ -1,0 +1,109 @@
+$outline-offset: -2px;
+$outline-size: 2px;
+
+// Call this mixin to enforce the accessibility visuals when on focus/active
+@mixin eui-accessible-focus($offset: $outline-offset, $size: $outline-size) {
+    &:focus:not([readonly]) {
+        outline: $size solid var(--eui-c-focus) !important;
+        outline-offset: $offset !important;
+        transition: none;
+    }
+
+    &:focus-visible:not([readonly]) {
+        outline: $size solid var(--eui-c-focus-visible) !important;
+        outline-offset: $offset !important;
+        transition: none;
+    }
+
+    // Forced focusable element
+    [tabindex="0"] {
+        // &:active:not([readonly]),
+        &:focus:not([readonly]) {
+            outline: $size solid var(--eui-c-focus-visible) !important;
+            outline-offset: $offset !important;
+            transition: none;
+        }
+    }
+}
+
+@mixin eui-accessible-focus-only($offset: $outline-offset, $size: $outline-size) {
+    &:focus:not([readonly]) {
+        outline: $size solid var(--eui-c-focus) !important;
+        outline-offset: $offset !important;
+        transition: none;
+    }
+}
+
+@mixin eui-accessible-focus-visible($offset: $outline-offset, $size: $outline-size) {
+    &:focus-visible:not([readonly]) {
+        outline: $size solid var(--eui-c-focus-visible) !important;
+        outline-offset: $offset !important;
+        transition: none;
+    }
+}
+
+@mixin eui-accessible-focus-rounded($offset: $outline-offset, $size: $outline-size) {
+    &:focus:not([readonly]) {
+        border-radius: var(--eui-br-max);
+        outline: $size solid var(--eui-c-focus) !important;
+        outline-offset: $offset !important;
+        transition: none;
+    }
+
+    &:focus-visible:not([readonly]) {
+        border-radius: var(--eui-br-max);
+        outline: $size solid var(--eui-c-focus-visible) !important;
+        outline-offset: $offset !important;
+        transition: none;
+    }
+}
+
+@mixin eui-accessible-focus-visible-rounded($offset: $outline-offset, $size: $outline-size) {
+    &:focus-visible:not([readonly]) {
+        border-radius: var(--eui-br-max);
+        outline: $size solid var(--eui-c-focus-visible) !important;
+        outline-offset: $offset !important;
+        transition: none;
+    }
+}
+
+@mixin eui-accessible-focus-border() {
+    border-left: var(--eui-s-2xs) solid transparent;
+
+    &:focus:not([readonly]) {
+        border: var(--eui-s-2xs) solid var(--eui-c-focus-visible) !important;
+        transition: none;
+    }
+}
+
+
+
+@mixin eui-accessible-focus-ring($offset: 1px) {
+    &:focus:not([readonly]) {
+        outline: var(--eui-bw-s) solid var(--eui-c-s-primary-border-light) !important;
+        outline-offset: $offset !important;
+        border-radius: var(--eui-br-s) !important;
+    }
+}
+@mixin eui-accessible-focus-ring-rounded($offset: 1px) {
+    &:focus:not([readonly]) {
+        outline: var(--eui-bw-s) solid var(--eui-c-s-primary-border-light) !important;
+        outline-offset: $offset !important;
+        border-radius: var(--eui-br-max) !important;
+    }
+}
+@mixin eui-accessible-focus-visible-ring($offset: 1px) {
+    &:focus-visible:not([readonly]) {
+        outline: var(--eui-bw-s) solid var(--eui-c-s-primary-border-light) !important;
+        outline-offset: $offset !important;
+        border-radius: var(--eui-br-s) !important;
+    }
+}
+@mixin eui-accessible-focus-visible-ring-rounded($offset: 1px) {
+    &:focus-visible:not([readonly]) {
+        outline: var(--eui-bw-s) solid var(--eui-c-s-primary-border-light) !important;
+        outline-offset: $offset !important;
+        border-radius: var(--eui-br-max) !important;
+    }
+}
+

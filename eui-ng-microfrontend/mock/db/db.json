@@ -1,0 +1,10 @@
+{
+  "user-details": {
+    "userId": "doejohn",
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "John.DOE@ec.europa.eu"
+  },
+  "users": [
+  ]
+}

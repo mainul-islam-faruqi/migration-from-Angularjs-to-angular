@@ -1,0 +1,52 @@
+@use '../02-tokens/maps-legacy-theme' as maps;
+
+html.eui-t-eui-legacy {
+    .eui-u-color-black {
+        color: var(--eui-c-black) !important;
+    }
+
+    .eui-u-bg-color-black {
+        background-color: var(--eui-c-black) !important;
+        color: var(--eui-c-white) !important;
+    }
+
+    .eui-u-color-white {
+        color: var(--eui-c-white) !important;
+    }
+
+    .eui-u-bg-color-white {
+        background-color: var(--eui-c-white) !important;
+        color: var(--eui-c-text) !important;
+    }
+    @each $color, $shades in maps.$color-map {
+        @each $shade, $value in $shades {
+            $base-color: $color;
+
+            @if $color == 'neutral' {
+                $base-color: 'grey'
+            }
+
+            .eui-u-color-#{$base-color + '-' + $shade} {
+                color: var(--eui-base-color-#{$base-color + '-' + $shade}) !important;
+            };
+
+            .eui-u-bg-color-#{$base-color + '-' + $shade} {
+                background-color: var(--eui-base-color-#{$base-color + '-' + $shade}) !important;
+                color: var(--eui-base-color-#{$base-color + '-' + $shade}-contrast) !important;
+            }
+        }
+    }
+
+    .eui-u-font-regular {
+        font-style: normal !important;
+        font-weight: normal !important;
+    }
+    .eui-u-font-bold-italic {
+        font-style: italic !important;
+        font-weight: 700 !important;
+    }
+    .eui-u-font-italic {
+        font-style: italic !important;
+        font-weight: normal !important;
+    }
+}

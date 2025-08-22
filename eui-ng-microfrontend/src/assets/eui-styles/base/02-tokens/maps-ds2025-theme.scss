@@ -1,0 +1,455 @@
+// COLORS
+
+// eUI DEFAULT NEUTRAL
+$eui-neutral-160: #131313;
+$eui-neutral-140: #1d1d1d;
+$eui-neutral-120: #262626;
+$eui-neutral-110: #2b2b2b;
+$eui-neutral-100: #303030;
+$eui-neutral-80: #595959;
+$eui-neutral-60: #838383;
+$eui-neutral-40: #acacac;
+$eui-neutral-20: #d6d6d6;
+$eui-neutral-10: #eaeaea;
+$eui-neutral-5: #f5f5f5;
+$eui-neutral-2: #fcfcfc;
+$eui-neutral-0: #fff;
+
+// eui DEFAULT ACCENT (ec-yellow)
+$eui-accent-160: #432105;
+$eui-accent-140: #734110;
+$eui-accent-120: #a46704;
+$eui-accent-110: #ce9100;
+$eui-accent-100: #efbc03;
+$eui-accent-80: #ffd617;
+$eui-accent-60: #ffe843;
+$eui-accent-40: #fff587;
+$eui-accent-20: #fffbc2;
+$eui-accent-10: #fefde8;
+$eui-accent-5: #fffcf7;
+$eui-accent-0: #fff;
+
+
+
+// ECL v5 default branding
+$ecl-blue-navy-50: #f5f5fa;
+$ecl-blue-navy-100: #f0f0f8;
+$ecl-blue-navy-200: #d9d9ec;
+$ecl-blue-navy-300: #bfbfe0;
+$ecl-blue-navy-400: #a0a0d1;
+$ecl-blue-navy-500: #8c8cc7;
+$ecl-blue-navy-600: #4545a4;
+$ecl-blue-navy-700: #000083;
+$ecl-blue-navy-800: #000069;
+$ecl-blue-navy-900: #00002e;
+$ecl-blue-navy-950: #000022; // ADDED for eUI 120 mapping
+
+$primary-blue-25: #f8f9ff;
+$primary-blue-50: #f0f4fe;
+$primary-blue-75: #e6ecfc;
+$primary-blue-100: #dce5fd;
+$primary-blue-200: #c2d2fb;
+$primary-blue-300: #98b6f8;
+$primary-blue-400: #5e88f1;
+$primary-blue-500: #3860ed;
+$primary-blue-600: #2d49e3;
+$primary-blue-700: #2537d0;
+$primary-blue-800: #242ea9;
+$primary-blue-900: #232c85;
+$primary-blue-950: #1a1d51;
+
+$primary-yellow-50: #fff9ed;
+$primary-yellow-100: #fff1d4;
+$primary-yellow-200: #ffdfa9;
+$primary-yellow-300: #ffbe5c;
+$primary-yellow-400: #fea439;
+$primary-yellow-500: #fc8713;
+$primary-yellow-600: #ed6c09;
+$primary-yellow-700: #c55109;
+$primary-yellow-800: #9c4010;
+$primary-yellow-900: #7e3610;
+$primary-yellow-950: #441a06;
+
+// $primary-neutral-25: #fafafb;
+// $primary-neutral-50: #f6f7f9;
+// $primary-neutral-100: #e9ebee;
+// $primary-neutral-200: #d9dce2;
+// $primary-neutral-300: #bec3ce;
+// $primary-neutral-400: #a4abb9;
+// $primary-neutral-500: #8a92a3;
+// $primary-neutral-600: #646e83;
+// $primary-neutral-700: #576278;
+// $primary-neutral-800: #3f4a62;
+// $primary-neutral-900: #26324b;
+// $primary-neutral-950: #1e283c;
+
+$alert-error-50: #fef2f3;
+$alert-error-100: #ffc9cc;
+$alert-error-200: #ffc9cc;
+$alert-error-300: #fda4a9;
+$alert-error-400: #fa6f76;
+$alert-error-500: #f1424b;
+$alert-error-600: #df232d;
+$alert-error-700: #ae1820;
+$alert-error-800: #9b1920;
+$alert-error-900: #801c21;
+$alert-error-950: #46090c;
+
+$alert-warning-50: #fefbe8;
+$alert-warning-100: #fff7c2;
+$alert-warning-200: #ffed89;
+$alert-warning-300: #ffdb45;
+$alert-warning-400: #fcc614;
+$alert-warning-500: #e3ac00;
+$alert-warning-600: #bf8c00;
+$alert-warning-700: #956e00;
+$alert-warning-800: #795d00;
+$alert-warning-900: #5e4a00;
+$alert-warning-950: #352b00;
+
+$alert-success-50: #f1fcf3;
+$alert-success-100: #defae5;
+$alert-success-200: #bef4cc;
+$alert-success-300: #8ce9a6;
+$alert-success-400: #52d676;
+$alert-success-500: #2bbc53;
+$alert-success-600: #1e9b41;
+$alert-success-700: #1d833b;
+$alert-success-800: #1a612f;
+$alert-success-900: #184f29;
+$alert-success-950: #072c13;
+
+$alert-info-50: #f0f9ff;
+$alert-info-100: #dff1ff;
+$alert-info-200: #b9e4fe;
+$alert-info-300: #7bd0fe;
+$alert-info-400: #34b8fc;
+$alert-info-500: #0aa0ed;
+$alert-info-600: #007acb;
+$alert-info-700: #006ab5;
+$alert-info-800: #005288;
+$alert-info-900: #004370;
+$alert-info-950: #002a4a;
+
+
+$color-map: (
+    branding: (
+        120: $ecl-blue-navy-950,
+        110: $ecl-blue-navy-950,
+        100: $ecl-blue-navy-900,
+        80: $ecl-blue-navy-800,
+        60: $ecl-blue-navy-700,
+        40: $ecl-blue-navy-600,
+        20: $ecl-blue-navy-500,
+        10: $ecl-blue-navy-400,
+        5: $ecl-blue-navy-300,
+        2: $ecl-blue-navy-200,
+        0: $ecl-blue-navy-100,
+    ),
+    primary: (
+        160: $primary-blue-950,
+        140: $primary-blue-900,
+        120: $primary-blue-700,
+        110: $primary-blue-600,
+        100: $primary-blue-500,
+        80: $primary-blue-400,
+        60: $primary-blue-300,
+        40: $primary-blue-200,
+        20: $primary-blue-100,
+        10: $primary-blue-75,
+        5: $primary-blue-50,
+        0: $primary-blue-25
+    ),
+    neutral: (
+        160: $eui-neutral-160,
+        140: $eui-neutral-140,
+        120: $eui-neutral-120,
+        110: $eui-neutral-110,
+        100: $eui-neutral-100,
+        80: $eui-neutral-80,
+        60: $eui-neutral-60,
+        40: $eui-neutral-40,
+        20: $eui-neutral-20,
+        10: $eui-neutral-10,
+        5: $eui-neutral-5,
+        2: $eui-neutral-2,
+        0: $eui-neutral-0
+    ),
+    accent: (
+        160: $eui-accent-160,
+        140: $eui-accent-140,
+        120: $eui-accent-120,
+        110: $eui-accent-110,
+        100: $eui-accent-100,
+        80: $eui-accent-80,
+        60: $eui-accent-60,
+        40: $eui-accent-40,
+        20: $eui-accent-20,
+        10: $eui-accent-10,
+        5: $eui-accent-5,
+        0: $eui-accent-0
+    ),
+    info: (
+        160: $alert-info-950,
+        140: $alert-info-900,
+        120: $alert-info-800,
+        110: $alert-info-700,
+        100: $alert-info-600,
+        80: $alert-info-500,
+        60: $alert-info-500,
+        40: $alert-info-400,
+        20: $alert-info-300,
+        10: $alert-info-200,
+        5: $alert-info-100,
+        0: $alert-info-50
+    ),
+    success: (
+        160: $alert-success-950,
+        140: $alert-success-900,
+        120: $alert-success-800,
+        110: $alert-success-700,
+        100: $alert-success-600,
+        80: $alert-success-500,
+        60: $alert-success-500,
+        40: $alert-success-400,
+        20: $alert-success-300,
+        10: $alert-success-200,
+        5: $alert-success-100,
+        0: $alert-success-50
+    ),
+    warning: (
+        160: $alert-warning-950,
+        140: $alert-warning-900,
+        120: $alert-warning-800,
+        110: $alert-warning-700,
+        100: $alert-warning-600,
+        80: $alert-warning-500,
+        60: $alert-warning-500,
+        40: $alert-warning-400,
+        20: $alert-warning-300,
+        10: $alert-warning-200,
+        5: $alert-warning-100,
+        0: $alert-warning-50
+    ),
+    danger: (
+        160: $alert-error-950,
+        140: $alert-error-900,
+        120: $alert-error-800,
+        110: $alert-error-700,
+        100: $alert-error-600,
+        80: $alert-error-500,
+        60: $alert-error-500,
+        40: $alert-error-400,
+        20: $alert-error-300,
+        10: $alert-error-200,
+        5: $alert-error-100,
+        0: $alert-error-50
+    ),
+    cta: (
+        160: $primary-yellow-950,
+        140: $primary-yellow-900,
+        120: $primary-yellow-800,
+        110: $primary-yellow-700,
+        100: $primary-yellow-600,
+        80: $primary-yellow-500,
+        60: $primary-yellow-500,
+        40: $primary-yellow-400,
+        20: $primary-yellow-300,
+        10: $primary-yellow-200,
+        5: $primary-yellow-100,
+        0: $primary-yellow-50
+    )
+);
+
+
+// TYPOGRAPHY
+
+$font-weight-map: (
+    'regular': 400,
+    'medium': 500,
+    'semi-bold': 600,
+    'bold': 700
+);
+
+$font-map: (
+    'display': (
+        'm': (
+            'desktop': (
+                'size': 3rem,
+                'line-height': 3.5rem
+            ),
+            'tablet': (
+                'size': 2.75rem,
+                'line-height': 3.25rem
+            ),
+            'mobile': (
+                'size': 2rem,
+                'line-height': 2.25rem
+            )
+        )
+    ),    
+    'title': (
+        'xl': (
+            'desktop': (
+                'size': 2.5rem,
+                'line-height': 3rem
+            ),
+            'tablet': (
+                'size': 2rem,
+                'line-height': 2.75rem
+            ),
+            'mobile': (
+                'size': 1.75rem,
+                'line-height': 2.5rem
+            )
+        ),
+        'xs': (
+            'desktop': (
+                'size': 1.25rem,
+                'line-height': 1.75rem
+            ),
+            'tablet': (
+                'size': 1.25rem,
+                'line-height': 1.75rem
+            ),
+            'mobile': (
+                'size': 1.2rem,
+                'line-height': 1.5rem
+            )
+        ),
+        '2xs': (
+            'desktop': (
+                'size': 1rem,
+                'line-height': 1.5rem
+            ),
+            'tablet': (
+                'size': 1rem,
+                'line-height': 1.5rem
+            ),
+            'mobile': (
+                'size': 1rem,
+                'line-height': 1.5rem
+            )
+        )
+    ),
+    'card-title': (
+        'm': (
+            'desktop': (
+                'size': 1.125rem,
+                'line-height': 1.5rem
+            ),            
+            'tablet': (
+                'size': 1.125rem,
+                'line-height': 1.5rem
+            ),            
+            'mobile': (
+                'size': 1.125rem,
+                'line-height': 1.5rem
+            )            
+        )
+    ),    
+    'label': (
+        'm': (
+            'desktop': (
+                'size': 0.875rem,
+                'line-height': 1.25rem
+            ),            
+            'tablet': (
+                'size': 0.875rem,
+                'line-height': 1.25rem
+            ),            
+            'mobile': (
+                'size': 0.875rem,
+                'line-height': 1.25rem
+            )            
+        ),
+        'l': (
+            'desktop': (
+                'size': 1rem,
+                'line-height': 1.5rem
+            ),            
+            'tablet': (
+                'size': 1rem,
+                'line-height': 1.5rem
+            ),            
+            'mobile': (
+                'size': 1rem,
+                'line-height': 1.5rem
+            )            
+        )
+    ),
+    'body': (
+        's': (
+            'desktop': (
+                'size': 0.875rem,
+                'line-height': 1.25rem
+            ),            
+            'tablet': (
+                'size': 0.875rem,
+                'line-height': 1.25rem
+            ),            
+            'mobile': (
+                'size': 0.875rem,
+                'line-height': 1.25rem
+            )            
+        ),
+        'm': (
+            'desktop': (
+                'size': 1rem,
+                'line-height': 1.5rem
+            ),            
+            'tablet': (
+                'size': 1rem,
+                'line-height': 1.5rem
+            ),            
+            'mobile': (
+                'size': 1rem,
+                'line-height': 1.5rem
+            )            
+        ),
+        'l': (
+            'desktop': (
+                'size': 1.25rem,
+                'line-height': 1.75rem
+            ),            
+            'tablet': (
+                'size': 1.25rem,
+                'line-height': 1.75rem
+            ),            
+            'mobile': (
+                'size': 1.25rem,
+                'line-height': 1.75rem
+            )            
+        ),        
+        'xl': (
+            'desktop': (
+                'size': 1.5rem,
+                'line-height': 2rem
+            ),            
+            'tablet': (
+                'size': 1.5rem,
+                'line-height': 2rem
+            ),            
+            'mobile': (
+                'size': 1.5rem,
+                'line-height': 2rem
+            )            
+        )        
+    ),
+    'microcopy': (
+        'm': (
+            'desktop': (
+                'size': 0.75rem,
+                'line-height': 1rem
+            ),            
+            'tablet': (
+                'size': 0.75rem,
+                'line-height': 1rem
+            ),            
+            'mobile': (
+                'size': 0.75rem,
+                'line-height': 1rem
+            )            
+        )
+    )
+);

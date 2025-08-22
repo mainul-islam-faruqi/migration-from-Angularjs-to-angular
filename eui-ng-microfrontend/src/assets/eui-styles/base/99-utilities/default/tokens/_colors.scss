@@ -1,0 +1,50 @@
+@use '../../../../base/02-tokens/maps' as tokens;
+
+// in v18, default utilities are mapping the context colors
+.eui-u-c-black {
+    color: var(--eui-c-black) !important;
+}
+
+.eui-u-c-bg-black {
+    background-color: var(--eui-c-black) !important;
+    color: var(--eui-c-white) !important;
+}
+
+.eui-u-c-white {
+    color: var(--eui-c-white) !important;
+}
+
+.eui-u-c-bg-white {
+    background-color: var(--eui-c-white) !important;
+    color: var(--eui-c-text) !important;
+}
+
+
+// context colors
+@each $color, $shades in tokens.$color-context-map {
+    @each $shade, $value in $shades {
+        @if $shade != border and $shade != hover {
+
+            @if $shade == base {
+                .eui-u-c-#{$color} {
+                    color: var(--eui-c-#{$color}) !important;
+                };
+
+                .eui-u-c-bg-#{$color} {
+                    background-color: var(--eui-c-#{$color}) !important;
+                    color: var(--eui-c-#{$color}-contrast) !important;
+                }
+
+            } @else {
+                .eui-u-c-#{$color + '-' + $shade} {
+                    color: var(--eui-c-#{$color + '-' + $shade}) !important;
+                };
+
+                .eui-u-c-bg-#{$color + '-' + $shade} {
+                    background-color: var(--eui-c-#{$color + '-' + $shade}) !important;
+                    color: var(--eui-c-#{$color + '-' + $shade}-contrast) !important;
+                }
+            }
+        }
+    }
+}

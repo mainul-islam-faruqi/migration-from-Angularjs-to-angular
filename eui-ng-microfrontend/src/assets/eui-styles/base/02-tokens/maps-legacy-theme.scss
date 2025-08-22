@@ -1,0 +1,133 @@
+// COLORS
+
+$color-map: (
+    branding: (
+        120: #003676,
+        100: #004494,
+        75: #3369a9
+    ),
+    primary: (
+        140: #002959,
+        130: #003068,
+        120: #003676,
+        110: #003d85,
+        100: #004494,
+        75: #4073af,
+        50: #80a2ca,
+        25: #bfd0e4,
+        10: #e6ecf4,
+        5: #f2f6fa,
+        0: #fff
+    ),
+    neutral: (
+        140: #1d1d1d,
+        130: #222,
+        120: #262626,
+        110: #2b2b2b,
+        100: #303030,
+        90: #454545,
+        80: #595959,
+        75: #646464,
+        50: #989898,
+        25: #cbcbcb,
+        20: #d6d6d6,
+        15: #e0e0e0,
+        10: #eaeaea,
+        5: #f5f5f5,
+        0: #fff
+    ),
+    accent: (
+        140: #896d00,
+        130: #b38f00,
+        120: #cca300,
+        110: #e6b800,
+        100: #fc0,
+        75: #ffd940,
+        50: #ffe680,
+        25: #fff2bf,
+        10: #fffae6,
+        5: #fffcf2,
+        0: #fff
+    ),
+    info: (
+        140: #00436c,
+        130: #004e7e,
+        120: #005990,
+        110: #0064a2,
+        100: #006fb4,
+        75: #2277ab,
+        50: #80b7da,
+        25: #bfdbec,
+        10: #e6f1f8,
+        5: #f2f8fb,
+        0: #fff
+    ),
+    success: (
+        140: #2a4922,
+        130: #315528,
+        120: #38622e,
+        110: #3f6e33,
+        100: #467a39,
+        75: #5d7d55,
+        50: #a3bd9c,
+        25: #d1dece,
+        10: #edf2eb,
+        5: #f6f8f5,
+        0: #fff
+    ),
+    warning: (
+        140: #613c10,
+        130: #794b14,
+        120: #915917,
+        110: #da8623,
+        100: #f29527,
+        75: #f5b05d,
+        50: #f9ca93,
+        25: #fce5c9,
+        10: #fef4e9,
+        5: #fefaf4,
+        0: #fff
+    ),
+    danger: (
+        140: #83141d,
+        130: #991722,
+        120: #ae1a27,
+        110: #c41e2c,
+        100: #da2131,
+        75: #c14b55,
+        50: #ed9098,
+        25: #f6c8cc,
+        10: #fbe9ea,
+        5: #fdf4f5,
+        0: #fff
+    )
+);
+
+$color-context-map: (
+    neutral: (
+        base: '100', darkest: '160', darker: '140', dark: '110', light: '75', lighter: '50', lightest: '25',
+        bg: '10', bg-light: '5'
+    ),
+    branding: (
+        base: '100', dark: '120', light: '75'
+    ),
+    primary: (
+        base: '100', darkest: '160', darker: '140', dark: '120', light: '75', lighter: '50', lightest: '25', bg: '10', bg-light: '5'
+    ),
+    info: (
+        base: '100', darkest: '160', darker: '140', dark: '120', light: '75', lighter: '50', lightest: '25', bg: '10', bg-light: '5'
+    ),
+    success: (
+        base: '100', darkest: '160', darker: '140', dark: '120', light: '75', lighter: '50', lightest: '25', bg: '10', bg-light: '5'
+    ),
+    warning: (
+        base: '100', darkest: '160', darker: '140', dark: '120', light: '75', lighter: '50', lightest: '25', bg: '10', bg-light: '5'
+    ),
+    danger: (
+        base: '100', darkest: '160', darker: '140', dark: '120', light: '75', lighter: '50', lightest: '25', bg: '10', bg-light: '5'
+    ),
+    accent: (
+        base: '100', darkest: '160', darker: '140', dark: '120', light: '75', lighter: '50', lightest: '25',
+        bg: '10', bg-light: '5'
+    ),
+);

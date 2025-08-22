@@ -1,0 +1,21 @@
+@use 'hacks';
+
+@mixin eui-anim--slideInRight {
+    @include hacks.hacks();
+    @keyframes eui-anim--slideInRight {
+        from {
+            opacity: 0;
+            transform: translate3d(50%, 0, 0);
+            visibility: visible;
+        }
+
+        to {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+    }
+    animation-name: eui-anim--slideInRight;
+    animation-duration: var(--eui-base-animation-duration-medium);
+    backface-visibility: visible;
+}
+

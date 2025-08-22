@@ -1,0 +1,24 @@
+// Single side border-radius
+@mixin eui-border-radius($radius: null) {
+    @if ($radius) {
+        border-radius: $radius;
+    } @else {
+        border-radius: var(--eui-border-radius-base);
+    }
+}
+@mixin eui-border-top-radius($radius) {
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+}
+@mixin eui-border-right-radius($radius) {
+    border-bottom-right-radius: $radius;
+    border-top-right-radius: $radius;
+}
+@mixin eui-border-bottom-radius($radius) {
+    border-bottom-left-radius: $radius;
+    border-bottom-right-radius: $radius;
+}
+@mixin eui-border-left-radius($radius) {
+    border-bottom-left-radius: $radius;
+    border-top-left-radius: $radius;
+}

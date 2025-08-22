@@ -1,0 +1,21 @@
+@use 'hacks';
+
+@mixin eui-anim--fadeIn {
+    @include hacks.hacks();
+    @keyframes eui-anim--fadeIn {
+        from {
+            offset: 0;
+            opacity: 0;
+            visibility: visible;
+        }
+
+        to {
+            offset: 1;
+            opacity: 1;
+        }
+    }
+    animation-name: eui-anim--fadeIn;
+    animation-duration: var(--eui-base-animation-duration-fast);
+    backface-visibility: visible;
+    transition-timing-function: ease;
+}

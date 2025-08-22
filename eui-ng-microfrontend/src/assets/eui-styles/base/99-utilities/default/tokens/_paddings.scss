@@ -1,0 +1,33 @@
+@use '../../../../base/02-tokens/maps' as tokens;
+
+@each $spacing, $value in tokens.$spacing-map {
+    .eui-u-pt-#{$spacing} {
+        padding-top: var(--eui-s-#{$spacing}) !important;
+    }
+    .eui-u-pb-#{$spacing} {
+        padding-bottom: var(--eui-s-#{$spacing}) !important;
+    }
+    .eui-u-pl-#{$spacing} {
+        padding-left: var(--eui-s-#{$spacing}) !important;
+    }
+    .eui-u-pr-#{$spacing} {
+        padding-right: var(--eui-s-#{$spacing}) !important;
+    }
+
+    .eui-u-p-#{$spacing} {
+        padding: var(--eui-s-#{$spacing}) !important;
+    }
+    .eui-u-pv-#{$spacing} {
+        padding-top: var(--eui-s-#{$spacing}) !important;
+        padding-bottom: var(--eui-s-#{$spacing}) !important;
+    }
+    .eui-u-ph-#{$spacing} {
+        padding-left: var(--eui-s-#{$spacing}) !important;
+        padding-right: var(--eui-s-#{$spacing}) !important;
+    }
+
+    .eui-u-spacing-#{$spacing} {
+        min-width: var(--eui-s-#{$spacing}) !important;
+        width: var(--eui-s-#{$spacing}) !important;
+    }
+}

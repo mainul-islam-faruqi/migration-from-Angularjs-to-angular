@@ -1,0 +1,128 @@
+@use '../../../../base/02-tokens/maps' as maps;
+
+// CONTAINERS
+.eui-u-flex {
+    align-items: center !important;
+    display: flex !important;
+    width: 100% !important;
+}
+
+.eui-u-flex-column {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.eui-u-inline-flex {
+    align-items: center !important;
+    display: inline-flex !important;
+}
+
+// Replacement of d-flex
+.eui-u-display-flex,
+.eui-u-d-flex {
+    display: flex !important;
+}
+
+.eui-u-display-inline-flex,
+.eui-u-d-inline-flex {
+    display: inline-flex !important;
+}
+
+// JUSTIFY content
+.eui-u-flex-justify-content-start {
+    justify-content: flex-start !important;
+}
+
+.eui-u-flex-justify-content-end {
+    justify-content: flex-end !important;
+}
+
+.eui-u-flex-justify-content-center {
+    justify-content: center !important;
+}
+
+.eui-u-flex-justify-content-around {
+    justify-content: space-around !important;
+}
+
+.eui-u-flex-justify-content-between {
+    justify-content: space-between !important;
+}
+
+.eui-u-flex-justify-content-evenly {
+    justify-content: space-evenly !important;
+}
+
+// ITEMS alignements
+.eui-u-flex-align-items-start {
+    align-items: flex-start !important;
+}
+
+.eui-u-flex-align-items-center {
+    align-items: center !important;
+}
+.eui-u-flex-align-items-end {
+    align-items: flex-end !important;
+}
+
+.eui-u-flex-align-items-stretch {
+    align-items: stretch !important;
+}
+
+// DIRECTION layout
+.eui-u-flex-row {
+    flex-direction: row !important;
+}
+
+.eui-u-flex-row-reverse {
+    flex-direction: row-reverse !important;
+}
+
+.eui-u-flex-column {
+    flex-direction: column !important;
+}
+
+.eui-u-flex-column-reverse {
+    flex-direction: column-reverse !important;
+}
+
+// VARIOUS
+.eui-u-flex-wrap {
+    flex-wrap: wrap !important;
+}
+
+.eui-u-flex-wrap-reverse {
+    flex-wrap: wrap-reverse !important;
+}
+
+.eui-u-flex-nowrap {
+    flex-wrap: nowrap !important;
+}
+
+.eui-u-flex-col {
+    flex: 1 0 0% !important;
+}
+
+.eui-u-flex-grow {
+    display: initial !important;
+    flex-grow: 1 !important;
+}
+
+.eui-u-flex-no-grow {
+    flex-grow: 0 !important;
+}
+
+.eui-u-flex-shrink {
+    display: initial !important;
+    flex-shrink: 0 !important;
+}
+
+.eui-u-flex-no-shrink {
+    flex-shrink: 0 !important;
+}
+
+@each $spacing, $value in maps.$spacing-map {
+    .eui-u-flex-gap-#{$spacing} {
+        gap: var(--eui-s-#{$spacing}) !important;
+    }
+}

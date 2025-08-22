@@ -1,0 +1,73 @@
+@use 'accessibility.mixins' as a11y;
+@use 'loading-indicator' as loadingIndicator;
+
+// TODO: this mixin should not be used an element that is not input.
+// eUI Inputs Layout & states commons
+// Used for: eui-input-text, eui-input-number, eui-select, eui-textarea, eui-datepicker, eui-autocomplete
+@mixin eui-input($element: input) {
+    font: var(--eui-f-m);
+    appearance: none;
+    background-color: var(--eui-c-surface-container);
+    border: 1px solid var(--eui-c-s-secondary-border-light);
+    border-radius: var(--eui-br-m);
+    box-shadow: none;
+    color: var(--eui-c-text);
+    padding: calc(var(--eui-s-xs) - 1px) calc(var(--eui-s-m) - 1px); // ECL aligned
+    width: 100%;
+    @include a11y.eui-accessible-focus();
+
+    &:not([hidden]) {
+        display: block;
+    }
+
+    &::placeholder {
+        color: var(--eui-c-text-lighter) !important;
+        opacity: 1;     // Firefox adds a lower opacity to the placeholder color
+    }
+
+    // STATES
+    &[readonly] {
+        background-color: transparent;
+        border-color: transparent;
+        box-shadow: none;
+        height: inherit;
+        padding-left: 0;
+        padding-right: 0;
+        pointer-events: none;
+
+        + .eui-feedback-message,
+        + .eui-input-maxlength {
+            appearance: none;
+            display: none;
+        }
+    }
+
+    &[disabled]:not([readonly]),
+    &--disabled:not([readonly]) {
+        background-color: var(--eui-c-s-secondary-surface-light) !important;
+        border: 1px solid var(--eui-c-s-secondary-border-lighter);
+        color: var(--eui-c-text-light);
+        @if $element == textarea {
+            pointer-events: auto;
+        } @else {
+            pointer-events: none;
+        }
+    }
+
+    &--invalid,
+    &--danger {
+        border: 1px solid var(--eui-c-s-danger-border);
+    }
+
+    &--loading {
+        padding-right: var(--eui-s-4xl);
+
+        &-icon {
+            @include loadingIndicator.loading-indicator();
+        }
+    }
+
+    &--clearable {
+        padding-right: var(--eui-s-4xl);
+    }
+}

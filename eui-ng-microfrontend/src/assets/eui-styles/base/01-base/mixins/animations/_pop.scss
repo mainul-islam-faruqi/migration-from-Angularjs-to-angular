@@ -1,0 +1,19 @@
+@use 'hacks';
+
+@mixin eui-anim--pop {
+	@include hacks.hacks();
+    @keyframes eui-anim--pop {
+        50% {
+            transform: scale(1.1);
+        }
+    }
+
+	&:hover,
+	&:focus,
+	&:active {
+		animation-name: eui-anim--pop;
+		animation-duration: var(--eui-base-animation-duration-medium);
+		animation-timing-function: linear;
+		animation-iteration-count: 1;
+	}
+}

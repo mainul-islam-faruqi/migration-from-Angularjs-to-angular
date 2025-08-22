@@ -1,0 +1,91 @@
+@use '../01-base' as base;
+@use '../02-tokens/maps-ds2025-theme' as maps;
+@use '../02-tokens/maps' as mapsDefault;
+
+@font-face {
+  font-family: 'Inter';
+  src: url('#{base.$eui-assets-base-path}/fonts/inter/InterVariable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('#{base.$eui-assets-base-path}/fonts/inter//InterVariable-Italic.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: italic;
+}
+
+html.eui-t-ds2025 {
+    // COLOR
+
+    @each $color, $shades in maps.$color-map {
+        @each $shade, $value in $shades {
+            --eui-bc-#{$color + '-' + $shade}: #{$value};
+            --eui-bc-#{$color + '-' + $shade}-contrast: #{base.getContrast($value)};
+        }
+    }
+
+    // TYPOGRAPHY
+
+    --eui-f-family: 'Inter', arial, sans-serif;
+
+    @each $size, $def in maps.$font-weight-map {
+        --eui-f-weight-#{$size}: #{$def};
+    }
+
+    @each $font, $fontDef in maps.$font-map {
+        @each $size, $sizeDef in $fontDef {
+            $desktop: map-get($sizeDef, 'desktop');
+            $tablet: map-get($sizeDef, 'tablet');
+            $mobile: map-get($sizeDef, 'mobile');
+
+            @each $type, $def in $desktop {
+                --eui-f-#{$font}-#{$size}-#{$type}: #{$def};
+            }
+            @each $type, $def in $tablet {
+                --eui-f-#{$font}-#{$size}-tablet-#{$type}: #{$def};
+            }
+            @each $type, $def in $mobile {
+                --eui-f-#{$font}-#{$size}-mobile-#{$type}: #{$def};
+            }
+            --eui-f-#{$font}-#{$size}-regular: normal normal var(--eui-f-weight-regular) var(--eui-f-#{$font}-#{$size}-size)/var(--eui-f-#{$font}-#{$size}-line-height) var(--eui-f-family);
+            --eui-f-#{$font}-#{$size}-medium: normal normal var(--eui-f-weight-medium) var(--eui-f-#{$font}-#{$size}-size)/var(--eui-f-#{$font}-#{$size}-line-height) var(--eui-f-family);
+            --eui-f-#{$font}-#{$size}-semi-bold: normal normal var(--eui-f-weight-semi-bold) var(--eui-f-#{$font}-#{$size}-size)/var(--eui-f-#{$font}-#{$size}-line-height) var(--eui-f-family);
+            --eui-f-#{$font}-#{$size}-bold: normal normal var(--eui-f-weight-semi-bold) var(--eui-f-#{$font}-#{$size}-size)/var(--eui-f-#{$font}-#{$size}-line-height) var(--eui-f-family);
+
+            --eui-f-#{$font}-#{$size}-tablet-regular: normal normal var(--eui-f-weight-regular) var(--eui-f-#{$font}-#{$size}-tablet-size)/var(--eui-f-#{$font}-#{$size}-tablet-line-height) var(--eui-f-family);
+            --eui-f-#{$font}-#{$size}-tablet-medium: normal normal var(--eui-f-weight-medium) var(--eui-f-#{$font}-#{$size}-tablet-size)/var(--eui-f-#{$font}-#{$size}-tablet-line-height) var(--eui-f-family);
+            --eui-f-#{$font}-#{$size}-tablet-semi-bold: normal normal var(--eui-f-weight-semi-bold) var(--eui-f-#{$font}-#{$size}-tablet-size)/var(--eui-f-#{$font}-#{$size}-tablet-line-height) var(--eui-f-family);
+            --eui-f-#{$font}-#{$size}-tablet-bold: normal normal var(--eui-f-weight-semi-bold) var(--eui-f-#{$font}-#{$size}-tablet-size)/var(--eui-f-#{$font}-#{$size}-tablet-line-height) var(--eui-f-family);
+
+            --eui-f-#{$font}-#{$size}-mobile-regular: normal normal var(--eui-f-weight-regular) var(--eui-f-#{$font}-#{$size}-mobile-size)/var(--eui-f-#{$font}-#{$size}-mobile-line-height) var(--eui-f-family);
+            --eui-f-#{$font}-#{$size}-mobile-medium: normal normal var(--eui-f-weight-medium) var(--eui-f-#{$font}-#{$size}-mobile-size)/var(--eui-f-#{$font}-#{$size}-mobile-line-height) var(--eui-f-family);
+            --eui-f-#{$font}-#{$size}-mobile-semi-bold: normal normal var(--eui-f-weight-semi-bold) var(--eui-f-#{$font}-#{$size}-mobile-size)/var(--eui-f-#{$font}-#{$size}-mobile-line-height) var(--eui-f-family);
+            --eui-f-#{$font}-#{$size}-mobile-bold: normal normal var(--eui-f-weight-semi-bold) var(--eui-f-#{$font}-#{$size}-mobile-size)/var(--eui-f-#{$font}-#{$size}-mobile-line-height) var(--eui-f-family);
+        }
+    }
+
+    @include base.media(mapsDefault.$eui-bkp-tablet) {
+        @each $font, $fontDef in maps.$font-map {
+            @each $size, $sizeDef in $fontDef {
+                --eui-f-#{$font}-#{$size}-regular: var(--eui-f-#{$font}-#{$size}-tablet-regular);
+                --eui-f-#{$font}-#{$size}-medium: var(--eui-f-#{$font}-#{$size}-tablet-medium);
+                --eui-f-#{$font}-#{$size}-semi-bold: var(--eui-f-#{$font}-#{$size}-tablet-semi-bold);
+                --eui-f-#{$font}-#{$size}-bold: var(--eui-f-#{$font}-#{$size}-tablet-bold);
+            }
+        }        
+    }
+    @include base.media(mapsDefault.$eui-bkp-mobile) {
+        @each $font, $fontDef in maps.$font-map {
+            @each $size, $sizeDef in $fontDef {
+                --eui-f-#{$font}-#{$size}-regular: var(--eui-f-#{$font}-#{$size}-mobile-regular);
+                --eui-f-#{$font}-#{$size}-medium: var(--eui-f-#{$font}-#{$size}-mobile-medium);
+                --eui-f-#{$font}-#{$size}-semi-bold: var(--eui-f-#{$font}-#{$size}-mobile-semi-bold);
+                --eui-f-#{$font}-#{$size}-bold: var(--eui-f-#{$font}-#{$size}-mobile-bold);
+            }
+        }   
+    }
+}

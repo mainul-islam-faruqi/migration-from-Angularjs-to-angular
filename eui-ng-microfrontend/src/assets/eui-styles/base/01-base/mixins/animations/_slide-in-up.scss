@@ -1,0 +1,21 @@
+@use 'hacks';
+
+@mixin eui-anim--slideInUp {
+    @include hacks.hacks();
+    @keyframes eui-anim--slideInUp {
+        from {
+            offset: 0;
+            transform: translate3d(0, 100%, 0);
+            visibility: visible;
+        }
+
+        to {
+            offset: 1;
+            transform: translate3d(0, 0, 0);
+        }
+    }
+    animation-name: eui-anim--slideInUp;
+    animation-duration: var(--eui-base-animation-duration-medium);
+    backface-visibility: visible;
+    transition-timing-function: ease;
+}
