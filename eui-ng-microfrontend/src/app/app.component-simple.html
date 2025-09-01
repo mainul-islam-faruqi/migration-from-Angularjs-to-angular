@@ -1,0 +1,10 @@
+<div style="padding: 20px; background: #f0f0f0; border: 2px solid green;">
+  <h3>✅ Angular App Running - Router Outlet Below</h3>
+  <p>Current URL: {{ router.url }}</p>
+  <p>Location href: {{ window.location.href }}</p>
+  <p>Hash: {{ window.location.hash }}</p>
+  <button (click)="navigateToHome()">Navigate to Home</button>
+  <div style="border: 1px solid blue; padding: 10px; margin: 10px 0;">
+    <router-outlet></router-outlet>
+  </div>
+</div>

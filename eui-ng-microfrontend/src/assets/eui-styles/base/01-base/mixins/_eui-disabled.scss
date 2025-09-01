@@ -1,6 +1,0 @@
-@mixin eui-disabled($opacity: var(--eui-o-50)) {
-    background-image: none;
-    box-shadow: none;
-    cursor: not-allowed !important;
-    opacity: $opacity;
-}

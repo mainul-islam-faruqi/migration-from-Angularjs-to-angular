@@ -1,6 +1,6 @@
 import { inject, provideAppInitializer } from '@angular/core';
 import { ApplicationConfig, importProvidersFrom } from '@angular/core';
-import { provideRouter, withDisabledInitialNavigation } from '@angular/router';
+import { provideRouter } from '@angular/router';
 import { Observable } from 'rxjs';
 
 import { routes } from './app.routes';
@@ -9,6 +9,7 @@ import { AppStarterService } from './app-starter.service';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { MicrofrontendHttpInterceptor } from './microfrontend-http.interceptor';
 import {
     CachePreventionInterceptor,
     CorsSecurityInterceptor,
@@ -40,6 +41,12 @@ export const appConfig: ApplicationConfig = {
         {
             provide: EUI_CONFIG_TOKEN,
             useValue: { appConfig: euiAppConfig, environment }
+        },
+        {
+            // Microfrontend HTTP interceptor to redirect requests to correct server
+            provide: HTTP_INTERCEPTORS,
+            useClass: MicrofrontendHttpInterceptor,
+            multi: true,
         },
         {
             // Sets the withCredentials on Ajax Request to send the JSESSIONID cookie to another domain.
@@ -78,7 +85,7 @@ export const appConfig: ApplicationConfig = {
             TranslateModule.forRoot(translateConfig)
         ),
         AppStarterService,
-        provideRouter(routes, withDisabledInitialNavigation()),
+        provideRouter(routes),
         provideAnimations(),
     ],
 };

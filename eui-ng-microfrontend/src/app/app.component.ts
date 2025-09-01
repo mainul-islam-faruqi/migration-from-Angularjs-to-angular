@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+import { Router, RouterOutlet } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-import { EuiLayoutModule } from '@eui/components/layout';
+import { EuiLayoutModule, EUI_NOTIFICATIONS } from '@eui/components/layout';
 import { EUI_LANGUAGE_SELECTOR } from '@eui/components/eui-language-selector';
 import { EUI_USER_PROFILE } from '@eui/components/eui-user-profile';
 import { EUI_ICON } from '@eui/components/eui-icon';
@@ -8,50 +9,24 @@ import { EuiMenuItem } from '@eui/components/eui-menu';
 
 @Component({
     selector: 'app-root',
-    template: `<eui-app>
-    <eui-app-toolbar>
-        <eui-toolbar>
-            <eui-toolbar-logo/>
-            <eui-toolbar-app appName="appName"/>
-            <eui-toolbar-environment>MOCK</eui-toolbar-environment>
+    templateUrl: './app.component.html',
 
-            <eui-toolbar-items>
-                <eui-toolbar-item>
-                    <eui-user-profile isShowAvatarInitials>
-                        <eui-user-profile-menu>
-                            <eui-user-profile-menu-item>
-                                <eui-icon-svg icon="person:outline"/>{{ 'eui.my-profile-informations' | translate }}
-                            </eui-user-profile-menu-item>
-                            <eui-user-profile-menu-item>
-                                <eui-icon-svg icon="log-out:outline"/>{{ 'eui.sign-out' | translate }}
-                            </eui-user-profile-menu-item>
-                        </eui-user-profile-menu>
-                    </eui-user-profile>
-                </eui-toolbar-item>
-
-                <eui-toolbar-item>
-                    <eui-notifications [count]="notificationItems?.length" [items]="notificationItems"></eui-notifications>
-                </eui-toolbar-item>
-            </eui-toolbar-items>
-
-            <eui-language-selector/>
-        </eui-toolbar>
-    </eui-app-toolbar>
-    <eui-app-sidebar>
-        <eui-app-sidebar-body>
-            <eui-app-sidebar-menu [items]="sidebarItems"/>
-        </eui-app-sidebar-body>
-    </eui-app-sidebar>
-</eui-app>`,
     imports: [
         TranslateModule,
         EuiLayoutModule,
+        RouterOutlet,
         ...EUI_ICON,
         ...EUI_USER_PROFILE,
         ...EUI_LANGUAGE_SELECTOR,
+        ...EUI_NOTIFICATIONS,
     ],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+    private router = inject(Router);
+    
+    // Add window reference for debugging
+    window = window;
+    
     sidebarItems: EuiMenuItem[] = [
         { label: 'Home', url: 'screen/home' },
         { label: 'Module 1', url: 'screen/module1', children: [
@@ -66,4 +41,26 @@ export class AppComponent {
         { label: 'Title label 3', subLabel: 'Subtitle label' },
         { label: 'Title label 4', subLabel: 'Subtitle label' },
     ];
+
+    ngOnInit(): void {
+        console.log('AppComponent ngOnInit - current URL:', this.router.url);
+        console.log('AppComponent ngOnInit - window.location.href:', window.location.href);
+        console.log('AppComponent ngOnInit - window.location.hash:', window.location.hash);
+        console.log('AppComponent ngOnInit - attempting navigation to home');
+        
+        // Force navigation to home route (without affecting browser URL)
+        setTimeout(() => {
+            this.navigateToHome();
+        }, 100);
+    }
+
+    navigateToHome() {
+        console.log('Navigating to home...');
+        this.router.navigateByUrl('phones', { replaceUrl: true }).then(() => {
+            console.log('Navigation to home completed successfully');
+            console.log('New URL:', this.router.url);
+        }).catch(err => {
+            console.error('Navigation error:', err);
+        });
+    }
 }
