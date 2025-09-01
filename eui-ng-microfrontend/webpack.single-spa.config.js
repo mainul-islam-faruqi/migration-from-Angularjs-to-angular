@@ -1,25 +1,5 @@
 const path = require('path');
-
-// Custom webpack plugin to replace asset URLs
-class AssetUrlReplacerPlugin {
-  apply(compiler) {
-    compiler.hooks.emit.tap('AssetUrlReplacerPlugin', (compilation) => {
-      Object.keys(compilation.assets).forEach(filename => {
-        if (filename.endsWith('.js')) {
-          let source = compilation.assets[filename].source();
-          
-          // Replace relative asset URLs with absolute microfrontend URLs
-          source = source.replace(/\/assets\/icons\/eui-internals\/([^"')]+)/g, 'http://localhost:4300/assets/icons/eui-internals/$1');
-          
-          compilation.assets[filename] = {
-            source: () => source,
-            size: () => source.length
-          };
-        }
-      });
-    });
-  }
-}
+const AssetUrlReplacerPlugin = require('./webpack-plugins/asset-url-replacer.plugin');
 
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
@@ -34,6 +14,7 @@ module.exports = (env, argv) => {
       alias: {
         '@eui/styles/dist/assets': path.resolve(__dirname, 'node_modules/@eui/styles/dist/assets'),
       },
+
     },
     module: {
       rules: [
@@ -186,25 +167,26 @@ module.exports = (env, argv) => {
           directory: path.resolve(__dirname, 'src/assets'),
           publicPath: '/assets',
         },
+        // Windows-compatible EUI assets serving
         {
-          directory: path.resolve(__dirname, 'node_modules/@eui/styles/dist'),
+          directory: path.resolve(__dirname, 'node_modules', '@eui', 'styles', 'dist'),
           publicPath: '/eui-styles',
         },
         {
-          directory: path.resolve(__dirname, 'node_modules/@eui/styles/dist/assets'),
+          directory: path.resolve(__dirname, 'node_modules', '@eui', 'styles', 'dist', 'assets'),
           publicPath: '/assets',
         },
         {
-          directory: path.resolve(__dirname, 'node_modules/@eui/styles/dist/assets'),
+          directory: path.resolve(__dirname, 'node_modules', '@eui', 'styles', 'dist', 'assets'),
           publicPath: '/@eui/styles/dist/assets',
         },
         {
-          directory: path.resolve(__dirname, 'node_modules/@eui/styles/dist/assets/icons'),
+          directory: path.resolve(__dirname, 'node_modules', '@eui', 'styles', 'dist', 'assets', 'icons'),
           publicPath: '/@eui/styles/dist/assets/icons',
         },
         {
-          directory: path.resolve(__dirname, 'node_modules/@eui/styles/dist/assets/icons/eui-internals/external.svg'),
-          publicPath: '/@eui/styles/dist/assets/icons/eui-internals/external.svg',
+          directory: path.resolve(__dirname, 'node_modules', '@eui', 'styles', 'dist', 'assets', 'icons', 'eui-internals'),
+          publicPath: '/@eui/styles/dist/assets/icons/eui-internals',
         },
       ],
       client: {

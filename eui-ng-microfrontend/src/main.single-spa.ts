@@ -10,6 +10,11 @@ import '@eui/styles/dist/eui-theme-eui-legacy.css';
 function patchAssetRequests() {
   const microfrontendBase = 'http://localhost:4300';
   
+  // Detect Windows and adjust asset paths if needed
+  const isWindows = navigator.platform.indexOf('Win') !== -1;
+  console.log(`🖥️ Platform detected: ${isWindows ? 'Windows' : 'Unix/Linux/macOS'}`);
+  console.log(`🌐 Microfrontend base: ${microfrontendBase}`);
+  
   // Patch fetch API
   const originalFetch = window.fetch;
   window.fetch = function(input: RequestInfo | URL, init?: RequestInit) {
