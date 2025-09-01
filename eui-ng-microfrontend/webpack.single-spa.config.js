@@ -115,11 +115,11 @@ module.exports = (env, argv) => {
                 postcssOptions: {
                   plugins: [
                     function(root) {
-                      // Custom PostCSS plugin to rewrite EUI asset URLs to absolute microfrontend URLs
+                      // Custom PostCSS plugin to rewrite EUI asset URLs to standard /assets path
                       root.walkDecls(decl => {
                         if (decl.value.includes('@eui/styles/dist/assets/')) {
-                          // Force absolute URLs to microfrontend server to avoid host server requests
-                          decl.value = decl.value.replace(/@eui\/styles\/dist\/assets\//g, 'http://localhost:4300/assets/');
+                          // Rewrite to standard /assets path (served by webpack dev server)
+                          decl.value = decl.value.replace(/@eui\/styles\/dist\/assets\//g, '/assets/');
                         }
                       });
                     }
@@ -167,27 +167,11 @@ module.exports = (env, argv) => {
           directory: path.resolve(__dirname, 'src/assets'),
           publicPath: '/assets',
         },
-        // Windows-compatible EUI assets serving
+        // Serve EUI assets from dist-mfe/assets (copied by angular.json)
         {
-          directory: path.resolve(__dirname, 'node_modules', '@eui', 'styles', 'dist'),
-          publicPath: '/eui-styles',
-        },
-        {
-          directory: path.resolve(__dirname, 'node_modules', '@eui', 'styles', 'dist', 'assets'),
+          directory: path.resolve(__dirname, 'dist-mfe', 'assets'),
           publicPath: '/assets',
-        },
-        {
-          directory: path.resolve(__dirname, 'node_modules', '@eui', 'styles', 'dist', 'assets'),
-          publicPath: '/@eui/styles/dist/assets',
-        },
-        {
-          directory: path.resolve(__dirname, 'node_modules', '@eui', 'styles', 'dist', 'assets', 'icons'),
-          publicPath: '/@eui/styles/dist/assets/icons',
-        },
-        {
-          directory: path.resolve(__dirname, 'node_modules', '@eui', 'styles', 'dist', 'assets', 'icons', 'eui-internals'),
-          publicPath: '/@eui/styles/dist/assets/icons/eui-internals',
-        },
+        }
       ],
       client: {
         webSocketURL: 'ws://localhost:4300/ws',
@@ -195,7 +179,7 @@ module.exports = (env, argv) => {
       setupMiddlewares: (middlewares, devServer) => {
         // Add EUI asset redirect middleware
         devServer.app.use((req, res, next) => {
-          // Redirect @eui/styles paths to /assets
+          // Redirect @eui/styles paths to /assets (copied by angular.json)
           if (req.url.includes('@eui/styles/dist/assets/')) {
             const newUrl = req.url.replace(/@eui\/styles\/dist\/assets\//g, '/assets/');
             return res.redirect(301, newUrl);
