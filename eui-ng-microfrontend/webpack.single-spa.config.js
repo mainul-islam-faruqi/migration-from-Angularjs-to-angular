@@ -24,19 +24,35 @@ module.exports = (env, argv) => {
     },
     module: {
       rules: [
-        // Compile TS then inline component templates/styles for JIT
+        // Compile TS then inline component templates/styles for JIT (Windows-compatible)
         {
           test: /\.ts$/,
-          exclude: /node_modules\/(?!@eui|@angular|@ngx-translate|rxjs|zone\.js|tslib)/,
+          exclude: (input) => {
+            const nodeModulesPath = path.resolve(__dirname, 'node_modules');
+            const euiPath = path.resolve(nodeModulesPath, '@eui');
+            const angularPath = path.resolve(nodeModulesPath, '@angular');
+            const ngxTranslatePath = path.resolve(nodeModulesPath, '@ngx-translate');
+            const rxjsPath = path.resolve(nodeModulesPath, 'rxjs');
+            const zoneJsPath = path.resolve(nodeModulesPath, 'zone.js');
+            const tslibPath = path.resolve(nodeModulesPath, 'tslib');
+            
+            return input.includes(nodeModulesPath) && 
+                   !input.includes(euiPath) && 
+                   !input.includes(angularPath) && 
+                   !input.includes(ngxTranslatePath) && 
+                   !input.includes(rxjsPath) && 
+                   !input.includes(zoneJsPath) && 
+                   !input.includes(tslibPath);
+          },
           use: [
             { loader: 'ts-loader', options: { transpileOnly: true } },
             { loader: 'angular2-template-loader' }
           ]
         },
-        // Handle JavaScript and Module files from EUI packages
+        // Handle JavaScript and Module files from EUI packages (Windows-compatible)
         {
           test: /\.m?js$/,
-          include: /node_modules\/@eui/,
+          include: path.resolve(__dirname, 'node_modules', '@eui'),
           use: [
             {
               loader: 'babel-loader',
@@ -48,10 +64,10 @@ module.exports = (env, argv) => {
           ]
         },
 
-        // Handle EUI module files specifically
+        // Handle EUI module files specifically (Windows-compatible)
         {
           test: /\.mjs$/,
-          include: /node_modules\/@eui/,
+          include: path.resolve(__dirname, 'node_modules', '@eui'),
           type: 'javascript/auto',
           resolve: {
             fullySpecified: false
@@ -103,10 +119,10 @@ module.exports = (env, argv) => {
             filename: 'assets/images/[name].[hash][ext]'
           }
         },
-        // Global CSS from imports (EUI styles)
+        // Global CSS from imports (EUI styles) (Windows-compatible)
         {
           test: /\.css$/,
-          include: /node_modules\/@eui/,
+          include: path.resolve(__dirname, 'node_modules', '@eui'),
           use: [
             'style-loader', 
             {
@@ -135,10 +151,10 @@ module.exports = (env, argv) => {
             }
           ]
         },
-        // Component CSS/SCSS referenced via styleUrls (inlined)
+        // Component CSS/SCSS referenced via styleUrls (inlined) (Windows-compatible)
         {
           test: /\.css$/,
-          exclude: /node_modules\/@eui/,
+          exclude: path.resolve(__dirname, 'node_modules', '@eui'),
           use: ['to-string-loader', 'css-loader']
         },
         { test: /\.scss$/, use: ['to-string-loader', 'css-loader', 'sass-loader'] }

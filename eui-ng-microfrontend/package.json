@@ -13,7 +13,7 @@
         "mfe:start": "webpack serve --config webpack.single-spa.config.js --mode development",
         "mfe:build": "webpack --config webpack.single-spa.config.js --mode production",
         "mfe:build:analyze": "webpack --config webpack.single-spa.config.js --mode production --analyze",
-        "mfe:deploy": "npm run mfe:build && echo 'Deploy dist-mfe/main.js to your CDN'",
+        "mfe:deploy": "yarn mfe:build && echo 'Deploy dist-mfe/main.js to your CDN'",
         "build-dev": "eui-scripts build-app --configuration=development --configEnvTarget=dev",
         "build-prod": "eui-scripts build-app --configuration=production-optimized --configEnvTarget=prod",
         "build-prod-skip-test": "eui-scripts build-app --configuration=production-optimized --configEnvTarget=prod --skipTest",
