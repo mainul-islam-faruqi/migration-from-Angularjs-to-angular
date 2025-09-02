@@ -14,7 +14,13 @@ module.exports = (env, argv) => {
       alias: {
         '@eui/styles/dist/assets': path.resolve(__dirname, 'node_modules/@eui/styles/dist/assets'),
       },
-
+      // Windows-compatible ESM module resolution
+      fullySpecified: false,
+      fallback: {
+        "path": false,
+        "fs": false,
+        "crypto": false
+      }
     },
     module: {
       rules: [
@@ -182,6 +188,7 @@ module.exports = (env, argv) => {
           // Redirect @eui/styles paths to /assets (copied by angular.json)
           if (req.url.includes('@eui/styles/dist/assets/')) {
             const newUrl = req.url.replace(/@eui\/styles\/dist\/assets\//g, '/assets/');
+            console.log(`🔄 Windows Debug: Redirecting ${req.url} to ${newUrl}`);
             return res.redirect(301, newUrl);
           }
           next();

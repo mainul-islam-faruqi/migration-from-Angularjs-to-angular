@@ -17,6 +17,9 @@
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "importHelpers": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "types": [],
     "typeRoots": [
       "node_modules/@types",
       "node_modules/@eui/deps-base/node_modules/@types"
@@ -26,7 +29,10 @@
     "paths": {
         "@shared/*": ["src/app/shared/*"],
         "@angular/*": ["node_modules/@angular/*"],
-        "@eui/*": ["node_modules/@eui/*"]
+        "@eui/*": ["node_modules/@eui/*"],
+        "@eui/components/*": ["node_modules/@eui/components/*"],
+        "@eui/core/*": ["node_modules/@eui/core/*"],
+        "@eui/styles/*": ["node_modules/@eui/styles/*"]
     }
   }
 }
