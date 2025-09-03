@@ -5,47 +5,125 @@ import '@angular/compiler';
 import '@eui/styles/dist/eui.css';
 import '@eui/styles/dist/eui-utilities.css';
 import '@eui/styles/dist/eui-theme-eui-legacy.css';
+// import '@eui/styles/dist/assets/icons/sprites/outline.json';
+// import '@eui/styles/dist/assets/icons/eui-internals/external.svg'
 
-// Patch browser APIs to redirect asset requests to microfrontend server
+// Redirect i18n and API requests to microfrontend server (keep for translations)
 function patchAssetRequests() {
   const microfrontendBase = 'http://localhost:4300';
   
-  // Detect Windows and adjust asset paths if needed
-  const isWindows = navigator.platform.indexOf('Win') !== -1;
-  console.log(`🖥️ Platform detected: ${isWindows ? 'Windows' : 'Unix/Linux/macOS'}`);
-  console.log(`🌐 Microfrontend base: ${microfrontendBase}`);
-  
-  // Patch fetch API
+  // Patch fetch API for i18n and API requests
   const originalFetch = window.fetch;
   window.fetch = function(input: RequestInfo | URL, init?: RequestInit) {
     let url = typeof input === 'string' ? input : input.toString();
     
-    // Redirect relative asset requests to microfrontend server
-    if (url.startsWith('/assets/') && !url.startsWith('http')) {
+    // Only redirect i18n assets (translations) - icons handled by sprite inlining
+    if (url.startsWith('/assets/i18n') && !url.startsWith('http')) {
       url = `${microfrontendBase}${url}`;
-      console.log(`🔄 Fetch redirect: ${url}`);
+      console.log(`🌐 i18n redirect: ${url}`);
     }
     
     return originalFetch.call(this, url, init);
   };
   
-  // Patch XMLHttpRequest
+  // Patch XMLHttpRequest for i18n requests
   const originalOpen = XMLHttpRequest.prototype.open;
   XMLHttpRequest.prototype.open = function(method: string, url: string | URL, ...args: any[]) {
     let requestUrl = url.toString();
     
-    // Redirect relative asset requests to microfrontend server
-    if (requestUrl.startsWith('/assets/') && !requestUrl.startsWith('http')) {
+    // Only redirect i18n assets (translations) - icons handled by sprite inlining
+    if (requestUrl.startsWith('/assets/i18n') && !requestUrl.startsWith('http')) {
       requestUrl = `${microfrontendBase}${requestUrl}`;
-      console.log(`🔄 XHR redirect: ${requestUrl}`);
+      console.log(`🌐 i18n XHR redirect: ${requestUrl}`);
     }
     
     return originalOpen.call(this, method, requestUrl, ...args);
   };
 }
 
-// Apply patches before Angular starts
+// Apply i18n patching before Angular starts
 patchAssetRequests();
+
+// Patch DOM manipulation to inline SVG sprites for cross-origin compatibility
+function patchDOMHrefs() {
+  const microfrontendBase = 'http://localhost:4300';
+  const loadedSprites = new Set<string>();
+  
+  // Function to load and inline SVG sprite
+  async function loadAndInlineSprite(spriteUrl: string): Promise<void> {
+    if (loadedSprites.has(spriteUrl)) return;
+    
+    try {
+      const response = await fetch(spriteUrl);
+      const svgText = await response.text();
+      
+      // Create a hidden SVG element to hold the sprite
+      const spriteContainer = document.createElement('div');
+      spriteContainer.style.display = 'none';
+      spriteContainer.innerHTML = svgText;
+      document.body.appendChild(spriteContainer);
+      
+      loadedSprites.add(spriteUrl);
+      console.log(`🎨 Inlined SVG sprite: ${spriteUrl}`);
+    } catch (error) {
+      console.error(`🎨 Failed to load sprite: ${spriteUrl}`, error);
+    }
+  }
+  
+  // Function to patch href attributes and load sprites
+  function patchHrefAttribute(element: Element, href: string): void {
+    if (href && href.startsWith('assets/icons/sprites/') && !href.startsWith('http')) {
+      // Extract sprite filename (e.g., "outline.svg") from the href
+      const spriteFile = href.split('/').pop()?.split('#')[0];
+      if (!spriteFile) return;
+      
+      // Build the sprite URL - simple assets path, no eui-assets complexity
+      const spriteUrl = `${microfrontendBase}/assets/icons/sprites/${spriteFile}`;
+      
+      // Load the sprite if not already loaded
+      loadAndInlineSprite(spriteUrl);
+      
+      // Update the href to use the fragment reference
+      const fragmentId = href.split('#')[1];
+      element.setAttribute('href', `#${fragmentId}`);
+      console.log(`🎨 Sprite inlined: ${spriteFile}, href: #${fragmentId}`);
+    }
+  }
+  
+  // Create a MutationObserver to watch for new DOM elements with href attributes
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.type === 'childList') {
+        mutation.addedNodes.forEach((node) => {
+          if (node.nodeType === Node.ELEMENT_NODE) {
+            const element = node as Element;
+            
+            // Check if this element has an href attribute that needs patching
+            if (element.hasAttribute('href')) {
+              const href = element.getAttribute('href');
+              if (href) patchHrefAttribute(element, href);
+            }
+            
+            // Also check child elements recursively
+            const hrefElements = element.querySelectorAll('[href]');
+            hrefElements.forEach((hrefElement) => {
+              const href = hrefElement.getAttribute('href');
+              if (href) patchHrefAttribute(hrefElement, href);
+            });
+          }
+        });
+      }
+    });
+  });
+  
+  // Start observing the entire document
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true
+  });
+  
+  console.log('🎨 DOM href patching with sprite inlining enabled');
+}
 
 import { bootstrapApplication } from '@angular/platform-browser';
 import { HashLocationStrategy, LocationStrategy, Location } from '@angular/common';
@@ -90,6 +168,9 @@ export async function mount(props: any) {
     }
     
     console.log('EUI MFE: Found DOM element, proceeding with mount...');
+    
+    // Enable DOM href patching for EUI icons
+    patchDOMHrefs();
 
   // Configure webpack public path at runtime for proper asset loading
   // This ensures assets are loaded from the Angular app server, not the host
