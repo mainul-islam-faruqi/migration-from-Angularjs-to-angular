@@ -142,7 +142,7 @@ module.exports = (env, argv) => {
     devServer: {
       port: 4300,
       headers: {
-        'Access-Control-Allow-Origin': 'http://localhost:8000',
+        'Access-Control-Allow-Origin': 'http://localhost:8080',
         'Access-Control-Allow-Credentials': 'true',
         'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS, PATCH',
         'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization, X-Csrf-Token, Cache-Control, Pragma, Expires',
