@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Test Navigation Fix</title>
+</head>
+
+<body>
+  <h1>Testing Navigation Fix</h1>
+  <p>This page tests if the Angular MFE stays on port 8000 when embedded.</p>
+
+  <h2>Test Links:</h2>
+  <ul>
+    <li><a href="http://localhost:8000/app/index.html#!/phones" target="_blank">Phone List (Port 8000)</a></li>
+    <li><a href="http://localhost:8000/app/index.html#!/dashboard" target="_blank">Dashboard (Port 8000)</a></li>
+    <li><a href="http://localhost:8000/app/index.html#!/reports" target="_blank">Reports (Port 8000)</a></li>
+  </ul>
+
+  <h2>Expected Behavior:</h2>
+  <ul>
+    <li>✅ All pages should stay on port 8000 (AngularJS host)</li>
+    <li>✅ Angular MFE components should load embedded in each page</li>
+    <li>✅ No redirects to port 4300</li>
+    <li>✅ Navigation between pages should work normally</li>
+  </ul>
+
+  <script>
+    // Test if we can access the pages
+    function testPage(url) {
+      fetch(url)
+        .then(response => {
+          if (response.ok) {
+            console.log('✅ Page accessible:', url);
+          } else {
+            console.log('❌ Page not accessible:', url, response.status);
+          }
+        })
+        .catch(error => {
+          console.log('❌ Error accessing page:', url, error);
+        });
+    }
+
+    // Test all pages
+    testPage('http://localhost:8000/app/index.html#!/phones');
+    testPage('http://localhost:8000/app/index.html#!/dashboard');
+    testPage('http://localhost:8000/app/index.html#!/reports');
+  </script>
+</body>
+
+</html>

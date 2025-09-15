@@ -148,7 +148,7 @@ module.exports = (env, argv) => {
         'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization, X-Csrf-Token, Cache-Control, Pragma, Expires',
       },
       allowedHosts: 'all',
-      historyApiFallback: true,
+      historyApiFallback: false,
       hot: true,
       liveReload: false,
       static: [

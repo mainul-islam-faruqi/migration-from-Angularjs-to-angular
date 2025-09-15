@@ -169,6 +169,24 @@ export async function mount(props: any) {
     
     console.log('EUI MFE: Found DOM element, proceeding with mount...');
     
+    // Clear any existing content to ensure clean mount
+    domElement.innerHTML = '';
+    
+    // Log the current route and page for debugging
+    if (props?.currentRoute) {
+      console.log('EUI MFE: Mounting for route:', props.currentRoute);
+    }
+    if (props?.pageName) {
+      console.log('EUI MFE: Mounting for page:', props.pageName);
+    }
+    
+    // Force a fresh mount by checking if we're already mounted
+    if (appRef) {
+      console.log('EUI MFE: App already exists, destroying first...');
+      appRef.destroy();
+      appRef = null;
+    }
+    
     // Enable DOM href patching for EUI icons
     patchDOMHrefs();
 
@@ -185,12 +203,28 @@ export async function mount(props: any) {
   };
 
   if (typeof __webpack_public_path__ !== 'undefined') {
-    __webpack_public_path__ = getAssetBaseUrl();
-    console.log('EUI MFE: Set webpack publicPath to:', __webpack_public_path__);
+    // Check if we're embedded in AngularJS host
+    const isEmbedded = domElement && domElement.id === 'eui-embedded-container';
+    
+    if (isEmbedded) {
+      console.log('EUI MFE: Running in embedded mode - NOT changing webpack publicPath to prevent redirects');
+    } else {
+      __webpack_public_path__ = getAssetBaseUrl();
+      console.log('EUI MFE: Set webpack publicPath to:', __webpack_public_path__);
+    }
   }
 
   // Set base href for the Angular app to ensure assets load from correct server
   const setMicrofrontendBaseHref = () => {
+    // Check if we're embedded in AngularJS host
+    const isEmbedded = domElement && domElement.id === 'eui-embedded-container';
+    
+    if (isEmbedded) {
+      console.log('EUI MFE: Running in embedded mode - NOT changing base href to prevent redirects');
+      return;
+    }
+    
+    // Only change base href for standalone mode
     const baseUrl = getAssetBaseUrl();
     let baseElement = document.querySelector('base');
     const wasExisting = !!baseElement;
@@ -256,6 +290,20 @@ export async function mount(props: any) {
 export async function unmount() {
   console.log('EUI MFE: unmount');
   
+  // Destroy the Angular app
+  if (appRef) {
+    console.log('EUI MFE: Destroying Angular app...');
+    appRef.destroy();
+    appRef = null;
+  }
+  
+  // Clear the DOM element
+  const embeddedContainer = document.getElementById('eui-embedded-container');
+  if (embeddedContainer) {
+    console.log('EUI MFE: Clearing embedded container...');
+    embeddedContainer.innerHTML = '';
+  }
+  
   // Restore original base href
   const baseElement = document.querySelector('base');
   if (baseElement) {
@@ -266,10 +314,7 @@ export async function unmount() {
     }
   }
   
-  if (appRef) {
-    appRef.destroy();
-    appRef = null;
-  }
+  console.log('EUI MFE: Unmount completed');
 }
 
 

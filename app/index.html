@@ -26,16 +26,21 @@
     </div>
   </nav> -->
 
+  <!-- Shared Header -->
+  <app-header></app-header>
+
   <!-- AngularJS App Container -->
-  <div class="view-container">
+  <div class="view-container" style="margin-top: 70px; margin-bottom: 100px;">
     <div ng-view class="view-frame"></div>
   </div>
-  
+
+  <!-- Shared Footer -->
+  <app-footer></app-footer>
   <!-- Micro-frontend Container -->
   <div id="angular-mfe-container"></div>
 
   <!-- Add a dedicated container -->
-  <div id="eui-mfe-container"></div>
+<div id="eui-mfe-container"></div>
   <!-- SystemJS -->
   <script src="https://cdn.jsdelivr.net/npm/systemjs@6.14.1/dist/system.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/systemjs@6.14.1/dist/extras/named-register.min.js"></script>
@@ -74,6 +79,13 @@
   <script src="phone-list/phone-list.component.js"></script>
   <script src="phone-detail/phone-detail.module.js"></script>
   <script src="phone-detail/phone-detail.component.js"></script>
+  <!-- Shared Components -->
+  <script src="components/header/header.component.js"></script>
+  <script src="components/footer/footer.component.js"></script>
+  
+  <!-- New Pages -->
+  <script src="dashboard/dashboard.component.js"></script>
+  <script src="reports/reports.component.js"></script>
 
   <!-- Load Single-SPA Root Config -->
   <script type="module" src="microfrontend-config.js"></script>

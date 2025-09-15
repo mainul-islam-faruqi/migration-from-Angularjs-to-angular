@@ -91,3 +91,117 @@ h1 {
   font-size: 1.2em;
   font-weight: bold;
 }
+
+/* Shared Components Styling */
+.footer {
+  background-color: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+  padding: 20px 0;
+  margin-top: 50px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Dashboard and Reports Styling */
+.stat-box {
+  text-align: center;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+.stat-box h4 {
+  font-size: 2em;
+  color: #007bff;
+  margin: 0;
+}
+
+.stat-box p {
+  color: #6c757d;
+  margin: 5px 0 0 0;
+}
+
+.panel {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border: none;
+  margin-bottom: 20px;
+}
+
+.panel-heading {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+  padding: 15px;
+}
+
+.panel-title {
+  font-weight: 600;
+  color: #495057;
+}
+
+.panel-body {
+  padding: 20px;
+}
+
+/* List group styling */
+.list-group-item {
+  border: 1px solid #e9ecef;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+.list-group-item:hover {
+  background-color: #f8f9fa;
+}
+
+/* Badge styling */
+.badge {
+  background-color: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.8em;
+}
+
+/* Label styling */
+.label {
+  padding: 3px 8px;
+  font-size: 0.8em;
+  border-radius: 3px;
+}
+
+.label-success {
+  background-color: #28a745;
+  color: white;
+}
+
+.label-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* Embedded component styling */
+#embedded-eui-component {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+#embedded-eui-component h3 {
+  color: #007bff;
+  margin-top: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer {
+    position: relative;
+    margin-top: 20px;
+  }
+  
+  .view-container {
+    margin-bottom: 20px !important;
+  }
+}

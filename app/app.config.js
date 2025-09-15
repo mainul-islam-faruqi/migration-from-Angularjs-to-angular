@@ -23,6 +23,12 @@ angular.
         when('/eui', {
           template: ''
         }).
+        when('/dashboard', {
+          template: '<dashboard></dashboard>'
+        }).
+        when('/reports', {
+          template: '<reports></reports>'
+        }).
         otherwise('/phones');
     }
   ]);

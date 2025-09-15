@@ -1,4 +1,17 @@
-<eui-app>
+<!-- Check if we're embedded in AngularJS page -->
+<div *ngIf="isEmbedded()" class="embedded-mode">
+    <h3>🎯 Angular Component in AngularJS Page</h3>
+    <p>This proves Angular components can run inside AngularJS pages!</p>
+
+    <!-- Simple Angular component -->
+    <app-simple-phone-card [phone]="samplePhone"></app-simple-phone-card>
+
+    <!-- EUI Angular component -->
+    <app-embedded></app-embedded>
+</div>
+
+<!-- Full EUI app when not embedded -->
+<eui-app *ngIf="!isEmbedded()">
     <eui-app-toolbar>
         <eui-toolbar>
             <eui-toolbar-logo />
@@ -32,4 +45,5 @@
             <eui-app-sidebar-menu [items]="sidebarItems" />
         </eui-app-sidebar-body>
     </eui-app-sidebar>
+    <router-outlet></router-outlet>
 </eui-app>

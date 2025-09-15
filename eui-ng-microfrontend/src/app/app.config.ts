@@ -1,6 +1,7 @@
 import { inject, provideAppInitializer } from '@angular/core';
 import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { provideRouter } from '@angular/router';
+import { LocationStrategy } from '@angular/common';
 import { Observable } from 'rxjs';
 
 import { routes } from './app.routes';
@@ -25,6 +26,7 @@ import {
 import { appConfig as euiAppConfig} from '../config';
 import { environment } from '../environments/environment';
 import { provideAnimations } from '@angular/platform-browser/animations';
+import { EmbeddedLocationStrategy } from './embedded-location-strategy';
 
 /**
  * The provided function is injected at application startup and executed during
@@ -87,5 +89,9 @@ export const appConfig: ApplicationConfig = {
         AppStarterService,
         provideRouter(routes),
         provideAnimations(),
+        {
+            provide: LocationStrategy,
+            useClass: EmbeddedLocationStrategy
+        },
     ],
 };

@@ -20,6 +20,7 @@
     <div class="col-md-10">
       <!--Body content-->
 
+      <!-- AngularJS Phone List -->
       <ul class="phones">
         <li ng-repeat="phone in $ctrl.phones | filter:$ctrl.query | orderBy:$ctrl.orderProp"
             class="thumbnail phone-list-item">
@@ -30,6 +31,12 @@
           <p>{{phone.snippet}}</p>
         </li>
       </ul>
+
+      <!-- Angular MFE Component Embedded Here -->
+      <div id="embedded-eui-component" style="margin-top: 20px; border: 2px dashed #ccc; padding: 20px;">
+        <h3>Angular MFE Component Embedded in Phone List</h3>
+        <div id="eui-embedded-container"></div>
+      </div>
 
     </div>
   </div>
