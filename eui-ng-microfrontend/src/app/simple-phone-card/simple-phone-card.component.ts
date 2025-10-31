@@ -58,3 +58,6 @@ export class SimplePhoneCardComponent {
     getData: () => 'Angular DI Working!'
   };
 }
+
+
+
