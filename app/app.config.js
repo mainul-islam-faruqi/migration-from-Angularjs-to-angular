@@ -23,6 +23,9 @@ angular.
         when('/eui', {
           template: ''
         }).
+        when('/eui/:path*', {
+          template: ''
+        }).
         when('/dashboard', {
           template: '<dashboard></dashboard>'
         }).

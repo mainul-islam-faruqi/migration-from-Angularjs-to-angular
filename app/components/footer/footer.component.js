@@ -32,3 +32,4 @@ angular.module('phonecatApp').component('appFooter', {
     // Footer controller logic if needed
   }
 });
+

@@ -105,3 +105,4 @@ angular.module('phonecatApp').component('dashboard', {
     ];
   }
 });
+

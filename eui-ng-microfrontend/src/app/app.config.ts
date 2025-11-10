@@ -27,6 +27,7 @@ import { appConfig as euiAppConfig} from '../config';
 import { environment } from '../environments/environment';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { EmbeddedLocationStrategy } from './embedded-location-strategy';
+import { PREVENT_URL_CHANGE } from './routing.tokens';
 
 /**
  * The provided function is injected at application startup and executed during
@@ -89,6 +90,10 @@ export const appConfig: ApplicationConfig = {
         AppStarterService,
         provideRouter(routes),
         provideAnimations(),
+        {
+            provide: PREVENT_URL_CHANGE,
+            useValue: false,
+        },
         {
             provide: LocationStrategy,
             useClass: EmbeddedLocationStrategy

@@ -107,3 +107,4 @@ angular.module('phonecatApp').component('reports', {
     ];
   }
 });
+

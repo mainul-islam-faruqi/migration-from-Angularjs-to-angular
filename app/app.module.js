@@ -8,19 +8,58 @@ angular.module('phonecatApp', [
   'phoneDetail',
   'phoneList'
 ]).run(function($rootScope, $location) {
-  // Listen for messages from Angular micro-frontend
+  var lastRouteFromAngular = null;
+
+  // Listen for navigation events emitted by the Angular micro-frontend
   window.addEventListener('angular-to-angularjs', function(event) {
-    console.log('Message received from Angular MFE:', event.detail);
-    
-    if (event.detail.action === 'navigate' && event.detail.route) {
-      // Handle navigation from Angular component
-      $location.url(event.detail.route.replace('#!', ''));
-      $rootScope.$apply();
-    } else {
-      alert('AngularJS received: ' + event.detail.message);
-      $rootScope.$apply(); // Trigger digest cycle if needed
+    var detail = event.detail || {};
+    if (detail.action !== 'navigate' || !detail.route) {
+      return;
     }
+
+    var targetUrl = '/eui' + (detail.route.startsWith('/') ? detail.route : '/' + detail.route);
+
+    if (targetUrl === lastRouteFromAngular) {
+      return;
+    }
+
+    lastRouteFromAngular = targetUrl;
+
+    if ($location.url().indexOf('/eui') !== 0) {
+      return;
+    }
+
+    $rootScope.$evalAsync(function() {
+      $location.url(targetUrl);
+    });
   });
-  
-  console.log('AngularJS host application initialized with MFE support');
+
+  // Send host route changes back to the Angular micro-frontend
+  $rootScope.$on('$locationChangeSuccess', function() {
+    var currentUrl = $location.url();
+
+    if (currentUrl === lastRouteFromAngular) {
+      lastRouteFromAngular = null;
+      return;
+    }
+
+    if (currentUrl.indexOf('/eui') !== 0) {
+      return;
+    }
+
+    var internalRoute = currentUrl.replace(/^\/eui/, '') || '/screen/home';
+    if (!internalRoute.startsWith('/')) {
+      internalRoute = '/' + internalRoute;
+    }
+
+    var navigationEvent = new CustomEvent('angularjs-to-angular', {
+      detail: {
+        action: 'navigate',
+        route: internalRoute
+      }
+    });
+    window.dispatchEvent(navigationEvent);
+  });
+
+  console.log('AngularJS host application initialized with MFE routing bridge');
 });

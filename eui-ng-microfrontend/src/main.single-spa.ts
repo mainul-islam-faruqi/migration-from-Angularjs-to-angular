@@ -126,28 +126,49 @@ function patchDOMHrefs() {
 }
 
 import { bootstrapApplication } from '@angular/platform-browser';
-import { HashLocationStrategy, LocationStrategy, Location } from '@angular/common';
-import { Injectable } from '@angular/core';
+import { APP_BASE_HREF, HashLocationStrategy, LocationStrategy, PlatformLocation } from '@angular/common';
+import { Inject, Optional } from '@angular/core';
 import { AppComponent } from './app/app.component';
 import { appConfig } from './app/app.config';
+import { HOST_INITIAL_ROUTE, PREVENT_URL_CHANGE } from './app/routing.tokens';
 
 // Webpack public path declaration for runtime configuration
 declare var __webpack_public_path__: string;
 
 // Base href management for microfrontend asset loading
 
-// Custom location strategy that doesn't interfere with host routing
-@Injectable()
 class MicrofrontendLocationStrategy extends HashLocationStrategy {
+  constructor(
+    platformLocation: PlatformLocation,
+    baseHref: string | null | undefined,
+    private readonly preventUrlChange: boolean,
+  ) {
+    super(platformLocation, baseHref ?? undefined);
+  }
+
   override replaceState(state: any, title: string, url: string, queryParams?: string): void {
-    // Don't update browser history when in microfrontend mode
-    console.log('MF: Blocking replaceState for:', url);
+    if (this.preventUrlChange) {
+      console.log('MF: Blocking replaceState for:', url);
+      return;
+    }
+    super.replaceState(state, title, url, queryParams);
   }
   
   override pushState(state: any, title: string, url: string, queryParams?: string): void {
-    // Don't update browser history when in microfrontend mode
-    console.log('MF: Blocking pushState for:', url);
+    if (this.preventUrlChange) {
+      console.log('MF: Blocking pushState for:', url);
+      return;
+    }
+    super.pushState(state, title, url, queryParams);
   }
+}
+
+function createMicrofrontendLocationStrategy(
+  platformLocation: PlatformLocation,
+  baseHref: string | null,
+  preventUrlChange: boolean,
+): LocationStrategy {
+  return new MicrofrontendLocationStrategy(platformLocation, baseHref, preventUrlChange);
 }
 
 let appRef: any;
@@ -216,11 +237,11 @@ export async function mount(props: any) {
 
   // Set base href for the Angular app to ensure assets load from correct server
   const setMicrofrontendBaseHref = () => {
-    // Check if we're embedded in AngularJS host
     const isEmbedded = domElement && domElement.id === 'eui-embedded-container';
+    const isHosted = domElement && domElement.id === 'eui-mfe-container';
     
-    if (isEmbedded) {
-      console.log('EUI MFE: Running in embedded mode - NOT changing base href to prevent redirects');
+    if (isEmbedded || isHosted) {
+      console.log('EUI MFE: Running in embedded/hosted mode - NOT changing base href to prevent redirects');
       return;
     }
     
@@ -271,8 +292,17 @@ export async function mount(props: any) {
     providers: [
       ...appConfig.providers,
       {
+        provide: PREVENT_URL_CHANGE,
+        useValue: props?.preventUrlChange ?? true,
+      },
+      {
+        provide: HOST_INITIAL_ROUTE,
+        useValue: props?.currentRoute ?? null,
+      },
+      {
         provide: LocationStrategy,
-        useClass: MicrofrontendLocationStrategy
+        useFactory: createMicrofrontendLocationStrategy,
+        deps: [PlatformLocation, [new Optional(), new Inject(APP_BASE_HREF)], PREVENT_URL_CHANGE],
       }
     ],
     rootElement: domElement.querySelector('app-root') as Element,

@@ -55,3 +55,4 @@ export class EmbeddedComponent {
     console.log('🎯 Embedded Angular component initialized in AngularJS page!');
   }
 }
+

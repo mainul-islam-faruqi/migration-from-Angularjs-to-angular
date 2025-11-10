@@ -61,8 +61,11 @@ System.import('single-spa').then(singleSpa => {
     name: 'eui-desktop',
     app: () => System.import('eui-desktop'),
     activeWhen: location => location.hash.includes('eui'),
-    customProps: () => ({
-      domElementGetter: () => document.getElementById('eui-mfe-container')
+    customProps: (name, location) => ({
+      domElementGetter: () => document.getElementById('eui-mfe-container'),
+      preventUrlChange: true,
+      currentRoute: location.hash,
+      hostHref: location.href,
     })
   });
 

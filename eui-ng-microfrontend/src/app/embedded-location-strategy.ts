@@ -1,11 +1,15 @@
 import { Injectable, Inject } from '@angular/core';
 import { LocationStrategy, PathLocationStrategy, PlatformLocation } from '@angular/common';
+import { PREVENT_URL_CHANGE } from './routing.tokens';
 
 @Injectable()
 export class EmbeddedLocationStrategy extends PathLocationStrategy {
   private isEmbedded = false;
 
-  constructor(@Inject(PlatformLocation) platformLocation: PlatformLocation) {
+  constructor(
+    @Inject(PlatformLocation) platformLocation: PlatformLocation,
+    @Inject(PREVENT_URL_CHANGE) private preventUrlChange: boolean,
+  ) {
     super(platformLocation);
     this.checkIfEmbedded();
   }
@@ -20,7 +24,7 @@ export class EmbeddedLocationStrategy extends PathLocationStrategy {
   }
 
   override pushState(state: any, title: string, url: string, queryParams?: string): void {
-    if (this.isEmbedded) {
+    if (this.isEmbedded && this.preventUrlChange) {
       console.log('🚫 EmbeddedLocationStrategy - Blocking pushState:', url);
       // Don't change the browser URL when embedded
       return;
@@ -29,7 +33,7 @@ export class EmbeddedLocationStrategy extends PathLocationStrategy {
   }
 
   override replaceState(state: any, title: string, url: string, queryParams?: string): void {
-    if (this.isEmbedded) {
+    if (this.isEmbedded && this.preventUrlChange) {
       console.log('🚫 EmbeddedLocationStrategy - Blocking replaceState:', url);
       // Don't change the browser URL when embedded
       return;

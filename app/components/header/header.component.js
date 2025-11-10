@@ -35,6 +35,38 @@ angular.module('phonecatApp').component('appHeader', {
                 Reports
               </a>
             </li>
+            <li class="dropdown" ng-class="{active: $ctrl.isEmbeddedRoute()}">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <i class="glyphicon glyphicon-export"></i>
+                EUI Microfrontend <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li ng-class="{active: $ctrl.isActive('/eui/screen/home')}">
+                  <a href="#!/eui/screen/home">
+                    <i class="glyphicon glyphicon-home"></i>
+                    EUI Home
+                  </a>
+                </li>
+                <li ng-class="{active: $ctrl.isActive('/eui/screen/embedded')}">
+                  <a href="#!/eui/screen/embedded">
+                    <i class="glyphicon glyphicon-new-window"></i>
+                    Embedded UI Demo
+                  </a>
+                </li>
+                <li ng-class="{active: $ctrl.isActive('/eui/screen/module1')}">
+                  <a href="#!/eui/screen/module1">
+                    <i class="glyphicon glyphicon-duplicate"></i>
+                    Module 1
+                  </a>
+                </li>
+                <li ng-class="{active: $ctrl.isActive('/eui/screen/module2')}">
+                  <a href="#!/eui/screen/module2">
+                    <i class="glyphicon glyphicon-th-large"></i>
+                    Module 2
+                  </a>
+                </li>
+              </ul>
+            </li>
           </ul>
           
           <ul class="nav navbar-nav navbar-right">
@@ -59,5 +91,10 @@ angular.module('phonecatApp').component('appHeader', {
     this.isActive = function(path) {
       return $location.path().indexOf(path) === 0;
     };
+
+    this.isEmbeddedRoute = function() {
+      return this.isActive('/eui');
+    };
   }
 });
+
