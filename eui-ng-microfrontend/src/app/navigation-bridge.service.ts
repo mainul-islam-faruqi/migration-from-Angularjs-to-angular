@@ -18,6 +18,7 @@ export class NavigationBridgeService implements OnDestroy {
     private currentRoute = '';
     private readonly embeddedMode = this.detectEmbedded();
     private initialRoute = inject(HOST_INITIAL_ROUTE, { optional: true });
+    private isNavigatingInternally = false; // Flag to prevent circular navigation
 
     constructor() {
         if (this.embeddedMode) {
@@ -59,6 +60,13 @@ export class NavigationBridgeService implements OnDestroy {
     }
 
     private handleHostNavigation = (event: Event): void => {
+        // Ignore events triggered by internal Angular navigation to prevent circular loops
+        if (this.isNavigatingInternally) {
+            console.log('🔄 NavigationBridge: Ignoring host event (internal navigation in progress)');
+            this.isNavigatingInternally = false;
+            return;
+        }
+
         const customEvent = event as CustomEvent<HostNavigationDetail>;
         const detail = customEvent.detail;
 
@@ -66,22 +74,42 @@ export class NavigationBridgeService implements OnDestroy {
             return;
         }
 
-        let targetRoute = detail.route.startsWith('/') ? detail.route : `/${detail.route}`;
+        // Normalize route to match route definitions (no leading slash)
+        let targetRoute = detail.route;
+        if (targetRoute.startsWith('/')) {
+            targetRoute = targetRoute.substring(1);
+        }
 
         if (this.currentRoute === targetRoute) {
+            console.log('🔄 NavigationBridge: Already at target route:', targetRoute);
             return;
         }
 
-        if (targetRoute === '/') {
-            targetRoute = '/screen/home';
+        if (!targetRoute || targetRoute === '') {
+            targetRoute = 'screen/home';
         }
 
+        console.log('📡 NavigationBridge: Navigating from host to:', targetRoute);
         this.zone.run(() => {
             this.router.navigateByUrl(targetRoute).catch((error) => {
                 console.error('NavigationBridgeService: failed to navigate to host route', targetRoute, error);
             });
         });
     };
+    
+    /**
+     * Call this before internal Angular navigation to prevent circular navigation
+     */
+    public notifyInternalNavigation(): void {
+        this.isNavigatingInternally = true;
+        // Reset flag after a delay in case the navigation fails
+        setTimeout(() => {
+            if (this.isNavigatingInternally) {
+                console.log('🔄 NavigationBridge: Resetting internal navigation flag');
+                this.isNavigatingInternally = false;
+            }
+        }, 500);
+    }
 
     private syncInitialRoute(): void {
         const route = this.normalizeRoute(this.initialRoute);
@@ -110,7 +138,7 @@ export class NavigationBridgeService implements OnDestroy {
         }
 
         // Remove hashbang prefixes like '#!/eui'
-        const cleaned = rawRoute.replace(/^#!?\/?/, '').replace(/^eui/, '').replace(/^\/eui/, '');
+        const cleaned = rawRoute.replace(/^#!?\/?/, '').replace(/^eui\/?/, '').replace(/^\/eui\/?/, '');
         let path = cleaned;
 
         // Strip any leading hash fragments like '#/screen/...'
@@ -119,11 +147,12 @@ export class NavigationBridgeService implements OnDestroy {
         }
 
         if (!path) {
-            return '/screen/home';
+            return 'screen/home'; // No leading slash to match route definitions
         }
 
-        if (!path.startsWith('/')) {
-            path = '/' + path;
+        // Remove leading slash to match route definitions (routes are 'screen/home' not '/screen/home')
+        if (path.startsWith('/')) {
+            path = path.substring(1);
         }
 
         return path;

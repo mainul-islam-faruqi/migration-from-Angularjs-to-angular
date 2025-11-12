@@ -34,7 +34,14 @@ export class AppComponent implements OnInit {
     
     // Add window reference for debugging
     window = window;
+
+    constructor() {
+        // Intercept ALL navigation (sidebar + routerLinks) to ensure consistent routing
+        this.setupNavigationHandler();
+    }
     
+    // Sidebar items - use route format matching route definitions (no leading slash)
+    // Routes are defined as 'screen/home' not '/screen/home' to work with APP_BASE_HREF='/eui'
     sidebarItems: EuiMenuItem[] = [
         { label: 'Home', url: 'screen/home' },
         { label: 'Embedded UI Demo', url: 'screen/embedded' },
@@ -84,6 +91,7 @@ export class AppComponent implements OnInit {
 
     navigateToHome() {
         console.log('Navigating to home...');
+        // Use route format without leading slash to match route definitions
         this.router.navigateByUrl('screen/home', { replaceUrl: true }).then(() => {
             console.log('Navigation to home completed successfully');
             console.log('New URL:', this.router.url);
@@ -98,11 +106,11 @@ export class AppComponent implements OnInit {
         const appRoot = document.querySelector('app-root');
         const isEmbedded = embeddedContainer !== null && embeddedContainer.contains(appRoot);
         
-        console.log('🔍 isEmbedded check:', {
-            embeddedContainer: embeddedContainer,
-            appRoot: appRoot,
-            isEmbedded: isEmbedded
-        });
+        // console.log('🔍 isEmbedded check:', {
+        //     embeddedContainer: embeddedContainer,
+        //     // appRoot: appRoot,
+        //     isEmbedded: isEmbedded
+        // });
         
         return isEmbedded;
     }
@@ -119,5 +127,86 @@ export class AppComponent implements OnInit {
         });
 
         return hosted;
+    }
+
+    private setupNavigationHandler(): void {
+        // Intercept ALL clicks on navigation links (sidebar AND routerLinks)
+        // This ensures consistent navigation handling for both sidebar and content links
+        setTimeout(() => {
+            document.addEventListener('click', (event) => {
+                const target = event.target as HTMLElement;
+                
+                // Check if click is on ANY link
+                const link = target.closest('a') as HTMLAnchorElement;
+                if (!link) return;
+                
+                // Check both href attribute AND routerLink attribute
+                const href = link.getAttribute('href');
+                const routerLink = link.getAttribute('ng-reflect-router-link') || link.hasAttribute('routerlink');
+                
+                // Skip if not a navigation link
+                if (!href && !routerLink) return;
+                
+                // Check if it's an internal screen/ navigation
+                const isInternalNav = (href && (href.includes('/screen/') || href.includes('screen/'))) ||
+                                     (routerLink && (href?.includes('/screen/') || href?.includes('screen/')));
+                
+                if (!isInternalNav) return;
+                
+                // Check if it's within the Angular MFE (sidebar OR content)
+                const isInSidebar = link.closest('eui-app-sidebar');
+                const isInContent = link.closest('eui-page-content') || link.closest('eui-page');
+                
+                if (!isInSidebar && !isInContent) return;
+                
+                console.log('🎯 Navigation link clicked:', { href, isInSidebar: !!isInSidebar, isInContent: !!isInContent });
+                
+                // Prevent default navigation
+                event.preventDefault();
+                event.stopPropagation();
+                
+                // Extract the route from href (handle all formats)
+                let route = href || '';
+                
+                if (route.includes('#!/eui/')) {
+                    route = route.split('#!/eui/')[1]; // screen/home (no leading slash)
+                } else if (route.includes('/screen/')) {
+                    // Extract and remove leading slash
+                    const match = route.match(/\/screen\/[^#?\s]*/);
+                    route = match ? match[0].substring(1) : route; // Remove leading '/'
+                } else if (route.includes('screen/')) {
+                    // Already in correct format
+                    const match = route.match(/screen\/[^#?\s]*/);
+                    route = match ? match[0] : route;
+                }
+                
+                // Ensure no leading slash (routes are 'screen/home' not '/screen/home')
+                if (route.startsWith('/')) {
+                    route = route.substring(1);
+                }
+                
+                // Validate route
+                if (!route || !route.startsWith('screen/')) {
+                    console.warn('⚠️ Invalid route extracted:', route);
+                    return;
+                }
+                
+                console.log('🎯 Navigating to:', route);
+                
+                // Notify NavigationBridge to prevent circular navigation
+                this.navigationBridge.notifyInternalNavigation();
+                
+                // Use Angular Router to navigate
+                this.router.navigateByUrl(route).then(success => {
+                    if (success) {
+                        console.log('✅ Navigation successful to:', route);
+                    } else {
+                        console.error('❌ Navigation failed to:', route);
+                    }
+                }).catch(err => {
+                    console.error('❌ Navigation error:', err);
+                });
+            }, true); // Use capture phase to intercept before other handlers
+        }, 100); // Small delay to ensure DOM is ready
     }
 }

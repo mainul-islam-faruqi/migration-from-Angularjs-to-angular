@@ -36,7 +36,10 @@
         <div class="eui-u-margin-top-l">
             <h4 class="eui-u-font-bold">Explore the demo modules</h4>
             <p>Jump into the feature module sample to see nested routing within this micro-frontend.</p>
+            <!-- No leading slash - routes are 'screen/module1' to work with APP_BASE_HREF='/eui' -->
             <a [routerLink]="['/screen/module1']" class="eui-u-text-link">Go to Module 1 demo</a>
+            <br><br>
+            <a [routerLink]="['/screen/module2']" class="eui-u-text-link">Go to Module 2 demo</a>
         </div>
 
         <div>

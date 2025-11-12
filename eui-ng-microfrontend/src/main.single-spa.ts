@@ -126,7 +126,7 @@ function patchDOMHrefs() {
 }
 
 import { bootstrapApplication } from '@angular/platform-browser';
-import { APP_BASE_HREF, HashLocationStrategy, LocationStrategy, PlatformLocation } from '@angular/common';
+import { APP_BASE_HREF, PathLocationStrategy, LocationStrategy, PlatformLocation } from '@angular/common';
 import { Inject, Optional } from '@angular/core';
 import { AppComponent } from './app/app.component';
 import { appConfig } from './app/app.config';
@@ -137,7 +137,9 @@ declare var __webpack_public_path__: string;
 
 // Base href management for microfrontend asset loading
 
-class MicrofrontendLocationStrategy extends HashLocationStrategy {
+// Custom LocationStrategy for single-spa microfrontend in hash-routing host
+// Based on single-spa best practices: https://single-spa.js.org/docs/ecosystem-angular/#routing
+class MicrofrontendLocationStrategy extends PathLocationStrategy {
   constructor(
     platformLocation: PlatformLocation,
     baseHref: string | null | undefined,
@@ -147,19 +149,82 @@ class MicrofrontendLocationStrategy extends HashLocationStrategy {
   }
 
   override replaceState(state: any, title: string, url: string, queryParams?: string): void {
+    console.log('MF Strategy replaceState():', { url, preventUrlChange: this.preventUrlChange });
     if (this.preventUrlChange) {
-      console.log('MF: Blocking replaceState for:', url);
+      // Embedded mode: block all URL changes
       return;
     }
-    super.replaceState(state, title, url, queryParams);
+    // Full MFE mode: sync with parent's hash routing
+    this.syncWithParentHash(url, true);
   }
   
   override pushState(state: any, title: string, url: string, queryParams?: string): void {
+    console.log('MF Strategy pushState():', { url, preventUrlChange: this.preventUrlChange });
     if (this.preventUrlChange) {
-      console.log('MF: Blocking pushState for:', url);
+      // Embedded mode: block all URL changes
       return;
     }
-    super.pushState(state, title, url, queryParams);
+    // Full MFE mode: sync with parent's hash routing
+    this.syncWithParentHash(url, false);
+  }
+  
+  private syncWithParentHash(url: string, replace: boolean): void {
+    // Clean the URL and build the full hash path
+    const cleanUrl = url.split('#')[0].split('?')[0];
+    const fullHashPath = this.buildHashPath(cleanUrl);
+    
+    console.log('MF: Syncing navigation -', replace ? 'replace' : 'push', '- url:', url, '-> hash:', fullHashPath);
+    
+    // Update the browser hash which single-spa will detect
+    if (replace) {
+      window.history.replaceState(null, '', fullHashPath);
+    } else {
+      window.history.pushState(null, '', fullHashPath);
+    }
+  }
+  
+  private buildHashPath(url: string): string {
+    // Build AngularJS-style hash path: #!/eui/screen/home
+    // The url comes as /screen/home, we need to add /eui prefix
+    let path = url;
+    
+    // Add /eui prefix if not present
+    if (!path.startsWith('/eui/') && !path.startsWith('/eui')) {
+      if (path.startsWith('/screen/')) {
+        path = '/eui' + path;
+      } else if (path.startsWith('screen/')) {
+        path = '/eui/' + path;
+      } else if (path.startsWith('/')) {
+        path = '/eui' + path;
+      } else {
+        path = '/eui/' + path;
+      }
+    }
+    
+    // Return AngularJS hash format
+    return '#!/' + path.replace(/^\//, '');
+  }
+  
+  override prepareExternalUrl(internal: string): string {
+    // This is called by Angular Router to determine what URL to show
+    // In our case, we want to show the path without /eui since APP_BASE_HREF handles that
+    return internal;
+  }
+  
+  override path(includeHash?: boolean): string {
+    // Override path() to correctly parse the hash for Angular Router
+    // Extract the Angular MFE's internal path from: #!/eui/screen/home -> /screen/home
+    const hash = window.location.hash;
+    let extractedPath = '/';
+    
+    if (hash.startsWith('#!/eui/')) {
+      extractedPath = '/' + hash.substring(7); // Remove #!/eui/ -> /screen/home
+    } else if (hash.startsWith('#!/eui')) {
+      extractedPath = hash.substring(6) || '/'; // Remove #!/eui -> /screen/home
+    }
+    
+    console.log('MF Strategy path():', { hash, extractedPath });
+    return extractedPath;
   }
 }
 
@@ -287,13 +352,18 @@ export async function mount(props: any) {
   });
 
   // Use custom location strategy that doesn't interfere with the host router
+  // Set APP_BASE_HREF to '/eui' for proper routing within the MFE namespace
   const mfConfig = {
     ...appConfig,
     providers: [
       ...appConfig.providers,
       {
+        provide: APP_BASE_HREF,
+        useValue: '/eui',
+      },
+      {
         provide: PREVENT_URL_CHANGE,
-        useValue: props?.preventUrlChange ?? true,
+        useValue: props?.preventUrlChange ?? false,
       },
       {
         provide: HOST_INITIAL_ROUTE,

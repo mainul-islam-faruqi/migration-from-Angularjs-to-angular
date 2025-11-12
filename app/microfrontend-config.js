@@ -63,43 +63,43 @@ System.import('single-spa').then(singleSpa => {
     activeWhen: location => location.hash.includes('eui'),
     customProps: (name, location) => ({
       domElementGetter: () => document.getElementById('eui-mfe-container'),
-      preventUrlChange: true,
+      preventUrlChange: false,
       currentRoute: location.hash,
       hostHref: location.href,
     })
   });
 
   // Register embedded Angular component for each page separately to force remounting
-  const pages = ['phones', 'dashboard', 'reports'];
+  // const pages = ['phones', 'dashboard', 'reports'];
   
-  pages.forEach(page => {
-    registerApplication({
-      name: `eui-embedded-${page}`,
-      app: () => System.import('eui-desktop'),
-      activeWhen: location => {
-        console.log(`🎯 Checking embedded route for ${page}:`, location.hash);
-        const isActive = location.hash.includes(page) && !location.hash.includes('eui');
-        console.log(`🎯 Embedded Angular component active for ${page}:`, isActive);
-        return isActive;
-      },
-      customProps: (name, location) => ({
-        domElementGetter: () => {
-          console.log(`🎯 Getting embedded container for ${page}`);
-          const container = document.getElementById('eui-embedded-container');
-          console.log(`🎯 Container found for ${page}:`, container);
-          return container;
-        },
-        // Prevent Angular router from changing browser URL
-        preventUrlChange: true,
-        // Pass context that this is embedded
-        isEmbedded: true,
-        // Pass current route to force remounting
-        currentRoute: location.hash,
-        // Pass page name for debugging
-        pageName: page
-      })
-    });
-  });
+  // pages.forEach(page => {
+  //   registerApplication({
+  //     name: `eui-embedded-${page}`,
+  //     app: () => System.import('eui-desktop'),
+  //     activeWhen: location => {
+  //       console.log(`🎯 Checking embedded route for ${page}:`, location.hash);
+  //       const isActive = location.hash.includes(page) && !location.hash.includes('eui');
+  //       console.log(`🎯 Embedded Angular component active for ${page}:`, isActive);
+  //       return isActive;
+  //     },
+  //     customProps: (name, location) => ({
+  //       domElementGetter: () => {
+  //         console.log(`🎯 Getting embedded container for ${page}`);
+  //         const container = document.getElementById('eui-embedded-container');
+  //         console.log(`🎯 Container found for ${page}:`, container);
+  //         return container;
+  //       },
+  //       // Prevent Angular router from changing browser URL
+  //       preventUrlChange: true,
+  //       // Pass context that this is embedded
+  //       isEmbedded: true,
+  //       // Pass current route to force remounting
+  //       currentRoute: location.hash,
+  //       // Pass page name for debugging
+  //       pageName: page
+  //     })
+  //   });
+  // });
 
   // Start single-spa
   start({
