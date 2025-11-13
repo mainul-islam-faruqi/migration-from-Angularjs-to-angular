@@ -1,0 +1,2 @@
+(globalThis.webpackChunkeui_angular_app=globalThis.webpackChunkeui_angular_app||[]).push([[801],{1002:e=>{e.exports='<eui-page>\n    <eui-page-header label="Module 2"></eui-page-header>\n\n    <eui-page-content>\n        Module 2 content\n    </eui-page-content>\n</eui-page>\n'},1801:(e,a,n)=>{"use strict";n.r(a),n.d(a,{MODULE2_ROUTES:()=>l});var p=n(1635),t=n(281),u=n(8833);let o=class{};o=(0,p.Cg)([(0,t.Component)({standalone:!0,template:n(1002),imports:[...u.Mn]})],o);const l=[{path:"",component:o}]}}]);
+//# sourceMappingURL=801.main.js.map

@@ -28,6 +28,7 @@ import { environment } from '../environments/environment';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { EmbeddedLocationStrategy } from './embedded-location-strategy';
 import { PREVENT_URL_CHANGE } from './routing.tokens';
+// import { DataBridgeService } from './data-bridge.service';
 
 /**
  * The provided function is injected at application startup and executed during
@@ -88,6 +89,7 @@ export const appConfig: ApplicationConfig = {
             TranslateModule.forRoot(translateConfig)
         ),
         AppStarterService,
+        // DataBridgeService, // Explicitly provide for microfrontend injection
         provideRouter(routes),
         provideAnimations(),
         {

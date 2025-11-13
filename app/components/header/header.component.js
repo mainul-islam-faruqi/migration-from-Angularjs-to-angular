@@ -35,8 +35,11 @@ angular.module('phonecatApp').component('appHeader', {
                 Reports
               </a>
             </li>
-            <li class="dropdown" ng-class="{active: $ctrl.isEmbeddedRoute()}">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <li class="dropdown"
+                ng-class="{active: $ctrl.isEmbeddedRoute(), open: $ctrl.euiDropdownOpen}"
+                ng-mouseenter="$ctrl.euiDropdownOpen = true"
+                ng-mouseleave="$ctrl.euiDropdownOpen = false">
+              <a href="#" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="{{$ctrl.euiDropdownOpen}}">
                 <i class="glyphicon glyphicon-export"></i>
                 EUI Microfrontend <span class="caret"></span>
               </a>

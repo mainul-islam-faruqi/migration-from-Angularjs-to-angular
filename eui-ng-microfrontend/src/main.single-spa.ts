@@ -131,6 +131,7 @@ import { Inject, Optional } from '@angular/core';
 import { AppComponent } from './app/app.component';
 import { appConfig } from './app/app.config';
 import { HOST_INITIAL_ROUTE, PREVENT_URL_CHANGE } from './app/routing.tokens';
+// import { DataBridgeService } from './app/data-bridge.service';
 
 // Webpack public path declaration for runtime configuration
 declare var __webpack_public_path__: string;
@@ -357,6 +358,8 @@ export async function mount(props: any) {
     ...appConfig,
     providers: [
       ...appConfig.providers,
+      // Explicitly provide DataBridgeService for microfrontend context
+      // DataBridgeService,
       {
         provide: APP_BASE_HREF,
         useValue: '/eui',
