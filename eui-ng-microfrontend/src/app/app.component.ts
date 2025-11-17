@@ -10,6 +10,7 @@ import { EuiMenuItem } from '@eui/components/eui-menu';
 import { EmbeddedComponent } from './embedded/embedded.component';
 import { SimplePhoneCardComponent } from './simple-phone-card/simple-phone-card.component';
 import { NavigationBridgeService } from './navigation-bridge.service';
+import { CookieBridgeService } from './shared/cookie-bridge.service';
 
 @Component({
     selector: 'app-root',
@@ -31,6 +32,7 @@ import { NavigationBridgeService } from './navigation-bridge.service';
 export class AppComponent implements OnInit {
     private router = inject(Router);
     private navigationBridge = inject(NavigationBridgeService);
+    private cookieBridge = inject(CookieBridgeService);
     
     // Add window reference for debugging
     window = window;
@@ -87,6 +89,10 @@ export class AppComponent implements OnInit {
                 console.log('🚦 Standalone mode detected existing route:', currentUrl, '- skipping auto navigation');
             }
         }
+
+        // Ensure we can see host cookies (set in AngularJS) from Angular
+        this.cookieBridge.ensureSampleCookie();
+        console.log('🍪 Cookies visible inside Angular MFE:', this.cookieBridge.getAll());
     }
 
     navigateToHome() {

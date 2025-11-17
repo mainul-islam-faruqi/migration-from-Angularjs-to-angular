@@ -7,12 +7,20 @@ angular.module('phonecatApp', [
   'core',
   'phoneDetail',
   'phoneList'
-]).run(function($rootScope, $location) {
+]).run(['$rootScope', '$location', 'cookieBridge', function($rootScope, $location, cookieBridge) {
   var lastRouteFromAngular = null;
+
+  // Set a sample cookie (once) so Angular MFEs can prove sharing works
+  if (!cookieBridge.get('mfe-sample')) {
+    cookieBridge.set('mfe-sample', 'angularjs-host', { path: '/' });
+  }
+
+  console.log('🍪 AngularJS host cookies:', cookieBridge.getAll());
 
   // Listen for navigation events emitted by the Angular micro-frontend
   window.addEventListener('angular-to-angularjs', function(event) {
     var detail = event.detail || {};
+    console.log('Message received from Angular MFE:', detail);
     if (detail.action !== 'navigate' || !detail.route) {
       return;
     }
@@ -60,6 +68,6 @@ angular.module('phonecatApp', [
     });
     window.dispatchEvent(navigationEvent);
   });
-
+  
   console.log('AngularJS host application initialized with MFE routing bridge');
-});
+}]);

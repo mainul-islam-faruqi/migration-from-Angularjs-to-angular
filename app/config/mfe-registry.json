@@ -1,0 +1,144 @@
+{
+  "version": "1.0.0",
+  "description": "Microfrontend Registry - Central configuration for all MFEs",
+  "applications": {
+    "angular-mfe": {
+      "name": "angular-mfe",
+      "displayName": "Angular Phone List",
+      "module": "angular-mfe",
+      "type": "fullpage",
+      "enabled": true,
+      "routes": {
+        "type": "hash",
+        "patterns": [
+          { "path": "/angular-page", "exact": false },
+          { "path": "/angular-phone-list", "exact": false },
+          { "path": "/angular-phone-detail", "exact": false }
+        ]
+      },
+      "container": {
+        "id": "angular-mfe-container",
+        "insertPosition": "afterbegin",
+        "insertTarget": "body"
+      },
+      "customProps": {
+        "preventUrlChange": false
+      }
+    },
+    "eui-desktop-fullpage": {
+      "name": "eui-desktop-fullpage",
+      "displayName": "EUI Desktop (Full Page)",
+      "module": "eui-desktop",
+      "type": "fullpage",
+      "enabled": true,
+      "routes": {
+        "type": "hash",
+        "patterns": [
+          { 
+            "path": "/eui", 
+            "exact": false,
+            "exclude": ["/phones", "/dashboard", "/reports"]
+          }
+        ]
+      },
+      "container": {
+        "id": "eui-mfe-container",
+        "insertPosition": "afterbegin",
+        "insertTarget": "body"
+      },
+      "customProps": {
+        "preventUrlChange": false,
+        "isEmbedded": false
+      }
+    },
+    "eui-desktop-embedded": {
+      "name": "eui-desktop-embedded",
+      "displayName": "EUI Desktop (Embedded)",
+      "module": "eui-desktop",
+      "type": "embedded",
+      "enabled": true,
+      "routes": {
+        "type": "hash",
+        "patterns": [
+          { "path": "/phones", "exact": false, "exclude": ["/eui"] },
+          { "path": "/dashboard", "exact": false, "exclude": ["/eui"] },
+          { "path": "/reports", "exact": false, "exclude": ["/eui"] }
+        ]
+      },
+      "container": {
+        "id": "eui-embedded-container",
+        "insertPosition": "afterbegin",
+        "insertTarget": "body"
+      },
+      "customProps": {
+        "preventUrlChange": true,
+        "isEmbedded": true
+      }
+    }
+  },
+  "containers": {
+    "managed": [
+      {
+        "id": "view-container",
+        "description": "AngularJS ng-view container",
+        "alwaysPresent": true
+      },
+      {
+        "id": "angular-mfe-container",
+        "description": "Angular MFE full-page container",
+        "alwaysPresent": false
+      },
+      {
+        "id": "eui-mfe-container",
+        "description": "EUI full-page container",
+        "alwaysPresent": false
+      },
+      {
+        "id": "eui-embedded-container",
+        "description": "EUI embedded component container",
+        "alwaysPresent": false
+      }
+    ]
+  },
+  "visibility": {
+    "rules": [
+      {
+        "condition": "route.includes('/eui') && !route.includes('/phones') && !route.includes('/dashboard') && !route.includes('/reports')",
+        "show": ["eui-mfe-container"],
+        "hide": ["view-container", "angular-mfe-container", "eui-embedded-container"]
+      },
+      {
+        "condition": "route.includes('/angular-page') || route.includes('/angular-phone-list') || route.includes('/angular-phone-detail')",
+        "show": ["angular-mfe-container"],
+        "hide": ["view-container", "eui-mfe-container", "eui-embedded-container"]
+      },
+      {
+        "condition": "route.includes('/phones') || route.includes('/dashboard') || route.includes('/reports')",
+        "show": ["view-container", "eui-embedded-container"],
+        "hide": ["angular-mfe-container", "eui-mfe-container"]
+      }
+    ],
+    "default": {
+      "show": ["view-container"],
+      "hide": ["angular-mfe-container", "eui-mfe-container", "eui-embedded-container"]
+    }
+  },
+  "environment": {
+    "development": {
+      "logging": true,
+      "debug": true,
+      "performanceMonitoring": false
+    },
+    "staging": {
+      "logging": true,
+      "debug": false,
+      "performanceMonitoring": true
+    },
+    "production": {
+      "logging": false,
+      "debug": false,
+      "performanceMonitoring": true
+    }
+  }
+}
+
